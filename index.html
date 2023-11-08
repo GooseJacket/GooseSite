@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <title> "The GooseSite" </title>
+  <title> The GooseSite </title>
   <head>
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
   </head>
   <body>
-    <h1>"The GooseSite"</h1>
-    <h2>"Adjective Endings German Practice"</h2>
+    <h1> The GooseSite </h1>
+    <hr>
+    <h2> Adjective Endings German Practice </h2>
     <py-script>
-      print("Hello World")
-      y = input()
-      print(y)
+      $(function(){
+        $("#includedContent").load("AdEnds.py"); 
+      });
     </py-script>
   </body>
 </html>
