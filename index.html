@@ -3,17 +3,18 @@
   <title> The GooseSite </title>
   <head>
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+     <script>
+        $(function() {
+           $("#includeHtml").load("AdEnds.html");
+        });
+     </script>
   </head>
   <body>
     <h1> The GooseSite </h1>
     <hr>
     <h2> Adjective Endings German Practice </h2>
-    <py-script>
-
-pyscript.write('prompt', "hello world")
-  
-</py-script>
+    <div id="includeHtml"></div>
   </body>
      <form>
       <label for="anser"><span id='prompt'> </span> </label>
