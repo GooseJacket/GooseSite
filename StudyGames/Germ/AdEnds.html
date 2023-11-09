@@ -5,42 +5,54 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="GameTitle"><h2> Adjective Endings German Practice</h2></div>
-      <div class=AdjEndings>
-      <div class="type">
+  <div class="GameTitle"><h2> Adjective Endings German Practice</h2></div>
+  <div class=AdjEndings>
+    <div class=checkboxes>
+    <table>
+      <tr>
+        <th>type</th>
+        <th>gender</th>
+        <th>case</th>
+      </tr>
+      <tr>
+        <td class="type">
           <input type="checkbox" id="der" name="der" value="der" checked>
-          <label for="vehicle1"> Der-Words</label><br>
+          <label for="der"> Der-Words</label><br>
           <input type="checkbox" id="ein" name="ein" value="ein" checked>
-          <label for="vehicle2"> Ein-Words</label><br>
+          <label for="ein"> Ein-Words</label><br>
           <input type="checkbox" id="unp" name="unp" value="unp" checked>
-          <label for="vehicle3"> Unpreceded</label><br>
-        </div>
-        <div class = "adCase">
+          <label for="unp"> Unpreceded</label><br>
+        </td>
+        <td class = "adCase">
           <input type="checkbox" id="nom" name="nom" value="nom" checked>
-          <label for="vehicle1"> Nomnitive</label><br>
+          <label for="nom"> Nomnitive</label><br>
           <input type="checkbox" id="acc" name="acc" value="acc" checked>
-          <label for="vehicle1"> Accusitive</label><br>
+          <label for="acc"> Accusitive</label><br>
           <input type="checkbox" id="dat" name="dat" value="dat" checked>
-          <label for="vehicle1"> Dative</label><br>
+          <label for="dat"> Dative</label><br>
           <input type="checkbox" id="gen" name="gen" value="gen" checked>
-          <label for="vehicle1"> Genitive</label><br>
-        </div>
-        <div class = "gender">
+          <label for="gen"> Genitive</label><br>
+        </td>
+        <td class = "gender">
           <input type="checkbox" id="fem" name="fem" value="fem" checked>
-          <label for="vehicle1"> Feminine</label><br>
+          <label for="fem"> Feminine</label><br>
           <input type="checkbox" id="neut" name="neut" value="neut" checked>
-          <label for="vehicle1"> Neuter</label><br>
+          <label for="neut"> Neuter</label><br>
           <input type="checkbox" id="masc" name="masc" value="masc" checked>
-          <label for="vehicle1"> Masculine</label><br>
+          <label for="masc"> Masculine</label><br>
           <input type="checkbox" id="pl" name="pl" value="pl" checked>
-          <label for="vehicle1"> Plural</label><br>
-        </div>
-        <var id = "wins">0</var>/<var id ="Round" name="round">0</var>
-        <p id = "prompt">Click Go to start!</p>
-        <input id="inp" type="text" size="10" value = "">
-        <input type ="submit" id="sub" value = "Go">
+          <label for="pl"> Plural</label><br>
+        </td>
+      </tr>
+    </table>
+    </div>
+    <div class=AdjEndUI>
+      <var id = "wins">0</var>/<var id ="Round" name="round">0</var>
+      <p id = "prompt">Click Go to start!</p>
+      <input id="inp" type="text" size="10" value = "">
+      <input type ="submit" id="sub" value = "Go">
       
-        <script src="AdEnds.js"></script>
+      <script src="AdEnds.js"></script>
     </div>
   </body>
 </html>
