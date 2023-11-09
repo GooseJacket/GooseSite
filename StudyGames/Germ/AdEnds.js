@@ -130,8 +130,9 @@ function generatePrompt(){
       should = neutEnds[type][adCase];}
     else if (gender == 3){
       hint[1] = "pl";
-      should = plEnds[type][adCase];}
-      stats[1][gender][1] +=1;
+      should = plEnds[type][adCase];
+    }
+    stats[1][gender][1] +=1;
   
     if (adCase == 0) hint[2] = "nom";
     else if (adCase == 1) hint[2] = "acc";
@@ -141,6 +142,7 @@ function generatePrompt(){
   }
 }
 
+//responds to user input
 function runRound(){
   if (ans == "hint"){
     window.alert(hint);
@@ -171,18 +173,19 @@ $(document).ready(function(){
       runRound();
 
       $("#derW").text(stats[0][0][0]);$("#derR").text(stats[0][0][1]);
-      $("#einW").text(stats[0][1][0]);$("#einR").text(stats[1][0][1]);
-      $("#unpW").text(stats[0][2][0]);$("#unpR").text(stats[2][0][1]);
+      $("#einW").text(stats[0][1][0]);$("#einR").text(stats[0][1][1]);
+      $("#unpW").text(stats[0][2][0]);$("#unpR").text(stats[0][2][1]);
 
-      $("#nomW").text(stats[1][0][0]);$("#nomR").text(stats[1][0][1]);
-      $("#accW").text(stats[1][1][0]);$("#accR").text(stats[1][1][1]);
-      $("#datW").text(stats[1][2][0]);$("#datR").text(stats[1][2][1]);
-      $("#genW").text(stats[1][3][0]);$("#genR").text(stats[1][3][1]);
+      $("#nomW").text(stats[2][0][0]);$("#nomR").text(stats[2][0][1]);
+      $("#accW").text(stats[2][1][0]);$("#accR").text(stats[2][1][1]);
+      $("#datW").text(stats[2][2][0]);$("#datR").text(stats[2][2][1]);
+      $("#genW").text(stats[2][3][0]);$("#genR").text(stats[2][3][1]);
 
-      $("#femW").text(stats[2][0][0]);$("#femR").text(stats[2][0][1]);
-      $("#neutW").text(stats[2][1][0]);$("#neutR").text(stats[2][1][1]);
-      $("#mascW").text(stats[2][2][0]);$("#mascR").text(stats[2][2][1]);
-      $("#plW").text(stats[2][3][0]);$("#plR").text(stats[2][3][1]);
+      $("#femW").text(stats[1][0][0]);$("#femR").text(stats[2][0][1]);
+      //ordered table wrong
+      $("#mascW").text(stats[1][1][0]);$("#mascR").text(stats[1][1][1]);
+      $("#neutW").text(stats[1][2][0]);$("#neutR").text(stats[1][2][1]);
+      $("#plW").text(stats[1][3][0]);$("#plR").text(stats[1][3][1]);
     
     } else started = true;
     generatePrompt();
