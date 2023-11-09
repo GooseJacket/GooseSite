@@ -64,6 +64,10 @@ let stats = [
 ];  //type - d e unp
 let wins = 0;
 
+function random(max) {
+  return max * Math.floor(Math.random());
+}
+
 function way(l){
   let values = []
   let ret = []
@@ -108,8 +112,8 @@ function generatePrompt(){
   type = weightedChoice(2, stats[2]);  //0=der 1=ein 3=unp
   
   if (gender < 3){
-    prompt += unpW[0][adCase][Math.random(0, unpW[0][adCase].length - 1)] + " ";
-  }else{prompt += unpW[1][adCase][Math.random(0, unpW[1][adCase].length - 1)] + " ";}
+    prompt += unpW[0][adCase][random(unpW[0][adCase].length - 1)] + " ";
+  }else{prompt += unpW[1][adCase][random(unpW[1][adCase].length - 1)] + " ";}
   
   if (type == 0){
     hint[0] = "der";
@@ -119,12 +123,12 @@ function generatePrompt(){
     prompt += einW[gender][adCase] + " ";
   }else hint[0] = "unp"
   
-  prompt += adjectives[Math.random(0, adjectives.length - 1)] + "__ ";
+  prompt += adjectives[random(adjectives.length - 1)] + "__ ";
   
-  if (gender == 0) prompt += fem[Math.random(0, fem.length - 1)];
-  else if (gender == 1) prompt += masc[Math.random(0, masc.length - 1)];
-  else if (gender == 2) prompt += neut[Math.random(0, neut.length - 1)];
-  else if (gender == 3) prompt += pl[Math.random(0, pl.length - 1)];
+  if (gender == 0) prompt += fem[random(fem.length - 1)];
+  else if (gender == 1) prompt += masc[random(masc.length - 1)];
+  else if (gender == 2) prompt += neut[random(neut.length - 1)];
+  else if (gender == 3) prompt += pl[random(pl.length - 1)];
   if (gender == 0){
     hint[1] = "fem";
     should = femEnds[type][adCase];}
@@ -146,7 +150,6 @@ function generatePrompt(){
 }
 
 function runRound(){
-  generatePrompt();
   if (ans == "hint"){
     window.alert(hint);
   }
@@ -173,6 +176,7 @@ function runRound(){
   }
 
   document.getElementById("wins").innerHTML = wins;
+  generatePrompt();
 }
 
 function confirmInput() {
