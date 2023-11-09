@@ -193,6 +193,6 @@ $(document).ready(function(){
     $("#wins").text(wins);
     $("#prompt").text(prompt);
     $("#inp").val("");
-    $("#sub").html("Submit");
+    $("#sub").val("Submit");
   });
 });
