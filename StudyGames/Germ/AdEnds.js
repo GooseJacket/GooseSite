@@ -95,7 +95,7 @@ function generatePrompt(){
   adCase = randomChoice("adCase");  //0=nom 1=acc 2=dat 3=gen
   gender = randomChoice("gender");  //0=fem 1=masc 2=neut 3=pl
   type = randomChoice("type");      //0=der 1=ein 3=unp
-  window.alert(["gender", gender, "adCase", adCase, "type", type]); //debug
+  //window.alert(["gender", gender, "adCase", adCase, "type", type]); //debug
 
   if (gender < 3){
     prompt += unpW[0][adCase][random(unpW[0][adCase].length - 1)] + " ";
