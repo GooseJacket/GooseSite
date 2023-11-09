@@ -66,7 +66,7 @@ let stats = [
 let wins = 0;
 
 function random(max) {
-  return max * Math.floor(Math.random());
+  return Math.floor(max * Math.random());
 }
 
 function way(l){
