@@ -111,7 +111,7 @@ function generatePrompt(){
 
   prompt += adjectives[random(adjectives.length - 1)] + "__ ";
 
-  prompt += nouns[gender][random(fem.length - 1)];
+  prompt += nouns[gender][random(nouns.length - 1)];
   if (gender == 0){
     hint[1] = "fem";
     should = femEnds[type][adCase];}
