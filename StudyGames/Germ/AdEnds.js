@@ -61,8 +61,8 @@ const unpW = [
 let stats = [
     [0, 1, 2, 3],  //gender - f m n p 
     [0, 1, 2, 3],  //adCase - n a d g
-    [0, 1, 2]
-];  //type - d e unp
+    [0, 1, 2]      //type - d e unp
+];  
 let wins = 0;
 
 function random(max) {
@@ -83,15 +83,25 @@ function way(l){
     },0);
   ret = ret.map(i => i / div);
   return ret;
-};
+}
 
-function weightedChoice(n, l) {
-  let items = [0, 1, 2];
-  if(n == 3) items.push(3);
+function getItems(which){
+  //let zero; let one; let two; let three; //0 = f, n, d. 1 = m, a, e. 2 = n, d, unp. 3 = p, g.
+  let ids = [];
+  if(which == "adCase") ids = [document.getElementById('nom').checked, document.getElementById('acc').checked, document.getElementById('doc').checked, document.getElementById('gen').checked];
+  else if(which == "gender") ids = [document.getElementById('fem').checked, document.getElementById('masc').checked, document.getElementById('neut').checked, document.getElementById('pl').checked]; 
+  else if(which == "type") ids = [document.getElementById('der').checked, document.getElementById('ein').checked, document.getElementById('unp').checked];
+  else return [0. 1, 2]
+  let ret = []; 
+  for (var i = 0; i < ids.length; i++){
+    if(ids[i] == "true") ret.push(i);
+  }return ret;
+}
+
+function weightedChoice(n, l, items) {
   let weights = way(l);
   
-    for (var i = 1; i < weights.length; i++)
-        weights[i] += weights[i - 1];
+    for (var i = 1; i < weights.length; i++) weights[i] += weights[i - 1];
 
     var random = Math.random() * weights[weights.length - 1];
 
@@ -108,9 +118,9 @@ let prompt; let ans; let hint; let adCase; let gender; let type; let should;
 
 function generatePrompt(){
   prompt = ""; ans = ""; hint = ["", "", ""]; should = "";
-  adCase = weightedChoice(3, stats[1]);  //0=nom 1=acc 2=dat 3=gen
-  gender = weightedChoice(3, stats[0]);  //0=fem 1=masc 2=neut 3=pl
-  type = weightedChoice(2, stats[2]);  //0=der 1=ein 3=unp
+  adCase = weightedChoice(3, stats[1], getItems("adCase"));  //0=nom 1=acc 2=dat 3=gen
+  gender = weightedChoice(3, stats[0], getItems("gender"));  //0=fem 1=masc 2=neut 3=pl
+  type = weightedChoice(2, stats[2], getItems("type"));//0=der 1=ein 3=unp
   
   if (gender < 3){
     prompt += unpW[0][adCase][random(unpW[0][adCase].length - 1)] + " ";
