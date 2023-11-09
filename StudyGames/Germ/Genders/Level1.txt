@@ -1,1 +1,9 @@
-
+Herr IST der WEIL Herr = man = masculine
+Frau IST die WEIL Frau = woman = feminine
+Maedchen IST das WEIL -chen = neuter (overrides gender norm!)
+Bruder IST der WEIL brother = masculine
+Schwester IST die WEIL sister = feminine (overrides -er norm!)
+Junge IST der WEIL boy = masculine (overrides -e norm!)
+Katze IST die WEIL -e = feminine (overrides domesticaed animals norm!)
+Hund IST der WEIL domesticated animal = masculine
+Essen IST das WEIL gerand = neuter
