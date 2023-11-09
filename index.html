@@ -12,13 +12,17 @@
   <body>
     <div class="title"><h1> The GooseSite </h1></div>
     <div class="GameTitle"><h2> Adjective Endings German Practice </h2></div>
-    <div class="TheCode" id="includeHtml"></div>
-    <div class="UI">
-       <form>
-        <label for="anser"><span id='prompt'> </span> </label>
-        <input type="text" id="answer" name="answer"><br><br>
-        <input type="submit" value="Submit">
-      </form>
-  </div>
+      <div class=AdEndings>
+        <var id = wins></var>/<var id = Round></var>
+        <form onsubmit="confirmInput()">
+        <p id = prompt></p>
+        <input id="inp" type="text" size="10">
+        <br>
+        <input type="submit">
+        <button type="button" onclick="generatePrompt()">Next Question</button>
+      
+        <script src="script.js"></script>
+        </form>
+    </div>
   </body>
 </html>
