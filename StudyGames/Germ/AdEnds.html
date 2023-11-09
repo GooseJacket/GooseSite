@@ -11,8 +11,11 @@
     <table>
       <tr>
         <th>type</th>
+        <th>stats</th>
         <th>gender</th>
+        <th>stats</th>
         <th>case</th>
+        <th>stats</th>
       </tr>
       <tr>
         <td class="type">
@@ -22,6 +25,11 @@
           <label for="ein"> Ein-Words</label><br>
           <input type="checkbox" id="unp" name="unp" value="unp" checked>
           <label for="unp"> Unpreceded</label><br>
+        </td>
+        <td class="type-stats">
+          <var id="derW">0</var>/<var id="derR">0</var><br>
+          <var id="einW">0</var>/<var id="einR">0</var><br>
+          <var id="unpW">0</var>/<var id="unpR">0</var>
         </td>
         <td class = "adCase">
           <input type="checkbox" id="nom" name="nom" value="nom" checked>
@@ -33,6 +41,12 @@
           <input type="checkbox" id="gen" name="gen" value="gen" checked>
           <label for="gen"> Genitive</label><br>
         </td>
+        <td class = "adCase-stats">
+          <var id="nomW">0</var>/<var id="nomR">0</var><br>
+          <var id="accW">0</var>/<var id="accR">0</var><br>
+          <var id="datW">0</var>/<var id="datR">0</var><br>
+          <var id="genW">0</var>/<var id="genR">0</var><br>
+          </td>
         <td class = "gender">
           <input type="checkbox" id="fem" name="fem" value="fem" checked>
           <label for="fem"> Feminine</label><br>
@@ -43,11 +57,17 @@
           <input type="checkbox" id="pl" name="pl" value="pl" checked>
           <label for="pl"> Plural</label><br>
         </td>
+        <td class = "gender-stats">
+          <var id="femW">0</var>/<var id="femR">0</var><br>
+          <var id="mascW">0</var>/<var id="neutR">0</var><br>
+          <var id="neutW">0</var>/<var id="mascR">0</var><br>
+          <var id="plW">0</var>/<var id="plR">0</var><br>
+          </td>
       </tr>
     </table>
     </div>
     <div class=AdjEndUI>
-      <var id = "wins">0</var>/<var id ="Round" name="round">0</var>
+      Total:<var id = "wins">0</var>/<var id ="Round" name="round">0</var>
       <p id = "prompt">Click Go to start!</p>
       <input id="inp" type="text" size="10" value = "">
       <input type ="submit" id="sub" value = "Go">
