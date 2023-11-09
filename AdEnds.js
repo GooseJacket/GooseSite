@@ -1,4 +1,4 @@
-var round = 1;
+var round = 0;
 
 const adjectives = [
   "bunt", "beliebt", "echt", "schoen", "toll", "blau", "besser", "gut",
@@ -75,7 +75,7 @@ function way(l){
     if (!values.includes(i)) {
         values.push(i);
         ret.push(1);
-    }else ret[values.index(i)] += 1;
+    }else ret[values.indexOf(i)] += 1;
   })
   let div = ret.reduce((accumulator, currentValue) => {
       return accumulator + currentValue
@@ -101,7 +101,7 @@ function weightedChoice(n, l) {
     return items[i];
 }
 
-document.getElementById("Round").innerHTML = round;
+//document.getElementById("Round").innerHTML = round;
 
 let prompt; let ans; let hint; let adCase; let gender; let type; let should;
 
@@ -142,7 +142,7 @@ function generatePrompt(){
     hint[1] = "pl";
     should = plEnds[type][adCase];}
 
-  document.getElementById("prompt").innerHTML = prompt;
+  //document.getElementById("prompt").innerHTML = prompt;
   if (adCase == 0){ hint[2] = "nom";}
   else if (adCase == 1) hint[2] = "acc";
   else if (adCase == 2) hint[2] = "dat";
@@ -175,16 +175,22 @@ function runRound(){
     stats[2].push(type);
   }
 
-  document.getElementById("wins").innerHTML = wins;
+  //document.getElementById("wins").innerHTML = wins;
   generatePrompt();
-}
-
-function confirmInput() {
-  ans = document.forms[0].inp.value;
-  round += 1;
-  runRound();
 }
 
 window.onload = function() {
   generatePrompt();
-} 
+}
+
+$(document).ready(function(){
+  $("#sub").click(function(){
+    ans = document.getElementById('inp').value
+    round += 1;
+    runRound();
+    $("#Round").text(round);
+    $("#wins").text(wins);
+    $("#prompt").text(prompt);
+    $("#inp").text("type here");
+  });
+});
