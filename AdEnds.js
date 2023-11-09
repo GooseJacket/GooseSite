@@ -1,4 +1,5 @@
 var round = 0;
+var started = false;
 
 const adjectives = [
   "bunt", "beliebt", "echt", "schoen", "toll", "blau", "besser", "gut",
@@ -174,9 +175,6 @@ function runRound(){
     stats[1].push(adCase);
     stats[2].push(type);
   }
-
-  //document.getElementById("wins").innerHTML = wins;
-  generatePrompt();
 }
 
 window.onload = function() {
@@ -185,12 +183,16 @@ window.onload = function() {
 
 $(document).ready(function(){
   $("#sub").click(function(){
-    ans = document.getElementById('inp').value
-    round += 1;
-    runRound();
+    if(started){
+      ans = document.getElementById('inp').value
+      round += 1;
+      runRound();
+    } else started = true;   
+    generatePrompt();
     $("#Round").text(round);
     $("#wins").text(wins);
     $("#prompt").text(prompt);
-    $("#inp").text("type here");
+    $("#inp").val("");
+    $("#sub").html("Submit");
   });
 });
