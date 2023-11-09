@@ -99,11 +99,10 @@ function weightedChoice(n, l) {
 
 document.getElementById("Round").innerHTML = round;
 
-let prompt = ""; let ans = "";
-let hint = ["", "", ""];
-let adCase; let gender; let type; let should = "";
+let prompt; let ans; let hint; let adCase; let gender; let type; let should;
 
 function generatePrompt(){
+  prompt = ""; ans = ""; hint = ["", "", ""]; should = "";
   adCase = weightedChoice(3, stats[1]);  //0=nom 1=acc 2=dat 3=gen
   gender = weightedChoice(3, stats[0]);  //0=fem 1=masc 2=neut 3=pl
   type = weightedChoice(2, stats[2]);  //0=der 1=ein 3=unp
