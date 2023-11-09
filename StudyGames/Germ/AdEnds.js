@@ -1,14 +1,18 @@
-var round = 0;
-var started = false;
+//init setup
+let round = 0; let wins = 0; let started = false;
+let prompt; let ans; let hint; let adCase; let gender; let type; let should;
 
+//data (until line 69)
 const adjectives = [
   "bunt", "beliebt", "echt", "schoen", "toll", "blau", "besser", "gut",
   "deutlich", "international"
 ];
-const fem = ["Katze", "Frau", "Tante", "Freundin", "Familie", "Offenkeit"];
-const masc = ["Herr", "Hund", "Junge", "Freund", "Arbeiter"];
-const neut = ["Maedchen", "Handy", "Heim", "Kind", "Haus"];
-const pl = ["Herren", "Eltern", "Augen", "Geschwister", "Freunde"];
+const nouns = [
+["Katze", "Frau", "Tante", "Freundin", "Familie", "Offenkeit"],
+["Herr", "Hund", "Junge", "Freund", "Arbeiter"],
+["Maedchen", "Handy", "Heim", "Kind", "Haus"],
+["Herren", "Eltern", "Augen", "Geschwister", "Freunde"]
+]
 
 const femEnds = [
     ["e", "e", "en", "en"],  //der
@@ -58,74 +62,45 @@ const unpW = [
     ]
 ];
 
-let stats = [
-    [0, 1, 2, 3],  //gender - f m n p 
-    [0, 1, 2, 3],  //adCase - n a d g
-    [0, 1, 2]      //type - d e unp
-];  
-let wins = 0;
+//easy python version of math.random
+function random(max) {return Math.floor(max * Math.random());}
 
-function random(max) {
-  return Math.floor(max * Math.random());
-}
-
-function way(l){
-  let values = []
-  let ret = []
-  l.forEach(i => {
-    if (!values.includes(i)) {
-        values.push(i);
-        ret.push(1);
-    }else ret[values.indexOf(i)] += 1;
-  })
-  let div = ret.reduce((accumulator, currentValue) => {
-      return accumulator + currentValue
-    },0);
-  ret = ret.map(i => i / div);
+//generates an items list for weightedChoice from the corresponding checkboxes
+function getItems(which){
+  let ids = [];
+  if(which == "adCase") ids = [document.getElementById('nom').checked, document.getElementById('acc').checked, document.getElementById('dat').checked, document.getElementById('gen').checked];
+  else if(which == "gender") ids = [document.getElementById('fem').checked, document.getElementById('masc').checked, document.getElementById('neut').checked, document.getElementById('pl').checked]; 
+  else if(which == "type") ids = [document.getElementById('der').checked, document.getElementById('ein').checked, document.getElementById('unp').checked];
+  else return [0, 1, 2];
+  let ret = []; 
+  for (var i = 0; i < ids.length; i++){
+    if(ids[i] == true){ret.push(i);}
+  }
+  if(ret.length == 0){
+    if(which == "type") ret = [0, 1, 2]
+    else ret = [0, 1, 2, 3]
+  }
   return ret;
 }
 
-function getItems(which){
-  //let zero; let one; let two; let three; //0 = f, n, d. 1 = m, a, e. 2 = n, d, unp. 3 = p, g.
-  let ids = [];
-  if(which == "adCase") ids = [document.getElementById('nom').checked, document.getElementById('acc').checked, document.getElementById('doc').checked, document.getElementById('gen').checked];
-  else if(which == "gender") ids = [document.getElementById('fem').checked, document.getElementById('masc').checked, document.getElementById('neut').checked, document.getElementById('pl').checked]; 
-  else if(which == "type") ids = [document.getElementById('der').checked, document.getElementById('ein').checked, document.getElementById('unp').checked];
-  else return [0. 1, 2]
-  let ret = []; 
-  for (var i = 0; i < ids.length; i++){
-    if(ids[i] == "true") ret.push(i);
-  }return ret;
+function randomChoice(which){
+  let items = getItems(which);
+  let rand = random(items.length);
+  return items[rand];
 }
 
-function weightedChoice(n, l, items) {
-  let weights = way(l);
-  
-    for (var i = 1; i < weights.length; i++) weights[i] += weights[i - 1];
-
-    var random = Math.random() * weights[weights.length - 1];
-
-    for (i = 0; i < weights.length; i++)
-        if (weights[i] > random)
-            break;
-
-    return items[i];
-}
-
-//document.getElementById("Round").innerHTML = round;
-
-let prompt; let ans; let hint; let adCase; let gender; let type; let should;
-
+//generates a prompt by randomly pulling a sentence starter, adjective, article, and noun
 function generatePrompt(){
   prompt = ""; ans = ""; hint = ["", "", ""]; should = "";
-  adCase = weightedChoice(3, stats[1], getItems("adCase"));  //0=nom 1=acc 2=dat 3=gen
-  gender = weightedChoice(3, stats[0], getItems("gender"));  //0=fem 1=masc 2=neut 3=pl
-  type = weightedChoice(2, stats[2], getItems("type"));//0=der 1=ein 3=unp
-  
+  adCase = randomChoice("adCase");  //0=nom 1=acc 2=dat 3=gen
+  gender = randomChoice("gender");  //0=fem 1=masc 2=neut 3=pl
+  type = randomChoice("type");      //0=der 1=ein 3=unp
+  window.alert(["gender", gender, "adCase", adCase, "type", type]); //debug
+
   if (gender < 3){
     prompt += unpW[0][adCase][random(unpW[0][adCase].length - 1)] + " ";
   }else{prompt += unpW[1][adCase][random(unpW[1][adCase].length - 1)] + " ";}
-  
+
   if (type == 0){
     hint[0] = "der";
     prompt += derW[gender][adCase] + " ";
@@ -133,13 +108,10 @@ function generatePrompt(){
     hint[0] = "ein";
     prompt += einW[gender][adCase] + " ";
   }else hint[0] = "unp"
-  
+
   prompt += adjectives[random(adjectives.length - 1)] + "__ ";
-  
-  if (gender == 0) prompt += fem[random(fem.length - 1)];
-  else if (gender == 1) prompt += masc[random(masc.length - 1)];
-  else if (gender == 2) prompt += neut[random(neut.length - 1)];
-  else if (gender == 3) prompt += pl[random(pl.length - 1)];
+
+  prompt += nouns[gender][random(fem.length - 1)];
   if (gender == 0){
     hint[1] = "fem";
     should = femEnds[type][adCase];}
@@ -153,8 +125,7 @@ function generatePrompt(){
     hint[1] = "pl";
     should = plEnds[type][adCase];}
 
-  //document.getElementById("prompt").innerHTML = prompt;
-  if (adCase == 0){ hint[2] = "nom";}
+  if (adCase == 0) hint[2] = "nom";
   else if (adCase == 1) hint[2] = "acc";
   else if (adCase == 2) hint[2] = "dat";
   else if (adCase == 3) hint[2] = "gen";
@@ -165,28 +136,14 @@ function runRound(){
     window.alert(hint);
   }
 
-  let affect = 0;
   if (ans == should){
     window.alert("good job!");
     wins += 1;
     ans == "";
-    stats[0].pop(gender);
-    stats[1].pop(adCase);
-    stats[2].pop(type);
-
-    if (!stats[0].includes(gender)) stats[0].push(gender);
-    if (!stats[1].includes(adCase)) stats[1].push(adCase);
-    if (!stats[2].includes(type)) stats[2].push(type);
-
   }if (ans != should){
     window.alert("The answer was: " + should.toString() + " because " + hint.toString());
-
-    stats[0].push(gender);
-    stats[1].push(adCase);
-    stats[2].push(type);
   }
 }
-
 window.onload = function() {
   generatePrompt();
 }
@@ -197,12 +154,13 @@ $(document).ready(function(){
       ans = document.getElementById('inp').value
       round += 1;
       runRound();
-    } else started = true;   
+    } else started = true;
     generatePrompt();
     $("#Round").text(round);
     $("#wins").text(wins);
     $("#prompt").text(prompt);
     $("#inp").val("");
     $("#sub").val("Submit");
+    ans = "";
   });
 });
