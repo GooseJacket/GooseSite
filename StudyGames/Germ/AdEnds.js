@@ -181,7 +181,7 @@ $(document).ready(function(){
       $("#datW").text(stats[2][2][0]);$("#datR").text(stats[2][2][1]);
       $("#genW").text(stats[2][3][0]);$("#genR").text(stats[2][3][1]);
 
-      $("#femW").text(stats[1][0][0]);$("#femR").text(stats[2][0][1]);
+      $("#femW").text(stats[1][0][0]);$("#femR").text(stats[1][0][1]);
       //ordered table wrong
       $("#mascW").text(stats[1][1][0]);$("#mascR").text(stats[1][1][1]);
       $("#neutW").text(stats[1][2][0]);$("#neutR").text(stats[1][2][1]);
