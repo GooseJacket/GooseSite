@@ -1,14 +1,44 @@
-
-["Paul Broca", "1861", "studied syphilis speech inpediment man (Patient Tan) and mapped ____'s Area"],
-  ["Donald Hebb", "1949", "nerves that fire together, wire together"],
-  ["David Huber and Torsten Wiesel", "1960", "Ocular dominance"],
-  ["Santiago Ramon y Cajal", "1894", "neurons make new Connections"],
-  ["Eric Kandel", "1960", "Pavlov's sea slugs (Aplysia California)"],
-  ["H.M.", "1950s", "severe epilepsy, removed hippocampus, no new memories"],
-  ["Barack Obama", "2013", "Brain Research through Advancing Innovative Neurotechnologies"],
-  ["German men", "2000s", "green algae responds to light"],
-  ["Franz Joseph Gall", "1800s", "phrenology (brain bumps)"],
-  ["Hans Berger", "1920s", "electroencephalogram/EEG"],
-  ["a deep neural network", "2015", "won at Go"],
-  ["Abu al-Qasim al-Zahrawi", "Middle Ages", "father of Modern surgery"]
-];
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <div class="GameTitle"><h2> AcaDeca Books Practice</h2></div>
+  <div class=AdjEndings>
+    <div class=checkboxes>
+      <input type="radio" id="author0" name="author" value="Paul Broca">
+      <label for="author0">Paul Broca</label><br>
+      <input type="radio" id="author1" name="author" value="Donald Hebb">
+      <label for="author1">Donald Hebb</label><br>
+      <input type="radio" id="author2" name="author" value="David Huber and Torsten Wiesel">
+      <label for="author2">David Huber and Torsten Wiesel</label><br>
+      <input type="radio" id="author3" name="author" value="Santiago Ramon y Cajal">
+      <label for="author3">Santiago Ramon y Cajal</label><br>
+      <input type="radio" id="author4" name="author" value="Eric Kandel">
+      <label for="author4">Eric Kandel</label><br>
+      <input type="radio" id="author5" name="author" value="H.M.">
+      <label for="author5">H.M.</label><br>
+      <input type="radio" id="author6" name="author" value="Barack Obama">
+      <label for="author6">Barack Obama</label><br>
+      <input type="radio" id="author7" name="author" value="German men">
+      <label for="author7">German men</label><br>
+      <input type="radio" id="author8" name="author" value="Franz Joseph Gall">
+      <label for="author8">Franz Joseph Gall</label><br>
+      <input type="radio" id="author6" name="author" value="Hans Berger">
+      <label for="author6">Hans Berger</label><br>
+      <input type="radio" id="author7" name="author" value="a deep neural network">
+      <label for="author7">a deep neural network</label><br>
+      <input type="radio" id="author8" name="author" value="Abu al-Qasim al-Zahrawi">
+      <label for="author8">Abu al-Qasim al-Zahrawi</label><br>
+    </div>
+    <div class=AdjEndUI>
+      <p id = "title">Click Go to start!</p>
+      <input id="inp" type="text" size="10" value = "">
+      <input type ="submit" id="sub" value = "Go">
+      
+      <script src="Books.js"></script>
+    </div>
+  </body>
+</html>
