@@ -126,7 +126,7 @@ $(document).ready(function(){
   $("#sub").click(function(){
     if(started){
       ansYear = document.getElementById('inp').value
-      ansMan = $('input[type="radio"][name="author"]:checked').val();
+      ansMan = $('input[type="radio"][name="artist"]:checked').val();
       runRound();
       
     } else started = true;
@@ -134,8 +134,16 @@ $(document).ready(function(){
     $("#title").text(achievement);
     $("#inp").val("");
     $("#sub").val("Submit");
-    for(let i = 0; i < 9; i++){
-      document.getElementById("author"+i.toString()).checked = false;
+    let fakeMen = [Math.random() * Men.length for i in range(0,3)];
+    for i in range(1,3){
+      let check = fakemen.pop(fakeMen[i]);
+      while fakeMen[i] in check{fakeMen[i] = Math.random() * Men.length;}
+    }
+    fakeMen.push(man);
+    fakeMen.sort();
+    for(let i = 0; i < 4; i++){
+      document.getElementById("a"+i.toString()).checked = false;
+      document.getElementById("a"+i.toString()).value = fakeMen[i];
     }
   });
 });
