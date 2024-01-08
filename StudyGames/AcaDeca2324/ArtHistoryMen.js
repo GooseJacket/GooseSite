@@ -135,9 +135,9 @@ $(document).ready(function(){
     $("#title").text(achievement);
     $("#inp").val("");
     $("#sub").val("Submit");
-    let fakeMen = [Men[Math.random() * Men.length] for i in range(0,3)];
+    let fakeMen = [Men[Math.random() * Men.length], Men[Math.random() * Men.length], Men[Math.random() * Men.length]];
     for i in range(1,3){
-      let check = [i for i in fakemen];
+      let check = fakemen;
       check.pop(fakeMen[i]);
       while fakeMen[i] in check{fakeMen[i] = Math.random() * Men.length;}
     }
