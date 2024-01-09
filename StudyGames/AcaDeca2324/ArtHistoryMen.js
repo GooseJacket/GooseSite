@@ -76,7 +76,7 @@ const Men = [
   ["Christo and Jeanne-Claude", "1970s", "Made Earthworks/Land art/Enviromental art. Wrapped monuments in fabric, built 24mi cloth fence in CA, surrounded 11 Florida islands with pink plastic, set up orange fabric gates in Central Park."],
   ["Michael Heizer and Robert Smithson", "1970s", "important Earthworks artists."],
   ["Guerrilla Girls", "1985", "Anonymous, all-girl New York Performance Art group that wear gorilla masks and use guerrilla-warfare tactics. Art isn’t just for white men."],
-  ["Philip Johnson", "1906-2005", "At one time was the leading modern architect of the International Style. In 1970, suggested that one of the functions of art is decoration, and added a finial to the top of the AT&T Building/550 Madison Avenue."],
+  ["Philip Johnson", "1906-2005", "At one time was the leading modern architect of the International Style. In 1970, suggested that one of the functions of art is decoration, and added a finial to the top of the AT&T Building/550 Madison Avenue."]
 ];
 
 //easy python version of math.random
