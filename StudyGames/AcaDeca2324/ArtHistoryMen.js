@@ -126,7 +126,7 @@ $(document).ready(function(){
   $("#sub").click(function(){
     if(started){
       window.alert("Successfully started :D");
-      ansYear = document.getElementById('inp').value
+      ansYear = document.getElementById('inp').value;
       ansMan = $('input[type="radio"][name="artist"]:checked').val();
       runRound();
       
