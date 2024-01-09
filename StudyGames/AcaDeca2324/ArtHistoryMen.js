@@ -145,7 +145,7 @@ $(document).ready(function(){
     fakeMen.sort();
     for(let i = 0; i < 4; i++){
       document.getElementById("a"+i.toString()).checked = false;
-      document.getElementById("a"+i.toString()).value = fakeMen[i];
+      $("#a"+str(i)).val(fakeMen[i]);
     }
   });
 });
