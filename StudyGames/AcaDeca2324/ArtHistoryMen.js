@@ -110,7 +110,7 @@ function runRound(){
     ansYear == "";
   }
   if(ansMan == man){
-    resultText += "Good job on the man! It was " + man;
+    resultText += "Good job on the person! It was " + man;
     ansMan = "";
   }else{
     resultText += "It was actually " + man;
@@ -126,7 +126,7 @@ $(document).ready(function(){
   $("#sub").click(function(){
     if(started){
       ansYear = document.getElementById('inp').value;
-      ansMan = $('input[type="radio"][name="artist"]:checked').val();
+      ansMan = $('input[type="radio"][name="artist"]:checked').next().text();
       runRound();
 
     } else started = true;
