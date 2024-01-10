@@ -125,27 +125,30 @@ window.onload = function() {
 $(document).ready(function(){
   $("#sub").click(function(){
     if(started){
-      window.alert("Successfully started :D");
       ansYear = document.getElementById('inp').value;
       ansMan = $('input[type="radio"][name="artist"]:checked').val();
       runRound();
-      
+
     } else started = true;
     generatePrompt();
     $("#title").text(achievement);
     $("#inp").val("");
     $("#sub").val("Submit");
-    let fakeMen = [Men[Math.random() * Men.length], Men[Math.random() * Men.length], Men[Math.random() * Men.length]];
-    for i in range(1,3){
-      let check = fakemen;
+    let fakeMen = [Men[Math.floor(Math.random()*Men.length)][0], Men[Math.floor(Math.random()*Men.length)][0], Men[Math.floor(Math.random()*Men.length)][0]];
+    //window.alert(fakeMen);
+    for(let i = 0; i < 3; i++){
+      let check = [fakeMen[0], fakeMen[1], fakeMen[2], man];
+      //window.alert(check);
       check.pop(fakeMen[i]);
-      while fakeMen[i] in check{fakeMen[i] = Math.random() * Men.length;}
+      while (fakeMen[i] in check){fakeMen[i] = Men[Math.floor(Math.random()*Men.length)][0];}
     }
+    //window.alert(fakeMen);
     fakeMen.push(man);
     fakeMen.sort();
     for(let i = 0; i < 4; i++){
       document.getElementById("a"+i.toString()).checked = false;
-      $("#a"+str(i)).val(fakeMen[i]);
+      //window.alert(fakeMen[i]);
+      $("#a"+i.toString()).next().text(fakeMen[i]);
     }
   });
 });
