@@ -110,7 +110,7 @@ function runRound(){
     ansYear == "";
   }
   if(ansMan == man){
-    resultText += "Good job on the person! It was " + man;
+    resultText += "Good job on the man! It was " + man;
     ansMan = "";
   }else{
     resultText += "It was actually " + man;
