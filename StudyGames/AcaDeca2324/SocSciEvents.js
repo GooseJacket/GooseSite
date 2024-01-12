@@ -123,7 +123,7 @@ unusedYears = [
   [1949, "EDSAC runs first program, first practical stored-program computer"],
   [1949, "EMCC tests BINAC before shipping, BINAC breaks."],
   [1951, "first UNIVAC completed, on-site"],
-  [1951, "IBM focuses on electronic computers"],
+  [1951, "IBM focuses on electronic computers"]
   
   
 ];
