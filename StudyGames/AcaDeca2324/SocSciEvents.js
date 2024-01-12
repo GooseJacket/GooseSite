@@ -135,7 +135,7 @@ function printUsedYears(){
   for(var i = 0; i < usedYears.length; i++){
     ret += usedYears[i][0].toString() + ": " + usedYears[i][1] + "<br>";
   }
-  pushHtml("known", ret)
+  pushHtml("known", ret);
 }
 //end of data
 
