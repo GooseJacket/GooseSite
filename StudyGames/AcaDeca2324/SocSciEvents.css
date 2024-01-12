@@ -13,6 +13,7 @@ div.box {
 .row {
   display: inline-block;
   border: 1px solid #ccc;
+  overflow-wrap: break-word;
 }
 
 p {
