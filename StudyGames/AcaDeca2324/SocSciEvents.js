@@ -129,10 +129,24 @@ unusedYears = [
 ];
 console.log(unusedYears);
 usedYears = [];
+
+colors = [
+  ["IBM", "red"],
+  ["MS", "blue"],
+  ["UNIVAC", "pink"],
+  ["ENIVAC", "teal"],
+  ["EDVAC", "brown"]
+]
+
 function printUsedYears(){
   usedYears = sortByIndex(0, usedYears);
   var ret = "";
   for(var i = 0; i < usedYears.length; i++){
+    var text = usedYears[i][1]
+    for(var j = 0; j < colors.length; j++){
+      if(text.search(colors[j][0]) > -1){
+        text = text.split(colors[j][0]).join("<span color:" + colors[j][1] + ">" + colors[j][0] + "</span>");
+      }
     ret += usedYears[i][0].toString() + ": " + usedYears[i][1] + "<br>";
   }
   pushHtml("known", ret);
