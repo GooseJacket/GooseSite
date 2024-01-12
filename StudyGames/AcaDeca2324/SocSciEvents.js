@@ -46,7 +46,7 @@ function sortByIndex(I, list){
 //data
 unusedYears = [
   [1790, "first US Census, happens every 10 years"],
-  [18, "James Ritty invents cash register, Patterson turns company into NCR"],
+  [1879, "James Ritty invents cash register, Patterson turns company into NCR"],
   [1880, "UC Census takes 7 years to process"],
   [1888, "Rob Porter asks Herman Hollerith for help: organette-style punch cards"],
   [1890, "US Census takes 2.5 years to process"],
@@ -104,7 +104,27 @@ unusedYears = [
   [1830, "decade that Babbage fixes the Bankers Clearning House with his book, Economy-Machinery-Manufacturers"],
   [1860, "decade that railroad companies ran electric cables along tracks"],
   [1928, "David Hilbert proposes Entscheidungsproblem. Does every problem have an algorithmic solution?"],
-  [1887, "Dorr E Felt invents Comptometer, William S Burroughs invents mechanical calculator: both adding machines"]
+  [1887, "Dorr E Felt invents Comptometer, William S Burroughs invents mechanical calculator: both adding machines"],
+  [1928, "MIT professor Vannevar Bush starts making Differential Analyzer"],
+  [1931, "Differential Analyzer finished"],
+  [1942, "John Atanastoff and Clifford Berry abandon the AB Computer"],
+  [1935, "Konrad Zuse graduated from Tech College of Berlin-Charlottenberg, builds computers in his parents' living room"],
+  [1938, "Konrad Zuse finishes the ZI prototype, with arithmetic and memory capabilities"],
+  [1942, "Helmut Schreyer proposed Zuse's ideas to the government, rejected."],
+  [1942, "Goldstine drafted into US army"],
+  [1942, "Mauchley proposed high-speed computer to UPenn"],
+  [1943, "US has no firing tables, Dr. Henry Goldstine is hired. He, Mauchley, and Eckert propose the ENIAC."],
+  [1944, "John von Neumann joins the EDVAC project"],
+  [1945, "von Neumann writes the First Draft on EDVAC, EDVAC completed"],
+  [1946, "UPenn and army present EDVAC. UPenn Moore School Lectures, Maurice Wilkes attends. Mauchley + Eckert resign."],
+  [1955, "ENIAC decomissioned"],
+  [1951, "von Neumann finishes IAS stored-program Computer"],
+  [1948, "Manchester Baby runs first program, making it the first stored-program computer"],
+  [1949, "EDSAC runs first program, first practical stored-program computer"],
+  [1949, "EMCC tests BINAC before shipping, BINAC breaks."],
+  [1951, "first UNIVAC completed, on-site"],
+  [1951, "IBM focuses on electronic computers"],
+  
   
 ];
 console.log(unusedYears);
