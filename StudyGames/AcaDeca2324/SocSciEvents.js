@@ -55,7 +55,22 @@ unusedYears = [
   [1987, "MS releases OS/2, IBM releases PS/2"],
   [1986, "Half of PC's sold are clones"],
   [1990, "Windows 3.0 released"],
-  [1994, "New management at IBM, stopped OS/2"]
+  [1994, "New management at IBM, stopped OS/2"],
+  [1860, "office correspondence stops being hand-written"],
+  [1869, "Chris Lathan Sholes makes the first typewriter, funded by James Densmore"],
+  [1873, "Philo Remington produced one thousand typewriters"],
+  [1880, "Rand produces > 1k typewriters / year"],
+  [1890, "Rand produces 20k typewriters / year"],
+  [192, "Remington Typewriter Company merges with Rand Kardex Company --> Remington Rand"],
+  [1949, "Hopper joins EMCC, working on UNIVAC"],
+  [1950, "James Rand Jr bought EMCC"],
+  [1952, "CBS election publicity stunt, Rand acquires English Reserch Association"],
+  [1955, "Sperry Rand buys Remington Rand --> Sperry Rand"],
+  [1957, "Former Sperry Rand employees found Control Data Corporation (science computers)"],
+  [1964, "Original ENIAC patent finalized"],
+  [1965, "Sperry Rand acquires RCA"],
+  [1973, "Earl Larson strikes down ENIAC patent"],
+  [1986, "Sperry Rand merges with Burroughs --> Unisys"]
 ];
 console.log(unusedYears);
 usedYears = [];
