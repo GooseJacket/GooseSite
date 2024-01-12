@@ -18,6 +18,31 @@ function drop(ev) { //do the swap
 }
 //end of swapping
 
+//housekeeping
+function random(max) {return Math.floor(max * Math.random());}
+
+function sortByIndex(I, list){
+  temp = []
+  //add all the indexes to temp
+  for(var i = 0; i < list.length; i++){
+    temp.push(list[i][I]);
+  }
+  //sort by the index
+  temp.sort();
+  //for each index, find the index in the original list and replace the temp list with that.
+  for(var i = 0; i < list.length; i++){ //0, 1, 2, 3, 4
+    for(var j = 0; j < list.length; j++){ //find the OG
+      if(list[j][I] == temp[i]){ //if the indexes match,
+        temp[i] = list[j]; //replace the temp item with the OG
+        break; //once done, get out of this loop
+      }
+    }
+  }
+  //window.alert(temp);
+  return temp;
+}
+//end of housekeeping
+
 //data
 unusedYears = [
   [1790, "first US Census, happens every 10 years"],
@@ -75,6 +100,7 @@ unusedYears = [
 console.log(unusedYears);
 usedYears = [];
 function printUsedYears(){
+  usedYears = sortByIndex(0, usedYears);
   var ret = "";
   for(var i = 0; i < usedYears.length; i++){
     ret += usedYears[i][0].toString() + ": " + usedYears[i][1] + "<br>";
@@ -82,31 +108,6 @@ function printUsedYears(){
   pushHtml("known", ret)
 }
 //end of data
-
-//housekeeping
-function random(max) {return Math.floor(max * Math.random());}
-
-function sortByIndex(I, list){
-  temp = []
-  //add all the indexes to temp
-  for(var i = 0; i < list.length; i++){
-    temp.push(list[i][I]);
-  }
-  //sort by the index
-  temp.sort();
-  //for each index, find the index in the original list and replace the temp list with that.
-  for(var i = 0; i < list.length; i++){ //0, 1, 2, 3, 4
-    for(var j = 0; j < list.length; j++){ //find the OG
-      if(list[j][I] == temp[i]){ //if the indexes match,
-        temp[i] = list[j]; //replace the temp item with the OG
-        break; //once done, get out of this loop
-      }
-    }
-  }
-  //window.alert(temp);
-  return temp;
-}
-//end of housekeeping
 
 //main
 var currentList = []
@@ -120,7 +121,7 @@ function generatePrompt(){
     return;
   }
   while(unusedYears.length < 5){
-    window.alert("Not enough unused years, adding more!");
+    //window.alert("Not enough unused years, adding more!");
     unusedYears.push(usedYears[random(usedYears.length)]);
     usedYears.splice(usedYears.indexOf(usedYears[-1]), 1);
   }
