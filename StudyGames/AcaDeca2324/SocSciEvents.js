@@ -124,8 +124,8 @@ unusedYears = [
   [1949, "EMCC tests BINAC before shipping, BINAC breaks."],
   [1951, "first UNIVAC completed, on-site"],
   [1951, "IBM focuses on electronic computers"]
-  
-  
+
+
 ];
 console.log(unusedYears);
 usedYears = [];
@@ -133,9 +133,21 @@ usedYears = [];
 colors = [
   ["IBM", "red"],
   ["MS", "blue"],
-  ["UNIVAC", "pink"],
+  ["Windows", "blue"]
+  ["UNIVAC", "purple"],
   ["ENIVAC", "teal"],
-  ["EDVAC", "brown"]
+  ["EDVAC", "brown"],
+  ["Manchester", "green"],
+  ["Rand", "chocolate"],
+  ["Remington", "chocolate"],
+  ["Sperry", "chocolate"]
+  ["EMCC", "DeepPink"],
+  ["Babbage", "Gold"],
+  ["FORTRAN", "silver"],
+  ["SABRE", "YellowGreen"],
+  ["COBOL", "Tomato"],
+  ["Apple", "Turquoise"],
+  ["Amazon", "Steelblue"]
 ]
 
 function printUsedYears(){
@@ -144,10 +156,12 @@ function printUsedYears(){
   for(var i = 0; i < usedYears.length; i++){
     var text = usedYears[i][1]
     for(var j = 0; j < colors.length; j++){
-      if(text.search(colors[j][0]) > -1){
-        text = text.split(colors[j][0]).join("<span color:" + colors[j][1] + ">" + colors[j][0] + "</span>");
+      var word = colors[j][0];
+      if(text.search(word) > -1){
+        text = text.split(word).join("<span style=\"color:" + colors[j][1] + "\">" + word + "</span>");
       }
-    ret += usedYears[i][0].toString() + ": " + usedYears[i][1] + "<br>";
+    }
+    ret += usedYears[i][0].toString() + ": " + text + "<br>";
   }
   pushHtml("known", ret);
 }
