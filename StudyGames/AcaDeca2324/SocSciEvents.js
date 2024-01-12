@@ -47,9 +47,9 @@ function sortByIndex(I, list){
 unusedYears = [
   [1790, "first US Census, happens every 10 years"],
   [18, "James Ritty invents cash register, Patterson turns company into NCR"],
-  [18, "UC Census takes 7 years to process"],
-  [18, "Rob Porter asks Herman Hollerith for help: organette-style punch cards"],
-  [18, "US Census takes 2.5 years to process"],
+  [1880, "UC Census takes 7 years to process"],
+  [1888, "Rob Porter asks Herman Hollerith for help: organette-style punch cards"],
+  [1890, "US Census takes 2.5 years to process"],
   [1905, "NCR sold 100,000 cash registers per year"],
   [1901, "Thomas Watson fired from NCR, he turns to CTR"],
   [1904, "Thomas Watson now CTR president"],
@@ -95,7 +95,17 @@ unusedYears = [
   [1964, "Original ENIAC patent finalized"],
   [1965, "Sperry Rand acquires RCA"],
   [1973, "Earl Larson strikes down ENIAC patent"],
-  [1986, "Sperry Rand merges with Burroughs --> Unisys"]
+  [1986, "Sperry Rand merges with Burroughs --> Unisys"],
+  [1819, "Charles Babbage wants to automate math caclulations"],
+  [1790, "Gaspard de Prony used the method of differences to make log tables in France"],
+  [1833, "Difference Engine proof of concept is working"],
+  [1834, "Babbage asks for money to make Analytical Machine, is rejected"],
+  [1843, "Ada Lovelace translates  French D.E. report, 4x the length and uses Bernoulli numbers."],
+  [1830, "decade that Babbage fixes the Bankers Clearning House with his book, Economy-Machinery-Manufacturers"],
+  [1860, "decade that railroad companies ran electric cables along tracks"],
+  [1928, "David Hilbert proposes Entscheidungsproblem. Does every problem have an algorithmic solution?"],
+  [1887, "Dorr E Felt invents Comptometer, William S Burroughs invents mechanical calculator: both adding machines"]
+  
 ];
 console.log(unusedYears);
 usedYears = [];
