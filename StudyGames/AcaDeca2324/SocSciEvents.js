@@ -133,14 +133,14 @@ usedYears = [];
 colors = [
   ["IBM", "red"],
   ["MS", "blue"],
-  ["Windows", "blue"]
+  ["Windows", "blue"],
   ["UNIVAC", "purple"],
   ["ENIVAC", "teal"],
   ["EDVAC", "brown"],
   ["Manchester", "green"],
   ["Rand", "chocolate"],
   ["Remington", "chocolate"],
-  ["Sperry", "chocolate"]
+  ["Sperry", "chocolate"],
   ["EMCC", "DeepPink"],
   ["Babbage", "Gold"],
   ["FORTRAN", "silver"],
@@ -148,7 +148,7 @@ colors = [
   ["COBOL", "Tomato"],
   ["Apple", "Turquoise"],
   ["Amazon", "Steelblue"]
-]
+];
 
 function printUsedYears(){
   usedYears = sortByIndex(0, usedYears);
