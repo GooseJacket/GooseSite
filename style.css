@@ -6,3 +6,11 @@ html {
 h1, h2 {
   text-align: center;
 }
+leftColumn {
+  float: left;
+  width: 75%;
+}
+rightColumn {
+  float: right;
+  width: 25%
+}
