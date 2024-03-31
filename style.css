@@ -2,7 +2,7 @@ html {
   height: 100%;
   width: 100%;
   margin-left: 20px;
-  background-color:#d2b4de;
+  background-color:#bb8fce;
 }
 hi {
   color: #900C3F;
@@ -18,3 +18,17 @@ h1, h2 {
   float: right;
   width: 25%
 }
+.GameBox {
+  margin: auto;
+  width: 80%;
+  background-color:#d2b4de;
+  padding: 10px;
+}
+.GameUI{                                                                
+  margin: auto;
+  width: 75%;
+  background-color:#d2b4de;
+  padding: 10px;
+}
+
+
