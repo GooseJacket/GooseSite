@@ -18,6 +18,10 @@ h1, h2 {
   float: right;
   width: 25%
 }
+.leftFourth {
+  float: left;
+  width: 25%
+}
 .GameBox {
   border-radius: 25px;
   margin: auto;
