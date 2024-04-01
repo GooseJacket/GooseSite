@@ -11,6 +11,7 @@ h1, h2 {
   text-align: center;
 }
 header {
+  padding: 10px;
   background-color:#d2b4de;
 }
 .leftThreeFourths {
