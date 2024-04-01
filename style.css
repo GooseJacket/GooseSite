@@ -11,18 +11,25 @@ h1, h2 {
   text-align: center;
 }
 header {
+  border-radius: 25px;
   padding: 10px;
   background-color:#d2b4de;
 }
 .leftThreeFourths {
+  border-top-left-radius:25px;
+  border-bottom-left-radius: 25px;
   float: left;
   width: 75%;
 }
 .rightFourth {
+  border-top-right-radius:25px; 
+  border-bottom-right-radius:25px;
   float: right;
   width: 25%
 }
 .leftFourth {
+  border-top-left-radius:25px;
+  border-bottom-left-radius: 25px;
   float: left;
   width: 25%;
   background-color:#f5eef8;
