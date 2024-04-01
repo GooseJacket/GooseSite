@@ -10,21 +10,23 @@ h1 {
 h1, h2 {
   text-align: center;
 }
-.leftColumn {
+.leftThreeFourths {
   float: left;
   width: 75%;
 }
-.rightColumn {
+.rightFourth {
   float: right;
   width: 25%
 }
 .GameBox {
+  border-radius: 25px;
   margin: auto;
   width: 80%;
   background-color:#d2b4de;
   padding: 10px;
 }
 .GameUI{                                                                
+  border-radius: 25px;
   margin: auto;
   width: 75%;
   background-color:#f5eef8;
