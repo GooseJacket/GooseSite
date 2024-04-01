@@ -19,12 +19,14 @@ header {
   border-top-left-radius:25px;
   border-bottom-left-radius: 25px;
   float: left;
+  padding: 10px;
   width: 75%;
 }
 .rightFourth {
   border-top-right-radius:25px; 
   border-bottom-right-radius:25px;
   float: right;
+  padding: 10px;
   width: 25%
 }
 .leftFourth {
