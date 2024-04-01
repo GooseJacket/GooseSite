@@ -20,14 +20,14 @@ header {
   border-bottom-left-radius: 25px;
   float: left;
   padding: 10px;
-  width: 75%;
+  width: calc(75% - 10px);
 }
 .rightFourth {
   border-top-right-radius:25px; 
   border-bottom-right-radius:25px;
   float: right;
   padding: 10px;
-  width: 25%
+  width: calc(25% - 10px);
 }
 .leftFourth {
   border-top-left-radius:25px;
@@ -39,6 +39,7 @@ header {
 .centerHalf {
   margin: auto;
   width: 50%
+  background-color:#f5eef8;
 }
 .GameBox {
   border-radius: 25px;
