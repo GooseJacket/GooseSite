@@ -26,6 +26,10 @@ header {
   float: left;
   width: 25%
 }
+.centerHalf {
+  margin: auto;
+  width: 50%
+}
 .GameBox {
   border-radius: 25px;
   margin: auto;
