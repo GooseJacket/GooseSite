@@ -10,6 +10,9 @@ h1 {
 h1, h2 {
   text-align: center;
 }
+header {
+  background-color:#d2b4de;
+}
 .leftThreeFourths {
   float: left;
   width: 75%;
