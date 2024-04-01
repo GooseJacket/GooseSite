@@ -1,27 +1,3 @@
-html {
-  height: 100%;
-  width: 100%;
-  margin-left: 20px;
-  background-color:#bb8fce;
-}
-h1 {
-  color: #900C3F;
-}
-h1, h2 {
-  text-align: center;
-}
-.GameBox {
-  margin: auto;
-  width: 80%;
-  background-color:#d2b4de;
-  padding: 10px;
-}
-.GameUI{                                                                
-  margin: auto;
-  width: 75%;
-  background-color:#f5eef8;
-  padding: 10px;
-}
 div.box {
   float: left;
   margin: 10px;
