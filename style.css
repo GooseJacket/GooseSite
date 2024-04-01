@@ -14,6 +14,9 @@ header {
   padding: 10px;
   background-color:#d2b4de;
 }
+.logo {
+  text-align: center;
+}
 .leftThreeFourths {
   float: left;
   width: 75%;
@@ -25,6 +28,7 @@ header {
 .leftFourth {
   float: left;
   width: 25%
+  background-color:#f5eef8;
 }
 .centerHalf {
   margin: auto;
