@@ -3,7 +3,6 @@ div.bar {
   height:20px;
   float:left;
   position:absolute;
-  
 }
 div.graph {
   background-color: azure;
@@ -11,7 +10,5 @@ div.graph {
   width:50%;
   margin:auto;
   padding: 10px;                                                  
-  border-radius: 25px;
-  
-  
+  border-radius: 25px; 
 }
