@@ -216,7 +216,7 @@ function graph(data, xmax, xmin){
   for(var i = 0; i < 10; i++){``
     letter = i.toString();
     print(letter, xranges[i]);
-    wide = (xcounts[i]/xmode*50).toString()+"%";
+    wide = (xcounts[i]/xmode*40).toString()+"%";
     //print(letter, wide)
     document.getElementById("b"+letter).style.width = wide;
 
