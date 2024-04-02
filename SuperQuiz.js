@@ -99,14 +99,7 @@ function getmed(list){
 function sortNumerically(list){
   //if(list.length > 3){window.alert(list)}
   l = [...list];
-  for(var i = 0; i < l.length; i++){
-    l[i] = parseFloat(l[i]) / 10
-  }
-  l.sort()
-  for(var i = 0; i < l.length; i++){
-    l[i] = l[i] * 10
-  }
-  //if(l.length > 3){window.alert(l)}
+  l.sort(function (a, b) {  return a - b;  });
   return l;
 }
 
