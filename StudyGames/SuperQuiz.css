@@ -1,0 +1,17 @@
+div.bar {
+  background-color:firebrick;
+  height:20px;
+  min-width:50px;
+  max-width:250px;
+  float:left;
+  position:absolute;
+  
+}
+div.graph {
+  background-color: azure;
+  height:100%;
+  width:50%;
+  margin:auto;
+  
+  
+}
