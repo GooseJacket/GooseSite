@@ -1,8 +1,8 @@
 div.bar {
   background-color:firebrick;
   height:5%;
-  min-width:10%;
-  max-width:50%;
+  min-width:5%;
+  max-width:40%;
   float:left;
   position:absolute;
 }
