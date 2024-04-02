@@ -2,6 +2,7 @@ div.bar {
   background-color:firebrick;
   height:20px;
   float:left;
+  min-width:50px;
   position:absolute;
 }
 div.graph {
