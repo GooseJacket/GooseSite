@@ -198,15 +198,15 @@ function graph(data, xmax, xmin){
   }
   superman = [...xcounts];
   xmode = getmax(superman)
-  ymax = document.getElementById("graph").clientWidth;
   
-  for(var i = 0; i < 10; i++){
+  for(var i = 0; i < 10; i++){``
     letter = i.toString();
     print(letter, xranges[i]);
-    wide = 50 + ymax*xcounts[i]/xmode;
-    //print(letter, wide)
-    document.getElementById("b"+letter).style.width = wide.toString()+"px";
+    wide = (xcounts[i]/xmode*50).toString()+"%";
+    print(letter, wide)
+    document.getElementById("b"+letter).style.width = wide;
 
+  
   }
   
   //print("1 X =", ystep)
