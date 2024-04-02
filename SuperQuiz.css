@@ -1,8 +1,6 @@
 div.bar {
   background-color:firebrick;
   height:20px;
-  min-width:50px;
-  max-width:250px;
   float:left;
   position:absolute;
   
@@ -12,6 +10,7 @@ div.graph {
   height:100%;
   width:50%;
   margin:auto;
+  padding: 10px;
   
   
 }
