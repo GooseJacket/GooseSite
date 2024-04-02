@@ -198,7 +198,7 @@ function graph(data, xmax, xmin){
   }
   superman = [...xcounts];
   xmode = getmax(superman)
-  ymax = 200;
+  ymax = document.getElementById("graph").clientWidth;
   
   for(var i = 0; i < 10; i++){
     letter = i.toString();
