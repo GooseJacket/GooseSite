@@ -96,8 +96,22 @@ function getmed(list){
   }
 }
 
-function getmax(l){list = l;list.sort();return list[list.length-1];}
-function min(list){list.sort();return list[0];}
+function sortNumerically(list){
+  //if(list.length > 3){window.alert(list)}
+  l = [...list];
+  for(var i = 0; i < l.length; i++){
+    l[i] = parseFloat(l[i]) / 10
+  }
+  l.sort()
+  for(var i = 0; i < l.length; i++){
+    l[i] = l[i] * 10
+  }
+  //if(l.length > 3){window.alert(l)}
+  return l;
+}
+
+function getmax(l){list=sortNumerically(l);return list[list.length-1];}
+function min(l){list=sortNumerically(l);return list[0];}
 
 function getmode(list){
   nums = []
@@ -203,7 +217,7 @@ function graph(data, xmax, xmin){
     letter = i.toString();
     print(letter, xranges[i]);
     wide = (xcounts[i]/xmode*50).toString()+"%";
-    print(letter, wide)
+    //print(letter, wide)
     document.getElementById("b"+letter).style.width = wide;
 
   
