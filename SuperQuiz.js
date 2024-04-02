@@ -213,7 +213,7 @@ function graph(data, xmax, xmin){
   superman = [...xcounts];
   xmode = getmax(superman)
   
-  for(var i = 0; i < 10; i++){``
+  for(var i = 0; i < 10; i++){
     letter = i.toString();
     print(letter, xranges[i]);
     wide = (xcounts[i]/xmode*40).toString()+"%";
