@@ -10,6 +10,9 @@ h1 {
 h1, h2 {
   text-align: center;
 }
+img {
+  50%
+}
 header {
   border-radius: 25px;
   padding: 10px;
