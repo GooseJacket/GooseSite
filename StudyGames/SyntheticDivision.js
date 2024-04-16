@@ -2,9 +2,10 @@ function print(content, id){
   document.getElementById(id).textContent = content.toString();
 }
 
-var num; var coeffirst; var box; var coeff
+var num; var coeffirst; var box; var coeff;
 
 function run(){
+  //get info
   num = parseInt(document.getElementById("num").value) + 1;
   coeffirst = document.getElementById("coeffirst").value;
   coeff = coeffirst.split(" ");
@@ -12,21 +13,26 @@ function run(){
     coeff[i] = parseInt(coeff[i]);
   }
   box = parseInt(document.getElementById("box").value) * -1;
-  var thing = 0; var add = 0; var row1 = [box.toString(), "| ", ...coeff];
-  var line = ""; var space = "";
-  for(var i = 0; i < box.toString().length; i++){
-    line += "-";
-    space += " ";
-  }
+  var thing = 0; var add; var line = ""; var space = "";
+  var row1 = [box.toString(), "| ", ...coeff];
+  
+  //make a little box for the box
+  for(var i = 0; i < box.toString().length; i++){line += "-";space += " ";}
   var row2 = [line, "  "];
   var row3 = [space, "  "];
+
+  /* Multiply the latest number by box, then add to the newest coeff to come up with a new number.
+  -1A |  1X  2Y   1Z      0 * A = 0, 0 + X = D
+  ----    v  -1B  -1C     D * A = B, B + Y = E
+          1D  1E   0F     E * A = C, C + Z = F
+  */
+  
   for(var i = 0; i < num; i++){
-    add = thing * parseInt(box);
-    row2.push(add.toString());
-    x = coeff[i];
-    //print(x)
-    thing = parseInt(x) + add;
-    row3.push(thing.toString());
+    add = thing * parseInt(box); //add(0, B, C) = thing(D, E, F) * A
+    row2.push(add.toString());   //make the v B C row
+    x = coeff[i];                //x(X, Y, Z) get from coeffs
+    thing = parseInt(x) + add;   //thing(D, E, F) = x(X, Y, Z) + add(0, B, C)
+    row3.push(thing.toString()); //make the D E F row
   }
 
   //print sympathetic division equation
@@ -35,12 +41,13 @@ function run(){
   print("   " + row3.join(" "), "eq3");
 
   //print actual equation
+  //(x^2 + 2x + 1) / (x+1) = ??? row3 = 1 1 0
   var question = "";
   var answer = "";
-  h = num - 1;
-  for(var i = 1; i < num; i++){
-    answer += row3[i].toString() + "x^" + (h-1).toString() + " + ";
-    question += coeff[i-1].toString() + "x^" + (h).toString() + " + ";
+  h = num - 1; //h = exponent
+  for(var i = 0; i < num; i++){
+    answer += row3[i].toString() + "x^" + (h).toString() + " + "; //
+    question += coeff[i].toString() + "x^" + (h+1).toString() + " + ";
     h -= 1;
   }
   question += coeff[num - 1].toString();
