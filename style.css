@@ -2,10 +2,8 @@ html {
   height: 100%;
   width: 100%;
   margin-left: 20px;
-  background-color:#bb8fce;
 }
 h1 {
-  color: #900C3F;
 }
 h1, h2 {
   text-align: center;
@@ -16,7 +14,6 @@ img {
 header {
   border-radius: 25px;
   padding: 10px;
-  background-color:#d2b4de;
 }
 .leftThreeFourths {
   border-top-left-radius:25px;
@@ -46,14 +43,12 @@ header {
   border-radius: 25px;
   margin: auto;
   width: 80%;
-  background-color:#d2b4de;
   padding: 10px;
 }
 .GameUI{                                                                
   border-radius: 25px;
   margin: auto;
   width: 75%;
-  background-color:#f5eef8;
   padding: 10px;
 }
 
