@@ -1,16 +1,17 @@
 html {
-  background-color:#AAAAAA;
+  background-color:#31004a;
+  color:#f2e5f2;
 }
 h1 {
-  color: #BBBBBB;
+  color: #efbbff;
 }
 header {
-  background-color:#CCCCCC;
+  background-color:#4c00a4;
 }
 
 .GameBox {
-  background-color:#DDDDDD;
+  background-color:#8300c4;
 }
 .GameUI{
-  background-color:#FFFFFF;
+  background-color:#ab00ff;
 } 
