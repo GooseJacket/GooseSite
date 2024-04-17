@@ -3,8 +3,18 @@
   <title> The GooseSite </title>
   <head>
     <link rel="stylesheet" href="style.css">
+    <link id="stylesheet" rel="stylesheet" href="darkMode.css"/>
+    <link rel="stylesheet alternate">
+    <script>
+      function setStyleSheet(url){
+         var stylesheet = document.getElementById("stylesheet");
+         stylesheet.setAttribute('href', url);
+      }
+      </script>
   </head>
-  <body>
+<body>
+    <a onclick="setStyleSheet('lightMode.css')" href="#">LIGHTMODE</a>
+    <a onclick="setStyleSheet('darkMode.css')" href="#">DARKMODE</a>
     <div class="title"><h1> The GooseSite </h1></div>
     <div class="leftThreeFourths" style="background-color:#FFC300;">
       <h2 style="color:#FF5733">Study Games</h2>
