@@ -44,10 +44,10 @@ function run(){
   //(x^2 + 2x + 1) / (x+1) = ??? row3 = 1 1 0
   var question = "";
   var answer = "";
-  h = num - 1; //h = exponent
-  for(var i = 0; i < num; i++){
-    answer += row3[i].toString() + "x^" + (h).toString() + " + "; //
-    question += coeff[i].toString() + "x^" + (h+1).toString() + " + ";
+  h = num; //h = exponent
+  for(var i = 2; i < num; i++){
+    answer += row3[i].toString() + "x^" + (h-1).toString() + " + "; //
+    question += coeff[i].toString() + "x^" + (h).toString() + " + ";
     h -= 1;
   }
   question += coeff[num - 1].toString();
