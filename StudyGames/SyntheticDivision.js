@@ -6,7 +6,7 @@ var num; var coeffirst; var box; var coeff;
 
 function run(){
   //get info
-  num = parseInt(document.getElementById("num").value) + 1;
+  num = parseInt(document.getElementById("num").value) + 1; //num = number of items in og question
   coeffirst = document.getElementById("coeffirst").value;
   coeff = coeffirst.split(" ");
   for(var i = 0; i < coeff.length; i++){
@@ -36,23 +36,23 @@ function run(){
   }
 
   //print sympathetic division equation
-  print(row1.join(" "), "eq1");
-  print(row2.join(" "), "eq2");
-  print("   " + row3.join(" "), "eq3");
+  print(row1.join(" "), "eq1"); //[box, " | ", num * items]
+  print(row2.join(" "), "eq2"); //["---", "  ", num * items
+  print("   " + row3.join(" "), "eq3"); //["  ", num * items]
 
   //print actual equation
   //(x^2 + 2x + 1) / (x+1) = ??? row3 = 1 1 0
   var question = "";
   var answer = "";
   h = num; //h = exponent
-  for(var i = 2; i < num; i++){
+  for(var i = 2; i < num+1; i++){
     answer += row3[i].toString() + "x^" + (h-1).toString() + " + "; //
     question += coeff[i].toString() + "x^" + (h).toString() + " + ";
     h -= 1;
   }
-  question += coeff[num - 1].toString();
-  answer += row3[num - 1].toString() + " + ";
-  answer += "(" + row3[num].toString() + ")/(x + " + (box*-1).toString() + ")";
+  question += coeff[num].toString();
+  answer += row3[num].toString() + " + ";
+  answer += "(" + row3[num+1].toString() + ")/(x + " + (box*-1).toString() + ")";
   print("(" + question + ") / (x + " + (box*-1).toString() + ") =", "q");
   print(answer, "ans")
   }
