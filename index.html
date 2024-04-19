@@ -2,21 +2,10 @@
 <html>
   <title> The GooseSite </title>
   <head>
+    
     <link rel="stylesheet" href="style.css">
     <link id="stylesheet" rel="stylesheet" href="darkMode.css"/>
-    <link rel="stylesheet alternate">
-    <script>
-      function grabSettings(){
-        setStyleSheet(localStorage.getItem("LD-mode"));
-      }
-      function setStyleSheet(url){
-         var stylesheet = document.getElementById("stylesheet");
-         stylesheet.setAttribute('href', url);
-         localStorage.setItem("LD-mode", url);
-      }
-      document.addEventListener('DOMContentLoaded', function() {grabSettings();}, false);
-      </script>
-  </head>
+    </head>
 <body>
     <a onclick="setStyleSheet('lightMode.css')" href="#">LIGHTMODE</a>
     <a onclick="setStyleSheet('darkMode.css')" href="#">DARKMODE</a>
