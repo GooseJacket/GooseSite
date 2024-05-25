@@ -3,10 +3,18 @@ html {
   width: 100%;
   margin-left: 20px;
 }
+body {
+  font-size: 100%;
+}
 h1 {
+  font-size: 2.5em;
 }
 h1, h2 {
   text-align: center;
+  font-size: 1.875em;
+}
+p {
+  font-size: 1.125em;
 }
 img {
   width:50%
