@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <title>Val Speech</title>
+  <head>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link id="stylesheet" rel="stylesheet" href="darkMode.css"/>
+    <link rel="stylesheet alternate">
+    <script>
+      function grabSettings(){
+        setStyleSheet(localStorage.getItem("LD-mode"));
+      }
+      function setStyleSheet(url){
+         var stylesheet = document.getElementById("stylesheet");
+         stylesheet.setAttribute('href', url);
+         localStorage.setItem("LD-mode", url);
+      }
+      document.addEventListener('DOMContentLoaded', function() {grabSettings();}, false);
+      </script>
+  </head>
+  <header>
+    <div class="leftFourth">
+      <a href = "https://goosejacket.github.io/GooseSite/">Back to Home</a>
+      <a onclick="setStyleSheet('lightMode.css')" href="#">LIGHTMODE</a>
+      <a onclick="setStyleSheet('darkMode.css')" href="#">DARKMODE</a>
+    </div>
+    <div class="centerHalf">
+      <h1>The GooseSite</h1>
+    </div>
+  </header>
+  <body>
+  <div class="GameTitle"><h2>Folsom High School Valedictorian Speech 2024</h2></div>
+  <div class=GameBox>
+    <div class=GameUI>
+    <iframe width="420" height="315" style:"margin:auto;"
+    src="https://youtu.be/PTO7eucrmfk?start=3897&end=4159">
+    </iframe>
+    </div>
+  <div class=GameUI>
+    <p>
+Good evening everyone,
+      </br></br>
+There’s a mural between our music building and our theater. If you haven’t seen it, it has eight panels, each starring its own color. A white skull, a red heart, a green dragon, a black rose--these dramatically differing objects unite under the same blue sky. It tells a story of recognizing differences while also coming together to become something…beautiful.
+    </br></br>
+My earliest memories of Folsom High are of this mural. You see, Russell Ranch Elementary School had an annual dance recital here , at what I now consider our theater. Each spring, we stood out in front of this mural, waiting for our class’ turn to dance. That massive theater and its drama program actually were my tipping point to select Folsom High as my school of choice. 
+    </br></br>
+The school seemed colossal back then, like a pair of your grandfather’s brown leather shoes, or the forgotten assigned reading that’s due the next day. Everything about high school seemed impossible. I have four older brothers, and I remember gawking at their assignments, from Pre-Calc’s thick back-to-school packet to Art’s huge canvases. Expectations were high--how on Earth would we meet them?
+    </br></br>
+Well, the key to everything regarding the class of 2024 has been working together through unusual circumstances. We missed being together during eighth grade and most of our freshman year, so ever since quarantine, there’s just something special about events with a crowd. Maybe a rally, a football game, a concert, a play--experiencing something together as one. A friend next to you, commentating in your ear; a wall of sound conducting your heartbeat; a standing ovation for all of the players--! And if you are one of the players, it is even more amazing. All of that hard work has finally paid off for your performance.
+</br></br>
+    This year, Folsom High has celebrated a lot of wins, in all of its niches. We turned one-hundred-and-one this year, and kicked-off the new century with amazing wins across the board. Our favorite colors are silver and gold, decorating our music program, Academic Decathlon, football, SkillUSA, LENEA--and countless more competitions that I know I am missing. In Academic Decathlon, we joke that Folsom High is “where winners win”--but it’s true! This school has been a power-house, and I am so proud of all of us.
+    </br></br>
+And for those of us who never got that medal, or that role, chair, or jersey, I am still so proud of you. You all have a passion--for something positive--that deserves to be celebrated. I hope that when you hear applause today, you can soak in all of the love that everyone here--in the stands and on the field--have for you and all of your effort in making it to where you are today. You earned the chair you’re sitting in. And, like the chair, it was hard, at times. But we’re here. We made it.
+    </br></br>
+The most beautiful paintings come from complementary, contrasting colors, like blue and orange, green and red. Somewhat surprisingly, these colors support each other, creating a more vibrant image. At Folsom High, we do the same--we thrive due to our multifacetedness and our mutual support. 
+    </br></br>
+The Class of 2024 is a piece of art. Our high school performance is over, but there’s an open world out there, a new blank canvas. Here’s to painting it with all of our vibrant colors.
+    </p>
+  </div>
+  </div>
+  </body>
+</html>
