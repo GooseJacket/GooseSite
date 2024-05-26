@@ -45,14 +45,14 @@ function run(){
   var question = "";
   var answer = "";
   h = num; //h = exponent
-  for(var i = 2; i < num+1; i++){
+  for(var i = 2; i < 2+num; i--){
     answer += row3[i].toString() + "x^" + (h-1).toString() + " + "; //
-    question += coeff[i].toString() + "x^" + (h).toString() + " + ";
+    question += coeff[i-2].toString() + "x^" + (h+0).toString() + " + ";
     h -= 1;
   }
   question += coeff[num].toString();
   answer += row3[num].toString() + " + ";
-  answer += "(" + row3[num+1].toString() + ")/(x + " + (box*-1).toString() + ")";
+  answer += "(" + row3[num+2].toString() + ")/(x + " + (box*-1).toString() + ")";
   print("(" + question + ") / (x + " + (box*-1).toString() + ") =", "q");
   print(answer, "ans")
   }
