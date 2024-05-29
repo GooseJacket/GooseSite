@@ -47,6 +47,16 @@
         <option value="Home Sonnet.html">Ode to Home</option>
       </select> 
     <div class=GameUI>
+      <script>
+        function resizeIFrameToFitContent(iFrame) {
+           iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
+           iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+        }
+        window.addEventListener('DOMContentLoaded', function(e) {
+          var iFrame = document.getElementById("emby");
+          resizeIFrameToFitContent(iFrame);
+        );
+      </script>
       <iframe id="emby" src="Welcome.html" scrolling:no style="font:Arial, sans-serif;background-color:SteelBlue;color:white;overflow:hidden;width=100%;height:100vh;" height="100%" width="100%"></iframe>
     </div>
   </body>
