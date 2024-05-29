@@ -31,7 +31,18 @@
   <body>
   <div class="GameTitle"><h2>t-ang-ents</h2></div>
   <div class=GameBox height=100%>
-  <script>
+     <label for="stories">Choose a story to open:</label>
+
+      <select name="stories" id="stories" onchange="setEmbed();">
+        <option value="Welcome.html">Select One</option>
+        <option value="Elevator.html">Elevator</option>
+        <option value="Brother.html">Can you pmu :pleading-eyes:</>
+        <option value="College Sonnet.html">Odysseus, Class of 2024</option>
+        <option value="Home Sonnet.html">Ode to Home</option>
+      </select> 
+    <div class=GameUI>
+      <iframe id="emby" src="Welcome.html" scrolling:no style="font:Arial, sans-serif;background-color:Lavender;color:white;" height="100%" width="100%"></iframe>
+    <script>
     function slowDown(iFrame){
       var x = 0
       for(var i = 0; i<10; i++){
@@ -48,17 +59,6 @@
       slowDown(iFrame);
     }
     </script>
-     <label for="stories">Choose a story to open:</label>
-
-      <select name="stories" id="stories" onchange="setEmbed();">
-        <option value="Welcome.html">Select One</option>
-        <option value="Elevator.html">Elevator</option>
-        <option value="Brother.html">Can you pmu :pleading-eyes:</>
-        <option value="College Sonnet.html">Odysseus, Class of 2024</option>
-        <option value="Home Sonnet.html">Ode to Home</option>
-      </select> 
-    <div class=GameUI>
-      <iframe id="emby" src="Welcome.html" scrolling:no style="font:Arial, sans-serif;background-color:Lavender;color:white;" height="100%" width="100%"></iframe>
     </div>
   </body>
 </html>
