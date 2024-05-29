@@ -33,8 +33,11 @@
   <div class=GameBox height=100%>
     <script>
       function setEmbed(){
-        var s = document.getElementById("stories").value;
-      	document.getElementById("emby").src = s;
+         var s = document.getElementById("stories").value;
+         var iFrame = document.getElementById("emby");
+         iFrame.src = s;
+         iFrame.width = iFrame.contentWindow.document.body.scrollWidth;
+         iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
       }
     </script>
      <label for="stories">Choose a story to open:</label>
@@ -47,16 +50,6 @@
         <option value="Home Sonnet.html">Ode to Home</option>
       </select> 
     <div class=GameUI>
-      <script>
-        function resizeIFrameToFitContent(iFrame) {
-           iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
-           iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
-        }
-        window.addEventListener('DOMContentLoaded', function(e) {
-          var iFrame = document.getElementById("emby");
-          resizeIFrameToFitContent(iFrame);
-        );
-      </script>
       <iframe id="emby" src="Welcome.html" scrolling:no style="font:Arial, sans-serif;background-color:SteelBlue;color:white;" height="100%" width="100%"></iframe>
     </div>
   </body>
