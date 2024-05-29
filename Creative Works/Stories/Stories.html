@@ -32,17 +32,14 @@
   <div class="GameTitle"><h2>Sample</h2></div>
   <div class=GameBox>
     <script>
-      function setEmbed(s){
-        var source=s.getAttribute("href");
-        var game=document.getElementById("emby");
-        var clone=game.cloneNode(true);
-        clone.setAttribute('src',source);
-        game.parentNode.replaceChild(clone,game);
+      function setEmbed(){
+        var s = document.getElementById("stories").value;
+      	document.getElementById("emby").src = s;
       }
     </script>
      <label for="stories">Choose a story to open:</label>
 
-      <select name="stories" id="stories" onchange="setEmbed(this);">
+      <select name="stories" id="stories" onchange="setEmbed();">
         <option value="Elevator.txt">Elevator</option>
         <option value="Brother.txt">Can you pmu :pleading-eyes:</>
         <option value="College Sonnet.txt">Odysseus, Class of 2024</option>
