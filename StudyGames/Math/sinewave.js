@@ -4,20 +4,19 @@
 const canvas = document.getElementById("my-house");
 const ctx = canvas.getContext("2d");
 
-var a = Array(300);
-a.fill(0);
+//scratch clones
+var a = Array(300);a.fill(0);
 
-var y = 0;
-var x = 0;
-var theta = 0;
+var y = 0;var x = 0;var theta = 0;
 
-var draw = true;
-var auto = true;
+//draw = cursor on circle?
+//auto = automatic or manual
+var draw = true;var auto = true;
 
-function swap(){
-  auto = !auto;
-}
+//function for the button
+function swap(){auto = !auto;}
 
+//mousemove --> get x, get y
 addEventListener("mousemove", (e) => {
   if(!auto){
     y = e.clientY;
@@ -25,6 +24,7 @@ addEventListener("mousemove", (e) => {
   }
 });
 
+//if manual and if cursor on circle, push data.
 setInterval(function(){
   if(!auto){
     var dist = Math.sqrt(Math.pow(x-150, 2) + Math.pow(y-150, 2));
@@ -32,10 +32,12 @@ setInterval(function(){
       a.shift();
       a.push(y);
       draw = true;
-    }else{draw = false;}
+    }
+    else{draw = false;}
   }
 }, 10);
 
+//if auto, push data. Slower than manual.
 setInterval(function(){
   if(auto){
     draw = true;
@@ -45,54 +47,51 @@ setInterval(function(){
   }
 }, 25);
 
-function setUp(){
+function setUp(){ //the circle and axes
   ctx.lineWidth = 2;
   ctx.strokeStyle = "black";
 
+  //axes
+  ctx.beginPath();
   ctx.moveTo(0, 150);
   ctx.lineTo(300, 150);
   ctx.moveTo(150, 0);
   ctx.lineTo(150, 300);
   ctx.stroke();
 
+  //circle
+  ctx.beginPath();
   ctx.moveTo(225, 150);
   ctx.arc(150, 150, 100, 0, 2 * Math.PI);
   ctx.stroke();
 }
 
-function drawTriangle(){
-  ctx.lineWidth = 2;
-  ctx.strokeStyle = "blue";
-
-  ctx.moveTo(x, 150);
-  ctx.lineTo(x, y);
-  ctx.stroke();
-}
-
-function drawPos(){
+function drawPos(){ //wave, etc.
   ctx.lineWidth = 1;
   ctx.strokeStyle = "red";
 
-  ctx.moveTo(0, a[0]);
+  ctx.beginPath();
+  ctx.moveTo(0, a[0]); //the sine wave
   for(let i = 0; i < a.length; i++){
     ctx.lineTo(i, a[i]);
   }
   ctx.stroke();
 
-  if(auto){
+  if(auto){ //the automatic indicator
     let autox = 100*Math.cos(theta)+150;
     let autoy = 100*Math.sin(theta)+150;
+    ctx.beginPath();
     ctx.moveTo(autox+10, autoy);
     ctx.arc(autox, autoy, 10, 0, 2 * Math.PI);
     ctx.stroke();
   }
 }
 
+//keep redrawing the stuff
 setInterval(function(){
   ctx.reset();
   setUp();
   if(draw){
-    //drawTriangle();
     drawPos();
   }
 }, 100);
