@@ -15,7 +15,7 @@ function run(){
   box = parseInt(document.getElementById("box").value) * -1;
   var thing = 0; var add; var line = ""; var space = "";
   var row1 = [box.toString(), "| ", ...coeff];
-  
+
   //make a little box for the box
   for(var i = 0; i < box.toString().length; i++){line += "-";space += " ";}
   var row2 = [line, "  "];
@@ -26,7 +26,7 @@ function run(){
   ----    v  -1B  -1C     D * A = B, B + Y = E
           1D  1E   0F     E * A = C, C + Z = F
   */
-  
+
   for(var i = 0; i < num; i++){
     add = thing * parseInt(box); //add(0, B, C) = thing(D, E, F) * A
     row2.push(add.toString());   //make the v B C row
@@ -44,15 +44,22 @@ function run(){
   //(x^2 + 2x + 1) / (x+1) = ??? row3 = 1 1 0
   var question = "";
   var answer = "";
-  h = num; //h = exponent
-  for(var i = 2; i < 1+num; i--){
-    answer += row3[i].toString() + "x^" + (h-1).toString() + " + "; //
-    question += coeff[i-2].toString() + "x^" + (h+0).toString() + " + ";
+  var temp = "";
+  h = num; //h = printed exponent
+  for(var i = 0; i < num-1; i++){
+    temp = row3[i + 2].toString();
+    if(temp == -1){answer += "-";}
+    else if(temp != 1 && temp != 0){answer += temp;}
+    if(temp != 0){answer += "x^" + (h-1).toString() + " + ";} //
+    temp = coeff[i].toString();
+    if(temp == -1){question += "-"}
+    else if(temp != 1 && temp != 0){question += temp;}
+    if(temp != 0){question += "x^" + (h+0).toString() + " + ";}
     h -= 1;
   }
-  question += coeff[num].toString();
+  question += coeff[num-1].toString();
   answer += row3[num].toString() + " + ";
-  answer += "(" + row3[num+2].toString() + ")/(x + " + (box*-1).toString() + ")";
+  answer += "(" + row3[num+1].toString() + ")/(x + " + (box*-1).toString() + ")";
   print("(" + question + ") / (x + " + (box*-1).toString() + ") =", "q");
   print(answer, "ans")
   }
