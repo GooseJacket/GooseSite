@@ -1,3 +1,6 @@
+//<canvas id="my-house" width="300" height="300"></canvas>
+//function to turn auto/manual: swap()
+
 const canvas = document.getElementById("my-house");
 const ctx = canvas.getContext("2d");
 
