@@ -9,7 +9,6 @@ a.fill(0);
 
 var y = 0;
 var x = 0;
-
 var theta = 0;
 
 var draw = true;
@@ -35,12 +34,16 @@ setInterval(function(){
       draw = true;
     }else{draw = false;}
   }
-  else{
+}, 10);
+
+setInterval(function(){
+  if(auto){
+    draw = true;
     theta += .05;
     a.shift();
     a.push(100*Math.sin(theta)+150);
   }
-}, 10);
+}, 25);
 
 function setUp(){
   ctx.lineWidth = 2;
@@ -70,11 +73,19 @@ function drawPos(){
   ctx.lineWidth = 1;
   ctx.strokeStyle = "red";
 
-  ctx.moveTo(0, 150);
+  ctx.moveTo(0, a[0]);
   for(let i = 0; i < a.length; i++){
     ctx.lineTo(i, a[i]);
   }
   ctx.stroke();
+
+  if(auto){
+    let autox = 100*Math.cos(theta)+150;
+    let autoy = 100*Math.sin(theta)+150;
+    ctx.moveTo(autox+10, autoy);
+    ctx.arc(autox, autoy, 10, 0, 2 * Math.PI);
+    ctx.stroke();
+  }
 }
 
 setInterval(function(){
