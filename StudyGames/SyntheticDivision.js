@@ -7,10 +7,10 @@ var num; var coeffirst; var box; var coeff;
 function run(){
   //get info
   num = parseInt(document.getElementById("num").value) + 1; //num = number of items in og question
-  coeffirst = document.getElementById("coeffirst").value;
-  coeff = coeffirst.split(" ");
+  coeffirst = document.getElementById("coeffirst").value; //1 1 1
+  coeff = coeffirst.split(" "); //"1", "1", "1"
   for(var i = 0; i < coeff.length; i++){
-    coeff[i] = parseInt(coeff[i]);
+    coeff[i] = parseInt(coeff[i]); //1, 1, 1
   }
   box = parseInt(document.getElementById("box").value) * -1;
   var thing = 0; var add; var line = ""; var space = "";
@@ -45,7 +45,7 @@ function run(){
   var question = "";
   var answer = "";
   h = num; //h = exponent
-  for(var i = 2; i < 2+num; i--){
+  for(var i = 2; i < 1+num; i--){
     answer += row3[i].toString() + "x^" + (h-1).toString() + " + "; //
     question += coeff[i-2].toString() + "x^" + (h+0).toString() + " + ";
     h -= 1;
