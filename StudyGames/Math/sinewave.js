@@ -41,7 +41,7 @@ setInterval(function(){
 setInterval(function(){
   if(auto){
     draw = true;
-    theta += .05;
+    theta -= .05;
     a.shift();
     a.push(100*Math.sin(theta)+150);
   }
