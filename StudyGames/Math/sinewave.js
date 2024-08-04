@@ -19,8 +19,8 @@ function swap(){auto = !auto;}
 //mousemove --> get x, get y
 addEventListener("mousemove", (e) => {
   if(!auto){
-    y = e.clientY;
-    x = e.clientX;
+    y = e.offsetY;
+    x = e.offsetX;
   }
 });
 
