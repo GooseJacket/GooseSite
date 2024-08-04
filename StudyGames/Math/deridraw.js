@@ -17,7 +17,7 @@ function deriSwap(){
 }
 
 addEventListener("mousemove", (e) => {
-  y = e.clientY;
+  y = e.offsetY;
 });
 
 setInterval(function(){
