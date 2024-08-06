@@ -1,8 +1,38 @@
 function print(content, id){
-  document.getElementById(id).textContent = content.toString();
+  document.getElementById(id).innerHTML = content.toString();
 }
 
 var num; var coeffirst; var box; var coeff;
+
+function formatcoeff(c, i){
+    var ret = "";
+    if(c == 0 || c == 1) return "";
+    if(c == -1) return "-";
+    if(i != 0){
+      if(c < 0){
+        ret += " - ";
+        c = c.toString().substr(1);
+      }
+      else ret += " + ";
+    }
+    return ret + c.toString();
+  }
+  function formatvar(t, e){
+    if(t == 0) return "";
+    if(e == 1) return "x";
+    return "x<sup>" + e.toString() + "</sup>";
+  }
+  function formatconst(c){
+    var ret = "";
+    if(c == 0) return "";
+    if(c < 0){
+      ret += " - ";
+      c = c.toString().substr(1);
+    }
+    else ret += " + ";
+    return ret + c.toString();
+  }
+  
 
 function run(){
   //get info
@@ -45,21 +75,24 @@ function run(){
   var question = "";
   var answer = "";
   var temp = "";
-  h = num; //h = printed exponent
+  h = num - 1; //h = printed exponent
+
   for(var i = 0; i < num-1; i++){
-    temp = row3[i + 2].toString();
-    if(temp == -1){answer += "-";}
-    else if(temp != 1 && temp != 0){answer += temp;}
-    if(temp != 0){answer += "x^" + (h-1).toString() + " + ";} //
-    temp = coeff[i].toString();
-    if(temp == -1){question += "-"}
-    else if(temp != 1 && temp != 0){question += temp;}
-    if(temp != 0){question += "x^" + (h+0).toString() + " + ";}
+    if(i < num - 2){
+      temp = row3[i + 2]; //temp = coeff
+      answer += formatcoeff(temp, i);
+      answer += formatvar(temp, h-1); //
+    }
+    temp = coeff[i]; //temp = coeff
+    question += formatcoeff(temp, i);
+    question += formatvar(temp, h);
     h -= 1;
   }
-  question += coeff[num-1].toString();
-  answer += row3[num].toString() + " + ";
-  answer += "(" + row3[num+1].toString() + ")/(x + " + (box*-1).toString() + ")";
+  question += formatconst(coeff[num-1]);
+  answer += formatconst(row3[num]);
+  if(row3[num+1] != 0){
+    answer += " + (" + row3[num+1].toString() + ")/(x + " + (box*-1).toString() + ")";
+  }
   print("(" + question + ") / (x + " + (box*-1).toString() + ") =", "q");
   print(answer, "ans")
   }
