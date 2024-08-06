@@ -34,5 +34,5 @@ function setStyleSheet(url){
 document.addEventListener('DOMContentLoaded', function() {
   let LD = getCookie("style");
   if (LD == "") setCookie("style", "lightMode.css", 365);
-  else setStyleSheet(LD);
+  else setStyleSheet("../../" + LD);
 }, false);
