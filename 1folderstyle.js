@@ -21,10 +21,10 @@ function getCookie(cname) {
 }
 function LD(){
   let l = "";
-  if(getCookie("style") == "../darkMode.css") l = "../lightMode.css";
-  else l = "../darkMode.css";
+  if(getCookie("style") == "darkMode.css") l = "lightMode.css";
+  else l = "darkMode.css";
   setCookie("style", l, 365);
-  setStyleSheet(l);
+  setStyleSheet("../" + l);
 }  
   
 function setStyleSheet(url){
@@ -34,6 +34,6 @@ function setStyleSheet(url){
 }
 document.addEventListener('DOMContentLoaded', function() {
   let LD = getCookie("style");
-  if (LD == "") setCookie("style", "../lightMode.css", 365);
+  if (LD == "") setCookie("style", "lightMode.css", 365);
   else setStyleSheet(LD);
 }, false);
