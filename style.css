@@ -4,7 +4,7 @@ html, embed {
   width: 100%;
   margin-left: 20px;
 }
-body, a {
+body {
   font-size: 100%;
 }
 h1 {
@@ -15,7 +15,7 @@ h2 {
   text-align: center;
   font-size: 1.875em;
 }
-p {
+p, a {
   font-size: 1.125em;
 }
 img {
