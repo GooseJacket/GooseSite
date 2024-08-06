@@ -16,3 +16,9 @@ header {
 .GameUI{
   background-color:#730073;
 } 
+a:link {
+  color: #a5a5d3;
+}
+a:visited {
+  color: #cd9da6;
+}
