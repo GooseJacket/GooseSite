@@ -7,9 +7,11 @@
     <link id="stylesheet" rel="stylesheet">
     </head>
     <script>  
-      function light(){setCookie("style", "lightMode.css", 365);}
-      function dark(){setCookie("style", "darkMode.css", 365);}
-        
+      function LD(){
+        if(getCookie("style") == "darkMode.css")
+        {setCookie("style", "lightMode.css", 365);}
+        else{setCookie("style", "darkMode.css", 365);}
+      }  
       function setStyleSheet(url){
          var stylesheet = document.getElementById("stylesheet");
          stylesheet.setAttribute('href', url);
@@ -22,8 +24,7 @@
       }, false);
       </script>
 <body>
-    <a onclick="light()" href="#">LIGHTMODE</a>
-    <a onclick="dark()" href="#">DARKMODE</a>
+    <button id='switch' onclick="LD()">Light/Dark Mode</button>
     <div class="title"><h1> The GooseSite - under construction! </h1></div>
     <div class="leftThreeFourths">
       <h2>My Study Tools 📚🖊</h2>
