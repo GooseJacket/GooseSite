@@ -20,8 +20,9 @@ function getCookie(cname) {
   return "";
 }
 function LD(){
-  if(getCookie("style") == "../../darkMode.css") let l = "../../lightMode.css";
-  else let l = "../../darkMode.css";
+  let l = "";
+  if(getCookie("style") == "../../darkMode.css") l = "../../lightMode.css";
+  else l = "../../darkMode.css";
   setCookie("style", l, 365);
   setStyleSheet(l);
 }  
