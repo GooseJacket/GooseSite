@@ -2,8 +2,11 @@ html {
   background-color:#bb8fce;
   color:#000000;
 }
-h1, h2 {
+h1 {
   color: #900C3F;
+}
+h2 { 
+  color: #a32a00;
 }
 header {
   background-color:#d2b4de;
