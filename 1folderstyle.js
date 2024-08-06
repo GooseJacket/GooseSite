@@ -1,5 +1,8 @@
-function light(){setCookie("style", "../lightMode.css", 365);}
-function dark(){setCookie("style", "../darkMode.css", 365);}
+function LD(){
+  if(getCookie("style") == "../darkMode.css")
+  {setCookie("style", "../lightMode.css", 365);}
+  else{setCookie("style", "../darkMode.css", 365);}
+}  
   
 function setStyleSheet(url){
    var stylesheet = document.getElementById("stylesheet");
