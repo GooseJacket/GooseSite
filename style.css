@@ -4,7 +4,7 @@ html, embed {
   width: 100%;
   margin-left: 20px;
 }
-body {
+body, a {
   font-size: 100%;
 }
 h1 {
