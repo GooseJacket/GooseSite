@@ -20,10 +20,11 @@ function getCookie(cname) {
   return "";
 }
 function LD(){
-        if(getCookie("style") == "../../darkMode.css")
-        {setCookie("style", "../../lightMode.css", 365);}
-        else{setCookie("style", "../../darkMode.css", 365);}
-      }  
+  if(getCookie("style") == "../../darkMode.css") let l = "../../lightMode.css";
+  else let l = "../../darkMode.css";
+  setCookie("style", l, 365);
+  setStyleSheet(l);
+}  
 function setStyleSheet(url){
    var stylesheet = document.getElementById("stylesheet");
    stylesheet.setAttribute('href', url);
