@@ -4,14 +4,22 @@
   <head>
     
     <link rel="stylesheet" href="style.css">
-    <link id="stylesheet" rel="stylesheet" href="lightMode.css"/>
+    <link id="stylesheet" rel="stylesheet">
     </head>
     <script>  
+      function light(){setCookie("style", "lightMode.css", 365);}
+      function dark(){setCookie("style", "darkMode.css", 365);}
+        
       function setStyleSheet(url){
          var stylesheet = document.getElementById("stylesheet");
          stylesheet.setAttribute('href', url);
          localStorage.setItem("LD-mode", url);
       }
+      document.addEventListener('DOMContentLoaded', function() {
+        let LD = getCookie("style");
+        if (LD == "") setCookie("style", "lightMode.css", 365);
+        else setStyleSheet(LD);
+      }, false);
       </script>
 <body>
     <a onclick="setStyleSheet('lightMode.css')" href="#">LIGHTMODE</a>
