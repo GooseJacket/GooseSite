@@ -5,34 +5,34 @@ function print(content, id){
 var num; var coeffirst; var box; var coeff;
 
 function formatcoeff(c, i){
-    var ret = "";
-    if(c == 0 || c == 1) return "";
-    if(c == -1) return "-";
-    if(i != 0){
-      if(c < 0){
-        ret += " - ";
-        c = c.toString().substr(1);
-      }
-      else ret += " + ";
-    }
-    return ret + c.toString();
-  }
-  function formatvar(t, e){
-    if(t == 0) return "";
-    if(e == 1) return "x";
-    return "x<sup>" + e.toString() + "</sup>";
-  }
-  function formatconst(c){
-    var ret = "";
-    if(c == 0) return "";
+  var ret = "";
+  if(c == 0 || c == 1) return "";
+  if(c == -1) return "-";
+  if(i != 0){
     if(c < 0){
       ret += " - ";
       c = c.toString().substr(1);
     }
     else ret += " + ";
-    return ret + c.toString();
   }
-  
+  return ret + c.toString();
+}
+function formatvar(t, e){
+  if(t == 0) return "";
+  if(e == 1) return "x";
+  return "x<sup>" + e.toString() + "</sup>";
+}
+function formatconst(c){
+  var ret = "";
+  if(c == 0) return "";
+  if(c < 0){
+    ret += " - ";
+    c = c.toString().substr(1);
+  }
+  else ret += " + ";
+  return ret + c.toString();
+}
+
 
 function run(){
   //get info
