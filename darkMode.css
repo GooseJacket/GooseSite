@@ -2,13 +2,15 @@ html {
   background-color:#270027;
   color: white;
 }
-h1, h2 {
+h1 {
   color: #efbbff;
+}
+h2 {
+  color: white;
 }
 header {
   background-color:#400040;
 }
-
 .GameBox {
   background-color:#400040;
   color:#efbbff;
