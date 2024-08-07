@@ -25,7 +25,7 @@ function nextImg(){
   yeet("AP Portfolio Photos/" + next + ".png");
 }
 
-function nextImg(){
+function prevImg(){
   var current = document.getElementById("img01").src.split("/")[1];
   current = current.substring(0, current.length - 5);
   var next;
