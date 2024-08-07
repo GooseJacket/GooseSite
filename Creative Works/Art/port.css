@@ -2,6 +2,7 @@
 img {
   border-radius: 5px;
   cursor: pointer;
+ width: 45%
 }
 
 img:hover {
@@ -88,4 +89,7 @@ img:hover {
   .modal-content {
     width: 100%;
   }
+ img {
+  width: 100%;
+ }
 } 
