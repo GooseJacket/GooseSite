@@ -8,9 +8,9 @@ function yeet(ele){
   let a, b, d;
   if(ele.naturalHeight > ele.naturalWidth){a = ele.naturalHeight; b = ele.naturalWidth; d = true;}
   else{b = ele.naturalHeight; a = ele.naturalWidth; d = false;}
-  let c = b * 1.0 / a * 100.0;
-  if(d){newimg.style.width = c.toString + "%"; newimg.style.height = "100%";}
-  else{newimg.style.height = c.toString + "%"; newimg.style.width = "100%";}
+  let c = b * 1.0 / a * 80.0;
+  if(d){newimg.style.width = c.toString + "%"; newimg.style.height = "80%";}
+  else{newimg.style.height = c.toString + "%"; newimg.style.width = "80%";}
     
   current = ele.src.split("/AP%20Portfolio%20Photos/")[1];
   document.getElementById("caption").innerHTML = ele.alt;
