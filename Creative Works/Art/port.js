@@ -1,5 +1,14 @@
 var current;
 
+function text(){
+  if(document.getElementById("myModal").style.display == "block"){
+    const key = event.key;
+    if (key == "Escape") closeModal();
+    else if (key == "ArrowLeft") prevImg();
+    else if (key == "ArrowRight") nextImg();
+  }
+}
+
 function yeet(ele){
   document.getElementById("myModal").style.display = "block";
   newimg = document.getElementById("img01");
