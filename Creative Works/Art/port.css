@@ -5,7 +5,10 @@ img {
   transition: 0.3s;
 }
 
-img:hover {opacity: 0.7;}
+img:hover {
+ border-style: solid;
+ border-width: 2px;
+}
 
 /* The Modal (background) */
 .modal {
