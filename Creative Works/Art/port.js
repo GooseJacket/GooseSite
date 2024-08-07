@@ -5,9 +5,6 @@ function yeet(ele){
 }
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+function closeModal(){
   document.getElementById("myModal").style.display = "none";
 } 
