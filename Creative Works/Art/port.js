@@ -1,6 +1,7 @@
 var current;
 
-function text(){
+document.onkeydown = function(evt) {
+  evt = evt || window.event;
   if(document.getElementById("myModal").style.display == "block"){
     const key = event.key;
     if (key == "Escape") closeModal();
