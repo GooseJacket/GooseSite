@@ -14,13 +14,14 @@ function closeModal(){
 
 function nextImg(){
   //var current = document.getElementById("img01").src.split("/")[1];
+  window.alert(current);
   current = current.substring(0, current.length - 5);
   var next;
   if(current == "W%2042") next = "SI1";
-  if(current == "SI%2013") next = "W1";
+  else if(current == "SI%2013") next = "W1";
   else if(current[0] == "W"){
     if(current[3] == "1") next = current.substring(0, current.length - 1) + "2";
-    else{next = "W" + (current[4].parseInt() + 1).toString() + "1";}
+    else{next = "W" + (Number.parseInt(current[4], 10) + 1).toString() + "1";}
   }
   else{ 
     next = "SI" + (current.substring(5).parseInt() + 1).toString();
@@ -35,7 +36,7 @@ function prevImg(){
   else if(current == "W1") next = "SI13";
   else if(current[0] == "W"){
     if(current[3] == "2") next = current.substring(0, current.length - 1) + "1";
-    else{next = "W" + (current[4].parseInt() - 1).toString() + "2";}
+    else{next = "W" + (Number.parseInt(current[4], 10) - 1).toString() + "2";}
   }
   else{ 
     next = "SI" + (current.substring(5).parseInt() - 1).toString();
