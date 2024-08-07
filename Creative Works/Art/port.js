@@ -2,7 +2,16 @@ var current;
 
 function yeet(ele){
   document.getElementById("myModal").style.display = "block";
-  document.getElementById("img01").src = ele.src;
+  newimg = document.getElementById("img01");
+  newimg.src = ele.src;
+
+  let a, b, d;
+  if(ele.naturalHeight > ele.naturalWidth){a = ele.naturalHeight; b = ele.naturalWidth; d = true;}
+  else{b = ele.naturalHeight; a = ele.naturalWidth; d = false;}
+  let c = b * 1.0 / a * 100.0;
+  if(d){newimg.style.width = c.toString + "%"; newimg.style.height = "100%";}
+  else{newimg.style.height = c.toString + "%"; newimg.style.width = "100%";}
+    
   current = ele.src.split("/AP%20Portfolio%20Photos/")[1];
   document.getElementById("caption").innerHTML = ele.alt;
 }
