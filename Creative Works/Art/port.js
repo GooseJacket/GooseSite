@@ -29,7 +29,7 @@ function closeModal(){
 
 function nextImg(){
   //var current = document.getElementById("img01").src.split("/")[1];
-  current = current.split(".pn")[0];
+  current = current.split(".")[0];
   //window.alert(current);
   var next;
   if(current == "W%2042") next = "SI1";
@@ -46,7 +46,7 @@ function nextImg(){
 }
 
 function prevImg(){
-  current = current.split(".pn")[0];
+  current = current.split(".")[0];
   //window.alert(current);
   var next;
   if(current == "SI%201") next = "W42";
