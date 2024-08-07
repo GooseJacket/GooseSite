@@ -1,6 +1,9 @@
+var current;
+
 function yeet(ele){
   document.getElementById("myModal").style.display = "block";
   document.getElementById("img01").src = ele.src;
+  current = ele.src;
   document.getElementById("caption").innerHTML = ele.alt;
 }
 
@@ -10,8 +13,8 @@ function closeModal(){
 } 
 
 function nextImg(){
-  var current = document.getElementById("img01").src.split("/")[1];
-  window.alert(current);
+  //var current = document.getElementById("img01").src.split("/")[1];
+  window.alert(current).substring(14);
   current = current.substring(0, current.length - 5);
   var next;
   if(current == "W 42") next = "SI 1";
