@@ -18,9 +18,9 @@ function nextImg(){
   window.alert(current);
   var next;
   if(current == "W%2042") next = "SI1";
-  else if(current == "SI%2013") next = "W1";
+  else if(current == "SI%2015") next = "W11";
   else if(current[0] == "W"){
-    if(current[4] == "1") next = current[3] + "2";
+    if(current[4] == "1") next = "W" + current[3] + "2";
     else{next = "W" + (Number.parseInt(current[4], 10) + 1).toString() + "1";}
   }
   else{ 
@@ -35,9 +35,9 @@ function prevImg(){
   window.alert(current);
   var next;
   if(current == "ST1") next = "W42";
-  else if(current == "W1") next = "SI13";
+  else if(current == "W11") next = "SI13";
   else if(current[0] == "W"){
-    if(current[4] == "2") next = current[3] + "1";
+    if(current[4] == "2") next = "W" + current[3] + "1";
     else{next = "W" + (Number.parseInt(current[4], 10) - 1).toString() + "2";}
   }
   else{ 
