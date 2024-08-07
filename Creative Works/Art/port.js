@@ -26,6 +26,7 @@ function nextImg(){
   else{ 
     next = "SI" + (Number.parseInt(current.substring(5), 10) + 1).toString();
   }
+  window.alert(next);
   yeet(document.getElementById(next));
 }
 
@@ -41,5 +42,6 @@ function prevImg(){
   else{ 
     next = "SI" + (Number.parseInt(current.substring(5), 10) - 1).toString();
   }  
+  window.alert(next);
   yeet(document.getElementById(next));
 }
