@@ -40,7 +40,7 @@
       var s = document.getElementById("stories").value;
       var iFrame = document.getElementById("emby");
       iFrame.src = s;
-      iFrame.contentWindow.document.addEventListener('DOMContentLoaded', slowDown();, false);
+      iFrame.contentWindow.document.addEventListener('DOMContentLoaded', slowDown(), false);
     }
     </script>
     </div>
