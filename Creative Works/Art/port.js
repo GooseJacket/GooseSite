@@ -12,6 +12,7 @@ function closeModal(){
 function nextImg(){
   var current = document.getElementById("img01").src.split("/")[1];
   current = current.substring(0, current.length - 5);
+  window.alert(current);
   var next;
   if(current == "W 42") next = "SI 1";
   if(current == "SI 13") next = "W 1";
