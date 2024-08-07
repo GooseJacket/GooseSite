@@ -29,7 +29,7 @@ img:hover {
 .modal-content {
   margin: auto;
   display: block;
-  height: 80%;
+  width: 80%;
   aspect-ratio: 1 / 1;
   width:
 }
