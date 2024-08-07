@@ -20,7 +20,7 @@ function nextImg(){
   if(current == "W%2042") next = "SI1";
   else if(current == "SI%2013") next = "W1";
   else if(current[0] == "W"){
-    if(current[3] == "1") next = current.substring(0, current.length - 1) + "2";
+    if(current[3] == "1") next = current[3] + "2";
     else{next = "W" + (Number.parseInt(current[4], 10) + 1).toString() + "1";}
   }
   else{ 
@@ -35,7 +35,7 @@ function prevImg(){
   if(current == "ST1") next = "W42";
   else if(current == "W1") next = "SI13";
   else if(current[0] == "W"){
-    if(current[3] == "2") next = current.substring(0, current.length - 1) + "1";
+    if(current[3] == "2") next = current[3] + "1";
     else{next = "W" + (Number.parseInt(current[4], 10) - 1).toString() + "2";}
   }
   else{ 
