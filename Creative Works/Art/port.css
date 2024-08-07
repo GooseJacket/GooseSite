@@ -2,7 +2,6 @@
 img {
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 img:hover {
@@ -35,6 +34,7 @@ img:hover {
 
 .modal-content:hover{
  border-width: 0px;
+ cursor: default;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
