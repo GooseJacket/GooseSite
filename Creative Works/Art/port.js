@@ -14,7 +14,6 @@ function closeModal(){
 
 function nextImg(){
   //var current = document.getElementById("img01").src.split("/")[1];
-  window.alert(current).substring(14);
   current = current.substring(0, current.length - 5);
   var next;
   if(current == "W%2042") next = "SI1";
@@ -30,7 +29,6 @@ function nextImg(){
 }
 
 function prevImg(){
-  var current = document.getElementById("img01").src.split("/")[1];
   current = current.substring(0, current.length - 5);
   var next;
   if(current == "ST1") next = "W42";
