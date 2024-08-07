@@ -29,8 +29,7 @@ img:hover {
 .modal-content {
   margin: auto;
   display: block;
-  width: 80%;
-  aspect-ratio: 1 / 1;
+  height: 80vpm;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
