@@ -35,7 +35,7 @@ function prevImg(){
   window.alert(current);
   var next;
   if(current == "SI%201") next = "W42";
-  else if(current == "W%2011") next = "SI13";
+  else if(current == "W%2011") next = "SI15";
   else if(current[0] == "W"){
     if(current[5] == "2") next = "W" + current[4] + "1";
     else{next = "W" + (Number.parseInt(current[4], 10) - 1).toString() + "2";}
