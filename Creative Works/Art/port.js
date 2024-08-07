@@ -1,10 +1,10 @@
 // Get the modal
 var modal = document.getElementById("myModal");
 
-function yeet(){
+function yeet(ele){
   modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
+  modalImg.src = ele.src;
+  captionText.innerHTML = ele.alt;
 }
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
