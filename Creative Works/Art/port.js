@@ -34,8 +34,8 @@ function prevImg(){
   current = current.split(".pn")[0];
   window.alert(current);
   var next;
-  if(current == "ST1") next = "W42";
-  else if(current == "W11") next = "SI13";
+  if(current == "SI%201") next = "W42";
+  else if(current == "W%2011") next = "SI13";
   else if(current[0] == "W"){
     if(current[5] == "2") next = "W" + current[4] + "1";
     else{next = "W" + (Number.parseInt(current[4], 10) - 1).toString() + "2";}
