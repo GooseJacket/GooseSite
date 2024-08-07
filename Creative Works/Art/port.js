@@ -24,7 +24,7 @@ function nextImg(){
     else{next = "W" + (Number.parseInt(current[4], 10) + 1).toString() + "1";}
   }
   else{ 
-    next = "SI" + (current.substring(5).parseInt() + 1).toString();
+    next = "SI" + (Number.parseInt(current.substring(5), 10) + 1).toString();
   }
   yeet(document.getElementById(next));
 }
@@ -39,7 +39,7 @@ function prevImg(){
     else{next = "W" + (Number.parseInt(current[4], 10) - 1).toString() + "2";}
   }
   else{ 
-    next = "SI" + (current.substring(5).parseInt() - 1).toString();
+    next = "SI" + (Number.parseInt(current.substring(5), 10) - 1).toString();
   }  
   yeet(document.getElementById(next));
 }
