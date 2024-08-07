@@ -32,11 +32,7 @@
       <iframe id="emby" src="Welcome.html" scrolling:no style="font:Arial, sans-serif;background-color:Lavender;color:white;" height="100%" width="100%"></iframe>
     <script>
     function slowDown(iFrame){
-      var x = 0
-      for(var i = 0; i<10; i++){
-        x = x + 1
-        x = x - 1
-      } i.innerHTML = fetch.then 
+      i.innerHTML = fetch.then 
       iFrame.width = iFrame.contentWindow.document.body.scrollWidth;
       iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
     }
@@ -44,7 +40,7 @@
       var s = document.getElementById("stories").value;
       var iFrame = document.getElementById("emby");
       iFrame.src = s;
-      iframe.document.addEventListener('DOMContentLoaded', function() {slowDown();}, false);
+      iFrame.document.addEventListener('DOMContentLoaded', function() {slowDown();}, false);
     }
     </script>
     </div>
