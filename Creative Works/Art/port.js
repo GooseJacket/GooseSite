@@ -1,11 +1,11 @@
 var current;
 
-window.addEventListener('keydown', function (e) {
+document.onkeydown = function (e) {
   if(document.getElementById("myModal").style.display == "block"){
     const key = e.key;
-    if (key == "Escape") closeModal();
-    else if (key == "ArrowLeft") prevImg();
-    else if (key == "ArrowRight") nextImg();
+    if (key === "Escape" || key === "Esc") closeModal();
+    else if (key === "ArrowLeft") prevImg();
+    else if (key === "ArrowRight") nextImg();
   }
 }
 
@@ -19,6 +19,7 @@ function yeet(ele){
     
   current = ele.src.split("/AP%20Portfolio%20Photos/")[1];
   document.getElementById("caption").innerHTML = ele.alt;
+  document.getElementById("but").focus();
 }
 
 // Get the <span> element that closes the modal
