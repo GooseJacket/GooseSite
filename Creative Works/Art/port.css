@@ -33,6 +33,10 @@ img:hover {
   max-width: 100%;
 }
 
+.modal-content:hover{
+ border-width: 0px;
+}
+
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
 #caption {
   margin: auto;
