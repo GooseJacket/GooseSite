@@ -60,14 +60,14 @@ img:hover {
 }
 
 .close {
-  top: 15px;
+  top: 10px;
   right: 35px;
   font-size: 20px;
   font-weight: bold;
 }
 
 .arrow {
-  top: 30px;
+  top: 20px;
   font-size: 20px;
   font-weight: bold;
 }
