@@ -2,7 +2,7 @@ var current;
 
 window.addEventListener('keydown', function (e) {
   if(document.getElementById("myModal").style.display == "block"){
-    const key = event.key;
+    const key = e.key;
     if (key == "Escape") closeModal();
     else if (key == "ArrowLeft") prevImg();
     else if (key == "ArrowRight") nextImg();
