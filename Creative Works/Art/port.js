@@ -5,12 +5,8 @@ function yeet(ele){
   newimg = document.getElementById("img01");
   newimg.src = ele.src;
 
-  let a, b, d;
-  if(ele.naturalHeight > ele.naturalWidth){a = ele.naturalHeight; b = ele.naturalWidth; d = true;}
-  else{b = ele.naturalHeight; a = ele.naturalWidth; d = false;}
-  let c = b * 1.0 / a * 80.0;
-  if(d){newimg.style.width = c.toString + "%"; newimg.style.height = "80%";}
-  else{newimg.style.height = c.toString + "%"; newimg.style.width = "80%";}
+  if(ele.naturalHeight > ele.naturalWidth){newimg.style.width = "auto"; newimg.style.height = "80%";}
+  else{newimg.style.height = "auto"; newimg.style.width = "80%";}
     
   current = ele.src.split("/AP%20Portfolio%20Photos/")[1];
   document.getElementById("caption").innerHTML = ele.alt;
