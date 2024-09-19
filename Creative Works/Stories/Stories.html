@@ -38,8 +38,9 @@
     function setEmbed(){
       var s = document.getElementById("stories").value;
       var iFrame = document.getElementById("emby");
-      iFrame.contentWindow.document.addEventListener('DOMContentLoaded', slowDown(iFrame), false);
       iFrame.src = s;
+      slowDown(iFrame);
+      iFrame.contentWindow.document.addEventListener('DOMContentLoaded', slowDown(iFrame), false);
       iFrame.src = s;
       slowDown(iFrame);
     }
