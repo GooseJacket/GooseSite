@@ -39,6 +39,8 @@
       var s = document.getElementById("stories").value;
       var iFrame = document.getElementById("emby");
       iFrame.src = s;
+      iFrame.src = s;
+      slowDown();
       iFrame.contentWindow.document.addEventListener('DOMContentLoaded', slowDown(), false);
     }
     </script>
