@@ -29,11 +29,10 @@
         <option value="Home Sonnet.html">Ode to Home</option>
       </select> 
     <div class=GameUI>
-      <iframe id="emby" src="Welcome.html" onload="slowDown(this);" style="overflow: hidden;font:Arial, sans-serif;background-color:Lavender;color:white;" height="100%" width="100%"></iframe>
+      <iframe id="emby" src="Welcome.html" onload="slowDown(this);" style="overflow: hidden;font:Arial, sans-serif;background-color:Lavender;color:white;"width="100%"></iframe>
     <script>
     function slowDown(iFrame){
-      iFrame.width = iFrame.contentWindow.document.body.scrollWidth;
-      iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+      iFrame.height = iFrame.contentWindow.document.scrollHeight;
     }
     function setEmbed(){
       var s = document.getElementById("stories").value;
