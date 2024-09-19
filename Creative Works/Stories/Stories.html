@@ -33,6 +33,7 @@
     <script>
     function slowDown(iFrame){
       iFrame.height = iFrame.contentWindow.document.scrollHeight;
+      iFrame.width = iFrame.contentWindow.document.scrollWidth;
     }
     function setEmbed(){
       var s = document.getElementById("stories").value;
