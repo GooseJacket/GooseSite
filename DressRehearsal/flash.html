@@ -1,20 +1,77 @@
 <! DOCTYPE html>
 <html>
-<head>
-<title>Rehearsal</title>
-</head>
-<body>
-<h1>
-Flashcards
-</h1>
-<div class="bigTile">
-  <div id="Question">
-    
-  </div>
-  <button onclick="flip();">Flip</button>
-  <button onclick="next();">Next</button>
-  <br>
-  <button onclick="shuffle();">Shuffle</button>
-</div>
-</body>
+  <head>
+    <title>Rehearsal</title>
+  </head>
+  <body>
+    <h1>Flashcards</h1>
+    <div class="bigTile">
+      <div id="Question">
+        
+      </div>
+      <button onclick="flip();">Flip</button>
+      <button onclick="next();">Next</button>
+      <br>
+      <button onclick="shuffle();">Shuffle</button>
+    </div>
+    <script>
+      let data = [
+  				["Hallo", "Hello"],
+  				["Katze", "Cat"],
+          ["Hund", "Dog"],
+          ["Guten Tag", "Good Day"]
+          ]
+  
+  let startSide = 0;
+  
+  let currentCardID = 0;
+  let currentCard = data[0][startSide];
+  let currentBracket = startSide;
+  
+  function flip(){
+    currentBracket = 1 - currentBracket;
+    currentCard = data[currentCardID][currentBracket];
+   
+  	set();
+  }
+  
+  function next(){
+  	currentCardID += 1;
+    if(currentCardID == data.length){
+    	currentCardID = 0;
+    }
+    set();
+  }
+  
+  function set(){
+  currentCard = data[currentCardID][currentBracket];
+  	document.getElementById("Question").innerHTML = currentCard;
+  }
+  
+  function shuffle(){
+    for (var i = data.length - 1; i >= 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = data[i];
+      data[i] = data[j];
+      data[j] = temp;
+    }
+    currentBracket = startSide;
+    set();
+  }
+  
+  document.addEventListener('DOMContentLoaded', set());
+  
+  var url = "http://www.example.com/file.json";
+  
+  var jsonFile = new XMLHttpRequest();
+      jsonFile.open("GET",url,true);
+      jsonFile.send();
+  
+      jsonFile.onreadystatechange = function() {
+          if (jsonFile.readyState== 4 && jsonFile.status == 200) {
+              document.getElementById("id-of-element").innerHTML = jsonFile.responseText;
+          }
+       }
+    </script>
+  </body>
 </html>
