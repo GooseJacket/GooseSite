@@ -11,7 +11,7 @@ body {
 h1{
   color: var(--color-4);
 }
-.tile{
+.tile, .bigTile{
   color: var(--color-3);
   background: var(--color-2);
   width: 33%;
@@ -21,6 +21,10 @@ h1{
   text-align:center;
   position:relative;
   float:left;
+}
+
+.bigTile{
+  width:95%;
 }
 
 .tile:after{
