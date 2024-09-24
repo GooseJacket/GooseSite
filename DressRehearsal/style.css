@@ -1,0 +1,36 @@
+:root {
+  --color-1: white;
+  --color-2: lavender;
+  --color-3: black;
+  --color-4: #C4002E;
+}
+body {
+  background: var(--color-1);
+  color: var(--color-3);
+}
+h1{
+  color: var(--color-4);
+}
+.tile{
+  color: var(--color-3);
+  background: var(--color-2);
+  width: 33%;
+  height:30vh;
+  border-radius:20px;
+  padding:10px;
+  text-align:center;
+  position:relative;
+  float:left;
+}
+
+.tile:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 400px) {
+  .tile {
+    width: 100%;
+  }
+}
