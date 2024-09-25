@@ -5,18 +5,6 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Flashcards</h1>
-    <div class="bigTile">
-      <iframe src="chooseSet.html"></iframe>
-      <div id="Question">
-        
-      </div>
-      <button onclick="flip();">Flip</button>
-      <button onclick="next();">Next</button>
-      <br>
-      <button onclick="shuffle();">Shuffle</button>
-    </div>
-    <script src="load.js"></script>
     <script>
       let data = populateDataVariable();/*[
   				["Hallo", "Hello"],
@@ -64,5 +52,17 @@
   
   document.addEventListener('DOMContentLoaded', set());  
     </script>
+    <h1>Flashcards</h1>
+    <div class="bigTile">
+      <iframe src="chooseSet.html"></iframe>
+      <div id="Question">
+        
+      </div>
+      <button onclick="flip();">Flip</button>
+      <button onclick="next();">Next</button>
+      <br>
+      <button onclick="shuffle();">Shuffle</button>
+    </div>
+    <script src="load.js"></script>
   </body>
 </html>
