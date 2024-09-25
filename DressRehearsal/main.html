@@ -3,18 +3,21 @@
   <head>
     <title>Rehearsal</title>
     <link rel="stylesheet" href="style.css">
+    <script src="load.js"></script>
   </head>
   <body>
     <h1>
     Reheasal by Ang <3
     </h1>
     <div class="tiles">
-      <a href="chooseSet.html"><div class="tile" name="set">Choose Set Here</div></a>
+      <a href="chooseSet.html"><div class="tile" name="set">Choose Set Here<p id="currentSet"></p></div></a>
       <a href="flash.html"><div class="tile" name="flashcards">Flashcards</div></a>
       <a href="dress.html"><div class="tile" name="dress">Dress Rehearsal!</div></a>
     </div>
   </body>
   <script>
-    
+    document.addEventListener('DOMContentLoaded', function () {
+      document.window.getElementById("currentSet").innerHTML = "Current set file: " + getCookie("dataSheet");
+    });  
   </script>
 </html>
