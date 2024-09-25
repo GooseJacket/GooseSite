@@ -17,6 +17,21 @@ function loadData(filePath) {
   return result;
 }
 
+function getCookie(cname) { //general function that grabs cookie from server
+	  let name = cname + "=";
+	  let ca = document.cookie.split(';');
+	  for(let i = 0; i < ca.length; i++) {
+	    let c = ca[i];
+	    while (c.charAt(0) == ' ') {
+	      c = c.substring(1);
+	    }
+	    if (c.indexOf(name) == 0) {
+	      return c.substring(name.length, c.length);
+	    }
+	  }
+	  return "";
+	}
+
 function populateDataVariable(){ //data getCookie
 	  let d = getCookie("dataSheet");
 	  window.alert(d);
