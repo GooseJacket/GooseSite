@@ -16,7 +16,7 @@
             let data = populateDataVariable();
             let currentCard = data[0][startSide];
 
-            function reset(){data = populateDataVariable();}
+            function reset(){data = populateDataVariable();set();}
             
             function flip() {
                 currentBracket = 1 - currentBracket;
