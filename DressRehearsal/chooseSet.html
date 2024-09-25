@@ -5,18 +5,15 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <label for="cars">Choose a card set:</label>
-
-    <select name="cars" id="data" onchange>
-      <option value="test1.txt">T1</option>
-      <option value="test2.txt">T2</option>
-      <option value="D1.I-Zahlen.txt">D1: Intro: Zahlen</option>
-      <option value="D1.I-Vokab.txt">D1: Intro: Vokab</option>
-    </select>
-
-    <button onclick="setData()">Save to Server</button>
-
-    <button onclick="getDataFromCookie()">Get from Server</button>
+    <div class="bigTile">
+        <label for="cars">Choose a card set:</label>
+    
+        <select name="cars" id="data" onchange>
+          <option value="D1.I-Zahlen.txt">D1: Intro: Zahlen</option>
+          <option value="D1.I-Vokab.txt">D1: Intro: Vokab</option>
+        </select>
+        <button onclick="setData()">Go!</button>
+    </div>
     <script>
       function setCookie(cname, cvalue, exdays) { //general function that pushes the cookie to the server
     const d = new Date();
@@ -47,28 +44,24 @@
   }
   //dataSheets = ["test1.txt", "test2.txt", "mercedes", "wrong"]; //UPDATE THIS AT SOME POINT
 
-  function getDataFromCookie(){ //data getCookie
-    let d = getCookie("dataSheet");
-    //window.alert(d);
-    if (d==""){
-    window.alert("No data sheet selected!");
-    }
-    else if(dataSheets.includes(d)){
-    window.alert("Data sheet loaded! " + d);
-    }
-    else window.alert("Uh. Something. Uh. Something went wrong. Yell at Ang at laladgdg@gmail.com to fix it, tell her 'something with the cookies pulling data on chooseSet.html'");
-  }  
+      function getDataFromCookie(){ //data getCookie
+          let d = getCookie("dataSheet");
+          //window.alert(d);
+          if (d==""){
+          window.alert("No data sheet selected!");
+          }
+          else if(dataSheets.includes(d)){
+            window.alert("Data sheet loaded! " + d);
+            window.location.replace("https://goosejacket.github.io/GooseSite/DressRehearsal/main.html");
+          }
+          else window.alert("Uh. Something. Uh. Something went wrong. Yell at Ang at laladgdg@gmail.com to fix it, tell her 'something with the cookies pulling data on chooseSet.html'");
+        }  
 
-   function setData(){ //data setCookie
-     let x = document.getElementById("data").value;
-     setCookie("dataSheet", x, 365);
-   }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    let d = getCookie("dataSheet");
-    if (d == "") setCookie("dataSheet", "", 365);
-    else getDataFromCookie(d);
-  }, false);
-    </script>
+         function setData(){ //data setCookie
+           let x = document.getElementById("data").value;
+           setCookie("dataSheet", x, 365);
+           getDataFromCookie();
+         }
+          </script>
   </body>
 </html>
