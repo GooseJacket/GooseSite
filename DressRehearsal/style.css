@@ -17,13 +17,23 @@ h1{
   border-radius:20px;
   padding:10px;
   text-align:center;
-  position:relative;
-  float:left;
+}
+
+.flashcard{
+  background: white;
+  border: 2px solid black;
+  border-radius:10px;
+  padding:10px;
+  text-align:center;
+  width: 30%;
+  margin: 0 auto;
 }
 
 .tile{
   width: 30%;
   height:30vh;
+  position:relative;
+  float:left;
 }
 
 .bigTile{
@@ -37,7 +47,7 @@ h1{
 }
 
 @media screen and (max-width: 400px) {
-  .tile {
+  .tile, .flashCard {
     width: 100%;
   }
 }
