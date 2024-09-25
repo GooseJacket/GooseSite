@@ -38,7 +38,12 @@
     return "";
   }
 
-  dataSheets = ["test1.txt", "test2.txt", "mercedes", "wrong"]; //UPDATE THIS AT SOME POINT
+  var dataSheets= new Array();
+  var ddl = document.getElementById("data");
+  for (i = 0; i < ddl.options.length; i++) {
+     dataSheets[i] = ddl.options[i].value;
+  }
+  //dataSheets = ["test1.txt", "test2.txt", "mercedes", "wrong"]; //UPDATE THIS AT SOME POINT
 
   function getDataFromCookie(){ //data getCookie
     let d = getCookie("dataSheet");
