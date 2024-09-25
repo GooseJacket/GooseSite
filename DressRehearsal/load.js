@@ -36,7 +36,8 @@ function populateDataVariable(){ //data getCookie
     let d = getCookie("dataSheet");
     //window.alert(d);
     if (d==""){
-    window.alert("No data sheet selected!");
+      window.alert("No data sheet selected!");
+      window.location.replace("https://goosejacket.github.io/GooseSite/DressRehearsal/chooseSet.html");
     }
     else
       return loadData(d);
