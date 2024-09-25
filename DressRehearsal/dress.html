@@ -1,0 +1,64 @@
+<! DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Rehearsal</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <script src="load.js"></script>
+        <script>
+            let data = populateDataVariable();
+            let numRows = data.length;
+            if(numRows > 20){numRows = 20;}
+            function shuffle() {
+                for (var i = data.length - 1; i >= 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var temp = data[i];
+                    data[i] = data[j];
+                    data[j] = temp;
+                }
+            }
+
+            function populateTable(){
+                let tempHTML="<tr><th>Deutsch</th><th>Englisch</th></tr>"
+                shuffle();
+                let currentTerm;
+                for(let i = 0; i < numRows/2; i++){
+                    currentTerm = data[i][0];
+                    tempHTML += "<tr><td>" + currentTerm + "</td><td><input id=\""+i+"\"></input></td></tr>";
+                }
+                for(let i = numRows/2; i < numRows; i++){
+                    currentTerm = data[i][1];
+                    tempHTML += "<tr><td><input id=\""+i+"\"></input></td><td>" + currentTerm + "</td></tr>";
+                }
+                document.getElementById("table").innerHTML = tempHTML;
+            }
+
+            function check(){
+                let a; let x = 1;
+                for(let i = 0; i < numRows; i++){
+                    if(i == numRows/2){x = 0;}
+                    a = document.getElementById(i);
+                    if(a.value != data[i][x]){
+                        a.style.color = "red";
+                    }else{a.style.color = "green";}
+                }
+            }
+                
+            document.addEventListener('DOMContentLoaded', function () {populateTable();
+            });  
+        </script>
+        <h1>Flashcards</h1>
+        <div class="bigTile">
+            <div id="Question">
+                <table id="table">
+                </table>
+            </div>
+            <button onclick="populateTable();">Refresh</button>
+            <button onclick="check();">Check</button>
+        </div>
+    </body>
+
+    </html>
