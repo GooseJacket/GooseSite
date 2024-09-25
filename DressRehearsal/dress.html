@@ -29,7 +29,7 @@
                 let currentTerm;
                 for(let i = 0; i < numRows/2; i++){
                     currentTerm = data[i][0];
-                    tempHTML += "<tr><td>" + currentTerm + "</td><td><input id=\""+i+"\"></input></td></tr>";
+                    tempHTML += "<tr><td>" + currentTerm + "</td><td><input id=\""+i+"\" onchange=\"black(this);\"></input></td></tr>";
                 }
                 for(let i = numRows/2; i < numRows; i++){
                     currentTerm = data[i][1];
@@ -38,14 +38,47 @@
                 document.getElementById("table").innerHTML = tempHTML;
             }
 
+            function black(a){
+                a.style.color = "black";
+            }
+            
+            function compare(a, b){
+                let equiv = ["ae", "ä","Ae", "Ä",  
+                             "oe", "ö", "Oe", "Ö",
+                             "ue", "ü", "Ue", "Ü",
+                             "ss", "ß", 
+                             "-", " "];
+                if(a === b){return true;}
+                for(let i = 0; i < equiv.length; i+=2){
+                    a = a.replaceAll(equiv[i+1], equiv[i]);
+                    b = b.replaceAll(equiv[i+1], equiv[i]);
+                }
+                if(a === b){return true;}
+                return false;
+            }
+                    
             function check(){
                 let a; let x = 1;
                 for(let i = 0; i < numRows; i++){
                     if(i == numRows/2){x = 0;}
                     a = document.getElementById(i);
-                    if(a.value != data[i][x]){
-                        a.style.color = "red";
-                    }else{a.style.color = "green";}
+                    if(compare(a.value, data[i][x])){
+                        a.style.color = "green";
+                    }else{a.style.color = "red";}
+                }
+            }
+
+            function reveal(){
+                let a; let x = 1;
+                for(let i = 0; i < numRows; i++){
+                    if(i == numRows/2){x = 0;}
+                    a = document.getElementById(i);
+                    if(compare(a.value, data[i][x])){
+                        a.style.color = "green";
+                    }else{a.style.color = "grey";
+                         a.placeholder = data[i][x];
+                          a.value = "";
+                         }
                 }
             }
                 
@@ -54,12 +87,14 @@
         </script>
         <h1>Practice Quiz</h1>
         <div class="bigTile">
+            If you cannot type Ä/Ö/Ü/ß/etc, type Ae/Oe/Ue/ss/etc!
             <div id="Question">
                 <table id="table">
                 </table>
             </div>
             <button onclick="populateTable();">Refresh</button>
             <button onclick="check();">Check</button>
+            <button onclick="reveal();">Reveal Answers</button>
         </div>
     </body>
 
