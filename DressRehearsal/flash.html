@@ -1,68 +1,66 @@
 <! DOCTYPE html>
-<html>
-  <head>
-    <title>Rehearsal</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="load.js"></script>
-  </head>
-  <body>
-    <script>
-      let data = populateDataVariable();/*[
-  				["Hallo", "Hello"],
-  				["Katze", "Cat"],
-          ["Hund", "Dog"],
-          ["Guten Tag", "Good Day"]
-          ]*/
-  
-  let startSide = 0;
-  
-  let currentCardID = 0;
-  let currentCard = data[0][startSide];
-  let currentBracket = startSide;
-  
-  function flip(){
-    currentBracket = 1 - currentBracket;
-    currentCard = data[currentCardID][currentBracket];
-   
-  	set();
-  }
-  
-  function next(){
-  	currentCardID += 1;
-    if(currentCardID == data.length){
-    	currentCardID = 0;
-    }
-    set();
-  }
-  
-  function set(){
-  currentCard = data[currentCardID][startSide];
-  	document.getElementById("Question").innerHTML = currentCard;
-  }
-  
-  function shuffle(){
-    for (var i = data.length - 1; i >= 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = data[i];
-      data[i] = data[j];
-      data[j] = temp;
-    }
-    currentBracket = startSide;
-    set();
-  }
-  
-  document.addEventListener('DOMContentLoaded', set());  
-    </script>
-    <h1>Flashcards</h1>
-    <div class="bigTile">
-      <iframe src="chooseSet.html"></iframe>
-      <div id="Question">
-        
-      </div>
-      <button onclick="flip();">Flip</button>
-      <button onclick="next();">Next</button>
-      <br>
-      <button onclick="shuffle();">Shuffle</button>
-    </div>
-  </body>
-</html>
+    <html>
+
+    <head>
+        <title>Rehearsal</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <script src="load.js"></script>
+        <script>
+            let startSide = 0;
+            let currentCardID = 0;
+            let currentBracket = startSide;
+            let data = populateDataVariable();
+            let currentCard = data[0][startSide];
+
+            function flip() {
+                currentBracket = 1 - currentBracket;
+
+                set();
+            }
+
+            function next() {
+                currentCardID += 1;
+                if (currentCardID == data.length) {
+                    currentCardID = 0;
+                }
+                currentBracket= startSide;
+                set();
+            }
+
+            function set() {
+                currentCard = data[currentCardID][currentBracket];
+                document.getElementById("Question").innerHTML = currentCard;
+            }
+
+            function shuffle() {
+                for (var i = data.length - 1; i >= 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var temp = data[i];
+                    data[i] = data[j];
+                    data[j] = temp;
+                }
+                currentBracket = startSide;
+                set();
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                set();
+
+            });  
+        </script>
+        <h1>Flashcards</h1>
+        <div class="bigTile">
+            <div id="Question">
+
+            </div>
+            <button onclick="flip();">Flip</button>
+            <button onclick="next();">Next</button>
+            <br>
+            <button onclick="shuffle();">Shuffle</button>
+        </div>
+    </body>
+
+    </html>
