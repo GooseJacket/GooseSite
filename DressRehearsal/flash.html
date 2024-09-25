@@ -7,6 +7,7 @@
   <body>
     <h1>Flashcards</h1>
     <div class="bigTile">
+      <iframe src="chooseSet.html"></iframe>
       <div id="Question">
         
       </div>
@@ -15,13 +16,14 @@
       <br>
       <button onclick="shuffle();">Shuffle</button>
     </div>
+    <script src="load.js"></script>
     <script>
-      let data = [
+      let data = populateData();/*[
   				["Hallo", "Hello"],
   				["Katze", "Cat"],
           ["Hund", "Dog"],
           ["Guten Tag", "Good Day"]
-          ]
+          ]*/
   
   let startSide = 0;
   
