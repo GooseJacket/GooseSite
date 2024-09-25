@@ -15,6 +15,8 @@
             let data = populateDataVariable();
             let currentCard = data[0][startSide];
 
+            function reset(){data = populateDataVariable();}
+            
             function flip() {
                 currentBracket = 1 - currentBracket;
 
@@ -60,6 +62,7 @@
             <button onclick="next();">Next</button>
             <br>
             <button onclick="shuffle();">Shuffle</button>
+            <button onclick="reset();">Reset Order</button>
         </div>
     </body>
 
