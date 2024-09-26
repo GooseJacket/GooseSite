@@ -29,11 +29,11 @@
                 let currentTerm;
                 for(let i = 0; i < numRows/2; i++){
                     currentTerm = data[i][0];
-                    tempHTML += "<tr><td>" + currentTerm + "</td><td><input id=\""+i+"\" onchange=\"black(this);\"></input></td></tr>";
+                    tempHTML += "<tr><td>" + currentTerm + "</td><td><input id=\""+i+"\" onchange=\"black(this);\"></td></tr>";
                 }
                 for(let i = numRows/2; i < numRows; i++){
                     currentTerm = data[i][1];
-                    tempHTML += "<tr><td><input id=\""+i+"\"></input></td><td>" + currentTerm + "</td></tr>";
+                    tempHTML += "<tr><td><input id=\""+i+"\"></td><td>" + currentTerm + "</td></tr>";
                 }
                 document.getElementById("table").innerHTML = tempHTML;
             }
