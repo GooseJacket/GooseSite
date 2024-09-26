@@ -11,7 +11,9 @@ function loadData(filePath) {
   result = result.split("\n");
 
   for(let i = 0; i < result.length; i++){
-      result[i] = result[i].split("UND");
+      if(result[i] != ""){
+        result[i] = result[i].split("UND");
+      }
   }
 
   return result;
