@@ -11,13 +11,21 @@
     </h1>
     <div class="tiles">
       <a href="chooseSet.html"><div class="tile" name="set">Choose Set Here<p id="currentSet"></p></div></a>
-      <a href="flash.html"><div class="tile" name="flashcards">Flashcards</div></a>
-      <a href="dress.html"><div class="tile" name="dress">Dress Rehearsal!</div></a>
+      <a href="flash.html"><div class="tile" id="flashcards">Flashcards</div></a>
+      <a href="dress.html"><div class="tile" id="dress">Dress Rehearsal!</div></a>
     </div>
   </body>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      document.getElementById("currentSet").innerHTML = "Current set file: " + getCookie("dataSheet");
+      if(getCookie("dataSheet")!==""){
+        document.getElementById("flashcards").style.display = '';        
+        document.getElementById("dress").style.display = '';
+      }
+      else{
+        document.getElementById("flashcards").style.display = 'hidden';        
+        document.getElementById("dress").style.display = 'hidden';
+        document.getElementById("currentSet").innerHTML = "Current set file: " + getCookie("dataSheet");
+      }
     });  
   </script>
 </html>
