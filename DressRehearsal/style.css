@@ -1,26 +1,29 @@
 :root {
-  --color-1: white;
-  --color-2: lavender;
-  --color-3: black;
-  --color-4: #C4002E;
+  --darkest:  #02000f;
+  --mid:  #1e1e25;
+  --lightest: white;
+  --accent: #ff948f;
+  --mid-light: #36353d;
+  
 }
 body {
-  background: var(--color-1);
-  color: var(--color-3);
+  background: var(--darkest);
+  color: var(--lightest);
 }
 h1{
-  color: var(--color-4);
+  color: var(--accent);
 }
 .tile, .bigTile{
-  color: var(--color-3);
-  background: var(--color-2);
+  color: var(--lightest);
+  background: var(--mid);
   border-radius:20px;
   padding:10px;
   text-align:center;
 }
 
 .flashcard{
-  background: white;
+  background: var(--mid-light);
+  color:var(--lightest);
   border: 2px solid black;
   border-radius:10px;
   padding:10px;
@@ -50,8 +53,18 @@ h1{
   clear: both;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .tile, .flashCard {
     width: 100%;
   }
+}
+button{
+  background:var(--accent);
+  color:black;
+  border: none; outline: none;
+  border-radius:5px;
+}
+.setting-button{
+  background:var(--mid-light);
+  color: white;
 }
