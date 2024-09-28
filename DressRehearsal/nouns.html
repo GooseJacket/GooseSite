@@ -40,7 +40,7 @@
             function check() {
                 a = document.getElementById("sing the")
                 c = data[currentCardID][0].substring(0, 4)
-                if (a === c) {
+                if (a.value === c) {
                     a.style.color = "green";
                 } else {a.style.color = "red"; window.alert(c);}
                 set()
