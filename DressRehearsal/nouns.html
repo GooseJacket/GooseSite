@@ -61,6 +61,9 @@
             function set() {
                 currentCard = data[currentCardID][0].substring(4)
                 document.getElementById("Singular").innerHTML = currentCard
+                a = document.getElementById("sing the");
+                a.value = "";
+                black(a);
             }
 
             function shuffle() {
