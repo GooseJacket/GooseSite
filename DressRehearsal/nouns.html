@@ -1,0 +1,86 @@
+<! DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Rehearsal</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <a href="main.html"><button>Back to Home</button></a>
+        <a href="chooseSet.html"><button>Choose your set here!</button></a>
+        <script src="load.js"></script>
+        <script>
+            let currentCardID = 0
+
+            function populateDataNouns() {
+                let data = populateDataVariable()
+                let temp = [];
+                for (let i = 0; i < data.length; i++) {
+                    if (["die", "der", "das"].includes(data[i][0].substring(0,3))) {
+                        temp.push(data[i]);
+                    }else{window.alert(data[i])}
+                }
+                return temp;
+            }
+            let data = populateDataNouns();
+
+            let currentCard = data[0][0];
+
+            function reset() {
+                currentCardID = 0
+                data = populateDataNouns()
+                currentCard = data[0][0]
+                set()
+            }
+
+            function check() {
+                a = document.getElementById("sing the")
+                c = data[currentCardID][0].substring(0, 4)
+                if (a == c) {
+                    a.style.color = "green";
+                } else {a.style.color = "red";}
+                set()
+            }
+
+            function next() {
+                currentCardID += 1
+                if (currentCardID == data.length) {
+                    currentCardID = 0
+                }
+                set()
+            }
+
+            function set() {
+                currentCard = data[currentCardID][0].substring(4)
+                document.getElementById("Singular").innerHTML = currentCard
+            }
+
+            function shuffle() {
+                for (var i = data.length - 1; i >= 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1))
+                    var temp = data[i]
+                    data[i] = data[j]
+                    data[j] = temp
+                }
+                set()
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                set()
+            })
+        </script>
+        <h1>Noun Genders</h1>
+        <div class="bigTile">
+            <input id="sing the">
+            <div id="Singular" style="display:inline;">term</div>
+            <br>
+            <button onclick="check();">Check</button>
+            <button onclick="next();">Next</button>
+            <br />
+            <button onclick="shuffle();">Shuffle</button>
+            <button onclick="reset();">Reset Order</button>
+        </div>
+    </body>
+
+    </html>
