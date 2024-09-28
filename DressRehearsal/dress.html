@@ -64,7 +64,7 @@
                     a = document.getElementById(i);
                     if(compare(a.value, data[i][x])){
                         a.style.color = "green";
-                    }else{a.style.color = "red";}
+                    }else{a.style.color = "red"; a.placeholder = "";}
                 }
             }
 
@@ -77,7 +77,7 @@
                         a.style.color = "green";
                     }else{a.style.color = "grey";
                          a.placeholder = data[i][x];
-                          a.value = "";
+                         a.value = "";
                          }
                 }
             }
