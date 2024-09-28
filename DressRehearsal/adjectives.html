@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Adjective Endings</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="adj.js"></script>
+  <link rel="stylesheet" href="style.css">
+    <link id="stylesheet" rel="stylesheet">
+  </head>
+  <a href="main.html"><button>Back to Home</button></a>
+  <body>
+  <h1>Adjective Endings</h1>
+  <div class=bigTile>
+    <div class=checkboxes>
+    <table>
+      <tr>
+        <th>type</th>
+        <th>stats</th>
+        <th>gender</th>
+        <th>stats</th>
+        <th>case</th>
+        <th>stats</th>
+      </tr>
+      <tr>
+        <td class="type">
+          <input type="checkbox" id="der" name="der" value="der" checked>
+          <label for="der"> Der-Words</label><br>
+          <input type="checkbox" id="ein" name="ein" value="ein" checked>
+          <label for="ein"> Ein-Words</label><br>
+          <input type="checkbox" id="unp" name="unp" value="unp" checked>
+          <label for="unp"> Unpreceded</label><br>
+        </td>
+        <td class="type-stats">
+          <var id="derW">0</var>/<var id="derR">0</var><br>
+          <var id="einW">0</var>/<var id="einR">0</var><br>
+          <var id="unpW">0</var>/<var id="unpR">0</var>
+        </td>
+        <td class = "gender">
+          <input type="checkbox" id="fem" name="fem" value="fem" checked>
+          <label for="fem"> Feminine</label><br>
+          <input type="checkbox" id="neut" name="neut" value="neut" checked>
+          <label for="neut"> Neuter</label><br>
+          <input type="checkbox" id="masc" name="masc" value="masc" checked>
+          <label for="masc"> Masculine</label><br>
+          <input type="checkbox" id="pl" name="pl" value="pl" checked>
+          <label for="pl"> Plural</label><br>
+        </td>
+        <td class = "gender-stats">
+          <var id="femW">0</var>/<var id="femR">0</var><br>
+          <var id="mascW">0</var>/<var id="neutR">0</var><br>
+          <var id="neutW">0</var>/<var id="mascR">0</var><br>
+          <var id="plW">0</var>/<var id="plR">0</var><br>
+          </td>
+        <td class = "adCase">
+          <input type="checkbox" id="nom" name="nom" value="nom" checked>
+          <label for="nom"> Nomnitive</label><br>
+          <input type="checkbox" id="acc" name="acc" value="acc" checked>
+          <label for="acc"> Accusitive</label><br>
+          <input type="checkbox" id="dat" name="dat" value="dat" checked>
+          <label for="dat"> Dative</label><br>
+          <input type="checkbox" id="gen" name="gen" value="gen" checked>
+          <label for="gen"> Genitive</label><br>
+        </td>
+        <td class = "adCase-stats">
+          <var id="nomW">0</var>/<var id="nomR">0</var><br>
+          <var id="accW">0</var>/<var id="accR">0</var><br>
+          <var id="datW">0</var>/<var id="datR">0</var><br>
+          <var id="genW">0</var>/<var id="genR">0</var><br>
+          </td>
+      </tr>
+    </table>
+    </div>
+    <div class=flashCard>
+      Total:<var id = "wins">0</var>/<var id ="Round" name="round">0</var>
+      <p id = "prompt">Click Go to start!</p>
+      <input id="inp" type="text" size="10" value = "">
+      <input type ="submit" id="sub" value = "Go">
+      
+      <script src="AdEnds.js"></script>
+    </div>
+  </body>
+</html>
