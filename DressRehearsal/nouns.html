@@ -58,6 +58,8 @@
             }
 
             function set() {
+                let p = currentCardID * 100 / data.length; 
+                document.getElementById("prog").style.width = p+"%";
                 currentCard = data[currentCardID][0].substring(4)
                 document.getElementById("Singular").innerHTML = currentCard
                 a = document.getElementById("sing the");
@@ -81,14 +83,18 @@
         </script>
         <h1>Noun Genders</h1>
         <div class="bigTile">
-            <input id="sing the" onchange="black(this);">
-            <div id="Singular" style="display:inline;">term</div>
-            <br>
-            <button onclick="check();">Check</button>
-            <button onclick="next();">Next</button>
-            <br />
-            <button onclick="shuffle();">Shuffle</button>
-            <button onclick="reset();">Reset Order</button>
+          <div class="setLength">
+            <div class="setProgress" id="prog">
+            </div>
+          </div>
+        <input id="sing the" onchange="black(this);">
+        <div id="Singular" style="display:inline;">term</div>
+        <br>
+        <button onclick="check();">Check</button>
+        <button onclick="next();">Next</button>
+        <br />
+        <button class="setting-button" onclick="shuffle();">Shuffle</button>
+        <button class="setting-button" onclick="reset();">Reset Order</button>
         </div>
     </body>
 
