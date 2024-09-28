@@ -46,6 +46,10 @@
                 set()
             }
 
+            function black(a){
+                a.style.color = "black";
+            }
+
             function next() {
                 currentCardID += 1
                 if (currentCardID == data.length) {
@@ -75,7 +79,7 @@
         </script>
         <h1>Noun Genders</h1>
         <div class="bigTile">
-            <input id="sing the">
+            <input id="sing the" onchange="black(this);">
             <div id="Singular" style="display:inline;">term</div>
             <br>
             <button onclick="check();">Check</button>
