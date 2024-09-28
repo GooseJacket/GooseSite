@@ -68,3 +68,13 @@ button{
   background:var(--mid-light);
   color: white;
 }
+.setLength{
+  background:var(--mid-light);
+  height:5px;
+}
+.setProgress{
+  background:var(--accent);
+  height:5px;
+  float:left;
+
+}
