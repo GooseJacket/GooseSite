@@ -20,8 +20,9 @@
                     if(data[i][0] != undefined){
                         if (["die", "der", "das"].includes(data[i][0].substring(0,3))) {
                             temp.push(data[i]);
-                        }else{//window.alert(data[i])}
-                    }}
+                        }else{//window.alert(data[i])
+                        }
+                    }
                 }
                 return temp;
             }
@@ -41,7 +42,7 @@
                 c = data[currentCardID][0].substring(0, 4)
                 if (a === c) {
                     a.style.color = "green";
-                } else {a.style.color = "red";}
+                } else {a.style.color = "red"; window.alert(c);}
                 set()
             }
 
