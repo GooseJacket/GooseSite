@@ -43,6 +43,8 @@
 
             function set() {
                 currentCard = data[currentCardID][currentBracket];
+                let p = currentCardID * 100 / data.length; 
+                document.getElementById("prog").style.width = p+"%";
                 document.getElementById("Question").innerHTML = currentCard;
             }
 
@@ -63,7 +65,12 @@
             });  
         </script>
         <h1>Flashcards</h1>
+        
         <div class="bigTile">
+          <div class="setLength">
+            <div class="setProgress" id="prog">
+            </div>
+          </div>
             <div class="flashcard">
                 <div id="Question">
     
@@ -72,8 +79,8 @@
             <button onclick="flip();">Flip</button>
             <button onclick="next();">Next</button>
             <br>
-            <button onclick="shuffle();">Shuffle</button>
-            <button onclick="reset();">Reset Order</button>
+            <button class="setting-button" onclick="shuffle();">Shuffle</button>
+            <button class="setting-button" onclick="reset();">Reset Order</button>
         </div>
     </body>
 
