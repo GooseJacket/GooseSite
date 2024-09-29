@@ -17,7 +17,7 @@ body {
 h1{
   color: var(--accent);
 }
-.tile, .bigTile, .results{
+.tile, .bigTile{
   color: var(--lightest);
   background: var(--mid);
   border-radius:20px;
@@ -61,6 +61,7 @@ h1{
 .results{
   display:none;
   margin: 0 auto;
+  height:;
 }
 
 @media screen and (max-width: 500px) {
