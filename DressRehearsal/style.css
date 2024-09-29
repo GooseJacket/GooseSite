@@ -6,14 +6,18 @@
   --mid-light: #36353d;
   
 }
+header{
+  text-align:left;
+}
 body {
   background: var(--darkest);
   color: var(--lightest);
+  text-align:center;
 }
 h1{
   color: var(--accent);
 }
-.tile, .bigTile{
+.tile, .bigTile, .results{
   color: var(--lightest);
   background: var(--mid);
   border-radius:20px;
@@ -43,14 +47,20 @@ h1{
   opacity:0.85;
 }
 
-.bigTile{
-  width:95%;
-}
-
 .tile:after{
   content: "";
   display: table;
   clear: both;
+}
+
+.bigTile{
+  width:95%;
+  margin: 0 auto;
+}
+
+.results{
+  display:none;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 500px) {
