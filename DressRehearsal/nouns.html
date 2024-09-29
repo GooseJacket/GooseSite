@@ -1,101 +1,131 @@
 <! DOCTYPE html>
-    <html>
+<html>
+  <head>
+    <title>Rehearsal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <head>
-        <title>Rehearsal</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
+  <header>
+    <a href="main.html"><button>Back to Home</button></a>
+    <a href="chooseSet.html"><button>Choose your set here!</button></a>
+  </header>
+  <body>
+    <script src="load.js"></script>
+    <script>
+      let currentCardID = 0
+      let score = 0
 
-    <body>
-        <a href="main.html"><button>Back to Home</button></a>
-        <a href="chooseSet.html"><button>Choose your set here!</button></a>
-        <script src="load.js"></script>
-        <script>
-            let currentCardID = 0
-
-            function populateDataNouns() {
-                let data = populateDataVariable()
-                let temp = [];
-                for (let i = 0; i < data.length; i++) {
-                    if(data[i][0] != undefined){
-                        if (["die", "der", "das"].includes(data[i][0].substring(0,3))) {
-                            temp.push(data[i]);
-                        }else{//window.alert(data[i])
-                        }
-                    }
-                }
-                return temp;
+      function populateDataNouns() {
+        let data = /*[
+          ["die j", 0],
+          ["die j", 0],
+          ["der p", 0],
+        ]*/populateDataVariable()
+        let temp = []
+        for (let i = 0; i < data.length; i++) {
+          if (data[i][0] != undefined) {
+            if (["die", "der", "das"].includes(data[i][0].substring(0, 3))) {
+              temp.push(data[i])
+            } else {
+              //window.alert(data[i])
             }
-            let data = populateDataNouns();
+          }
+        }
+        return temp
+      }
+      let data = populateDataNouns()
 
-            let currentCard = data[0][0];
+      let currentCard = data[0][0]
 
-            function reset() {
-                currentCardID = 0
-                data = populateDataNouns()
-                currentCard = data[0][0]
-                set()
-            }
+      function setUp() {
+        score = 0
+        currentCardID = 0
+        set()
+      }
 
-            function check() {
-                a = document.getElementById("sing the")
-                c = data[currentCardID][0].substring(0, 3)
-                if (a.value === c) {
-                    a.style.color = "green";
-                } else {a.style.color = "red";}
-            }
+      function reset() {
+        data = populateDataNouns()
+        setUp()
+      }
 
-            function black(a){
-                a.style.color = "black";
-            }
+      function check() {
+        a = document.getElementById("sing the")
+        c = data[currentCardID][0].substring(0, 3)
+        if (a.value === c) {
+          a.style.color = "green"
+          if (document.getElementById("nextNoun").style.display === "none") {
+            score += 1
+          }
+        } else {
+          a.style.color = "red"
+        }
+        document.getElementById("nextNoun").style.display = "inline"
+      }
 
-            function next() {
-                currentCardID += 1
-                if (currentCardID == data.length) {
-                    currentCardID = 0
-                }
-                set()
-            }
+      function black(a) {
+        a.style.color = "black"
+      }
 
-            function set() {
-                let p = currentCardID * 100 / data.length; 
-                document.getElementById("prog").style.width = p+"%";
-                currentCard = data[currentCardID][0].substring(4)
-                document.getElementById("Singular").innerHTML = currentCard
-                a = document.getElementById("sing the");
-                a.value = "";
-                black(a);
-            }
+      function next() {
+        currentCardID += 1
+        if (currentCardID == data.length) {
+          document.getElementById("results").style.display = "inline"
+          document.getElementById("resText").innerHTML =
+            "You finished the set! Your score is " + score + "/" + data.length
+          document.getElementById("play").style.display = "none"
+        } else {
+          set()
+        }
+      }
 
-            function shuffle() {
-                for (var i = data.length - 1; i >= 0; i--) {
-                    var j = Math.floor(Math.random() * (i + 1))
-                    var temp = data[i]
-                    data[i] = data[j]
-                    data[j] = temp
-                }
-                set()
-            }
+      function set() {
+        document.getElementById("nextNoun").style.display = "none"
+        if (currentCardID == 0) {
+          document.getElementById("results").style.display = "none"
+          document.getElementById("play").style.display = ""
+        }
+        let p = (currentCardID * 100) / data.length
+        document.getElementById("prog").style.width = p + "%"
+        currentCard = data[currentCardID][0].substring(4)
+        document.getElementById("Singular").innerHTML = currentCard
+        a = document.getElementById("sing the")
+        a.value = ""
+        black(a)
+      }
 
-            document.addEventListener("DOMContentLoaded", function () {
-                set()
-            })
-        </script>
-        <h1>Noun Genders</h1>
-        <div class="bigTile">
-          <div class="setLength">
-            <div class="setProgress" id="prog">
-            </div>
-          </div>
-        <input id="sing the" onchange="black(this);">
-        <div id="Singular" style="display:inline;">term</div>
-        <br>
-        <button onclick="check();">Check</button>
-        <button onclick="next();">Next</button>
-        <br />
-        <button class="setting-button" onclick="shuffle();">Shuffle</button>
-        <button class="setting-button" onclick="reset();">Reset Order</button>
-        </div>
-    </body>
+      function shuffle() {
+        for (var i = data.length - 1; i >= 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1))
+          var temp = data[i]
+          data[i] = data[j]
+          data[j] = temp
+        }
+        setUp()
+      }
 
-    </html>
+      document.addEventListener("DOMContentLoaded", function () {
+        set()
+      })
+    </script>
+    <h1>Noun Genders</h1>
+    <div class="results" id="results">
+      <div class="flashcard" id="resText"></div>
+      <button class="setting-button" onclick="shuffle();">Shuffle</button>
+      <button class="setting-button" onclick="reset();">Reset Order</button>
+    </div>
+
+    <div class="bigTile" id="play">
+      <div class="setLength">
+        <div class="setProgress" id="prog"></div>
+      </div>
+      <input id="sing the" onchange="black(this);" />
+      <div id="Singular" style="display: inline">term</div>
+      <br />
+      <button onclick="check();">Check</button>
+      <button onclick="next();" id="nextNoun">Next</button>
+      <br />
+      <button class="setting-button" onclick="shuffle();">Shuffle</button>
+      <button class="setting-button" onclick="reset();">Reset Order</button>
+    </div>
+  </body>
+</html>
