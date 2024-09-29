@@ -1,87 +1,98 @@
 <! DOCTYPE html>
-    <html>
+<html>
+  <head>
+    <title>Rehearsal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <header>
+    <a href="main.html"><button>Back to Home</button></a>
+    <a href="chooseSet.html"><button>Choose your set here!</button></a>
+    </header>
+  <body>
+    <script src="load.js"></script>
+    <script>
+      let startSide = 0
+      let currentCardID = 0
+      let currentBracket = startSide
+      let data = populateDataVariable()
+      let currentCard = data[0][startSide]
+      let score = 0
 
-    <head>
-        <title>Rehearsal</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <a href="main.html"><button>Back to Home</button></a>
-        <a href="chooseSet.html"><button>Choose your set here!</button></a>
-        <script src="load.js"></script>
-        <script>
-            let startSide = 0;
-            let currentCardID = 0;
-            let currentBracket = startSide;
-            let data = populateDataVariable();
-            let currentCard = data[0][startSide];
+      function reset() {
+        score = 0
+        startSide = 0
+        currentCardID = 0
+        currentBracket = startSide
+        data = populateDataVariable()
+        currentCard = data[0][startSide]
+        set()
+      }
 
-            function reset(){
-                startSide = 0;
-                currentCardID = 0;
-                currentBracket = startSide;
-                data = populateDataVariable();
-                currentCard = data[0][startSide];
-                set();
-                
-            }
-            
-            function flip() {
-                currentBracket = 1 - currentBracket;
+      function flip() {
+        currentBracket = 1 - currentBracket
 
-                set();
-            }
+        set()
+      }
 
-            function next() {
-                currentCardID += 1;
-                if (currentCardID == data.length) {
-                    currentCardID = 0;
-                }
-                currentBracket= startSide;
-                set();
-            }
+      function next() {
+        currentCardID += 1
+        if (currentCardID == data.length) {
+          document.getElementById("results").style.display="inline";
+          document.getElementById("play").style.display="none";
+          currentCardID = 0;
+        }else{
+          currentBracket = startSide
+          set()
+        }
+      }
 
-            function set() {
-                currentCard = data[currentCardID][currentBracket];
-                let p = currentCardID * 100 / data.length; 
-                document.getElementById("prog").style.width = p+"%";
-                document.getElementById("Question").innerHTML = currentCard;
-            }
+      function set() {
+      	if(currentCardID == 0){
+        document.getElementById("results").style.display="none";
+          document.getElementById("play").style.display="";
+        }
+        currentCard = data[currentCardID][currentBracket]
+        let p = (currentCardID * 100) / data.length
+        document.getElementById("prog").style.width = p + "%"
+        document.getElementById("Question").innerHTML = currentCard
+      }
 
-            function shuffle() {
-                for (var i = data.length - 1; i >= 0; i--) {
-                    var j = Math.floor(Math.random() * (i + 1));
-                    var temp = data[i];
-                    data[i] = data[j];
-                    data[j] = temp;
-                }
-                currentBracket = startSide;
-                set();
-            }
+      function shuffle() {
+      	score = 0;
+        for (var i = data.length - 1; i >= 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1))
+          var temp = data[i]
+          data[i] = data[j]
+          data[j] = temp
+        }
+        currentBracket = startSide
+        set()
+      }
 
-            document.addEventListener('DOMContentLoaded', function () {
-                set();
+      document.addEventListener("DOMContentLoaded", function () {
+        set()
+      })
+    </script>
+    <h1>Flashcards</h1>
 
-            });  
-        </script>
-        <h1>Flashcards</h1>
-        
-        <div class="bigTile">
-          <div class="setLength">
-            <div class="setProgress" id="prog">
-            </div>
-          </div>
-            <div class="flashcard">
-                <div id="Question">
-    
-                </div>
-            </div>
-            <button onclick="flip();">Flip</button>
-            <button onclick="next();">Next</button>
-            <br>
-            <button class="setting-button" onclick="shuffle();">Shuffle</button>
-            <button class="setting-button" onclick="reset();">Reset Order</button>
-        </div>
-    </body>
+    <div class="results" id="results">
+    You finished the set!
+    <button class="setting-button" onclick="shuffle();">Shuffle</button>
+      <button class="setting-button" onclick="reset();">Reset Order</button>
+    </div>
 
-    </html>
+    <div class="bigTile" id="play">
+      <div class="setLength">
+        <div class="setProgress" id="prog"></div>
+      </div>
+      <div class="flashcard">
+        <div id="Question"></div>
+      </div>
+      <button onclick="flip();">Flip</button>
+      <button onclick="next();">Next</button>
+      <br />
+      <button class="setting-button" onclick="shuffle();">Shuffle</button>
+      <button class="setting-button" onclick="reset();">Reset Order</button>
+    </div>
+  </body>
+</html>
