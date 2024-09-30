@@ -13,23 +13,23 @@
       <a href="chooseSet.html"><div class="tile" name="set">Choose Set Here<p id="currentSet"></p></div></a>
       <a href="flash.html"><div class="tile" id="flashcards">Flashcards</div></a>
       <a href="nouns.html"><div class="tile" id="nouns">Noun Genders</div></a>
+      <a href="mc.html"><div class="tile" id="mc">Multiple Choice Flashcards</div></a>
       <a href="adjectives.html"><div class="tile" id="adj">Adjective Endings<br>-<br>not connected to any specific card set</div></a>
-      <a href="dress.html"><div class="tile" id="dress">Dress Rehearsal!</div></a>
+      <a href="dress.html"><div class="tile" id="dress">Practice Quiz!</div></a>
     </div>
   </body>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      let x;
       if(getCookie("dataSheet")!==""){
-        document.getElementById("flashcards").style.display = '';        
-        document.getElementById("dress").style.display = '';
-        document.getElementById("nouns").style.display = '';
+        x = '';
         document.getElementById("currentSet").innerHTML = "Current set file: " + getCookie("dataSheet");
       }
-      else{
-        document.getElementById("flashcards").style.display = 'none';        
-        document.getElementById("dress").style.display = 'none';      
-        document.getElementById("nouns").style.display = 'none';
-      }
+      else{x='none';}
+      document.getElementById("flashcards").style.display = x;    
+      document.getElementById("nouns").style.display = x;
+      document.getElementById("mc").style.display = x;
+      document.getElementById("dress").style.display = x;
     });  
   </script>
 </html>
