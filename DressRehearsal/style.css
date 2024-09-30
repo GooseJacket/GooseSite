@@ -13,8 +13,10 @@ body {
   background: var(--darkest);
   color: var(--lightest);
   text-align:center;
+  font-size:1.4em;
 }
 h1{
+  font-size:1.3em;
   color: var(--accent);
 }
 .tile, .bigTile{
