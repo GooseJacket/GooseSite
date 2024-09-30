@@ -14,14 +14,14 @@ function loadData(filePath) {
   for(let i = 0; i < result.length; i++){
       if(result[i] != ""){
         //if(result[i].includes("UND")){
-          ret.push(result[i].split("UND"));
+          result[i] = result[i].split("UND");
         //}else{
         //  ret.push(result[i]);
         }
       }
   }
-
-  return ret;
+  window.alert(result);
+  return result;
 }
 
 function getCookie(cname) { //general function that grabs cookie from server
