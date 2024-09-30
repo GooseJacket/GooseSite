@@ -13,10 +13,10 @@ function loadData(filePath) {
   let ret = [];
   for(let i = 0; i < result.length; i++){
       if(result[i] != ""){
-        if(result[i].includes("UND")){
+        //if(result[i].includes("UND")){
           ret.push(result[i].split("UND"));
-        }else{
-          ret.push(result[i]);
+        //}else{
+        //  ret.push(result[i]);
         }
       }
   }
