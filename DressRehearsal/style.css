@@ -10,13 +10,14 @@ header{
   text-align:left;
 }
 body {
+  font-family: Verdana, Helvetica, sans-serif;
   background: var(--darkest);
   color: var(--lightest);
   text-align:center;
-  font-size:1.4em;
+  font-size:1em;
 }
 h1{
-  font-size:1.3em;
+  font-size:1.2em;
   color: var(--accent);
 }
 .tile, .bigTile{
