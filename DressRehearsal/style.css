@@ -21,10 +21,11 @@ h1{
   color: var(--accent);
 }
 .tile, .bigTile{
+  border: 2px solid var(--mid);
   color: var(--lightest);
   background: var(--mid);
   border-radius:20px;
-  padding:10px;
+  padding:8px;
   text-align:center;
 }
 
