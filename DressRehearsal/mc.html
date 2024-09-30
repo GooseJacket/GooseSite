@@ -83,8 +83,8 @@
         document.getElementById("prog").style.width = p + "%"
 
 				//set question
-        currentCard = data[currentCardID][0]
-        document.getElementById("Question").innerHTML = currentCard[side]
+        currentCard = data[currentCardID][side]
+        document.getElementById("Question").innerHTML = currentCard
       }
 
       function shuffle() {
