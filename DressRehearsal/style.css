@@ -71,14 +71,14 @@ h1{
 .miniTile{
   color: var(--lightest);
   background: var(--mid);
-  border-radius:5px;
+  border-radius:10px;
   padding:5px;
   text-align:center;
   position:relative;
   display:inline-block;
   background:var(--mid-light);
   color:var(--accent);
-  height:30%;
+  height:20%;
   border: 2px solid var(--mid);
   width: calc(25% - 20px);
   
