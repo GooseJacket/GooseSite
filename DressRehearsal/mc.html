@@ -1,0 +1,127 @@
+<! DOCTYPE html>
+<html>
+  <head>
+    <title>Rehearsal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <header>
+    <a href="main.html"><button>Back to Home</button></a>
+    <a href="chooseSet.html"><button>Choose your set here!</button></a>
+  </header>
+  <body>
+    <script src="load.js"></script>
+    <script>
+      let currentCardID = 0
+      let score = 0
+      let correctID = "2"
+      let side = 0
+
+      function randomCard(banned) {
+        let ret = banned[0]
+        ret = data[Math.floor(Math.random() * data.length)]
+        if(banned.includes(ret)) {
+        	ret = randomCard(banned)
+        }
+        return ret
+      }
+
+      let data = populateDataVariable()
+
+      let currentCard = data[0][side]
+
+      function setUp() {
+        score = 0
+        currentCardID = 0
+        set()
+      }
+
+      function check(a) {
+        if (a.id === correctID) {
+          a.style.border = "2px solid green"
+          if (document.getElementById("nextNoun").style.display === "none") {
+            score += 1
+          }
+        } else {
+          a.style.border = "2px solid red"
+        }
+        document.getElementById("nextNoun").style.display = "inline"
+      }
+
+      function next() {
+        currentCardID += 1
+        if (currentCardID == data.length) {
+          document.getElementById("results").style.display = "inline"
+          document.getElementById("resText").innerHTML =
+            "You finished the set! Your score is " + score + "/" + data.length
+          document.getElementById("play").style.display = "none"
+        } else {
+          set()
+        }
+      }
+
+      function set() {
+      	let lazyyyy = ["0", "1", "2", "3"]
+        correctID = lazyyyy[Math.floor(Math.random() * 4)]
+        let tempArray = [data[currentCardID]]
+        for (let i = 0; i < 4; i++) {
+        	let j = lazyyyy[i]
+          document.getElementById(j).style.border = ""
+          let tempCard = randomCard(tempArray)
+          document.getElementById(j).innerHTML = tempCard[1 - side]
+          tempArray.push(tempCard)
+        }
+        document.getElementById(correctID).innerHTML = data[currentCardID][1 - side]
+
+        document.getElementById("nextNoun").style.display = "none"
+        if (currentCardID == 0) {
+          document.getElementById("results").style.display = "none"
+          document.getElementById("play").style.display = ""
+        }
+        //update progress bar
+        let p = (currentCardID * 100) / data.length
+        document.getElementById("prog").style.width = p + "%"
+
+				//set question
+        currentCard = data[currentCardID][0]
+        document.getElementById("Question").innerHTML = currentCard[side]
+      }
+
+      function shuffle() {
+        for (var i = data.length - 1; i >= 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1))
+          var temp = data[i]
+          data[i] = data[j]
+          data[j] = temp
+        }
+        setUp()
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        set()
+      })
+    </script>
+    <h1>Multiple Choice Flashcards</h1>
+    <div class="results" id="results">
+      <div class="flashcard" id="resText"></div>
+      <button class="setting-button" onclick="shuffle();">Restart</button>
+    </div>
+
+    <div class="bigTile" id="play">
+      <div class="setLength">
+        <div class="setProgress" id="prog"></div>
+      </div>
+      <div id="Question" style="display: inline;">question</div>
+      <br>
+      <div class="tiles">
+        <div class="miniTile" id="0" onclick="check(this);"></div>
+        <div class="miniTile" id="1" onclick="check(this);"></div>
+        <div class="miniTile" id="2" onclick="check(this);"></div>
+        <div class="miniTile" id="3" onclick="check(this);"></div>
+      </div>
+      <button onclick="next();" id="nextNoun">Next</button>
+      <br>
+      <button class="setting-button" onclick="shuffle();">Restart</button>
+    </div>
+  </body>
+</html>
