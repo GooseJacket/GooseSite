@@ -43,7 +43,7 @@ h1{
   float:left;
 }
 
-.tile:hover{
+.tile:hover, .miniTile:hover{
   opacity:0.85;
 }
 
@@ -58,9 +58,32 @@ h1{
   margin: 0 auto;
 }
 
+.tiles{
+  display: inline;
+  margin: 0 auto;
+  height:100px;
+}
+
+.miniTile{
+  color: var(--lightest);
+  background: var(--mid);
+  border-radius:5px;
+  padding:5px;
+  text-align:center;
+  position:relative;
+  display:inline-block;
+  background:var(--mid-light);
+  color:var(--accent);
+  height:30%;
+  border: 2px solid var(--mid);
+  width: calc(25% - 20px);
+  
+}
+
 .results{
   display:none;
   margin: 0 auto;
+  height:;
 }
 
 @media screen and (max-width: 500px) {
