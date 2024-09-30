@@ -96,6 +96,7 @@ button{
   color:black;
   border: none; outline: none;
   border-radius:5px;
+  height:30px;
 }
 .setting-button{
   background:var(--mid-light);
