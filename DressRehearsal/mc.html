@@ -25,7 +25,12 @@
         }
         return ret
       }
-
+	/*function populateDataVariable() {
+		let data = [
+		  ["Aaa", "a"],["Baa", "b"],["Caa", "c"],["Daaa", "d"],["Ea", "e"],["Faa", "f"],["Gaa", "g"],["Ha", "h"]
+		]
+		return data
+	      }*/
       let data = populateDataVariable()
 
       let currentCard = data[0][side]
@@ -96,9 +101,15 @@
         }
         setUp()
       }
+      
+      function switchSide() {
+      	data = populateDataVariable()
+      	side = 1 - side;
+        shuffle();
+      }
 
       document.addEventListener("DOMContentLoaded", function () {
-        set()
+        shuffle()
       })
     </script>
     <h1>Multiple Choice Flashcards</h1>
@@ -111,8 +122,9 @@
       <div class="setLength">
         <div class="setProgress" id="prog"></div>
       </div>
-      <div id="Question" style="display: inline;">question</div>
-      <br>
+      <div class="flashcard">
+        <div id="Question" style="display: inline;">question</div>
+      </div>
       <div class="tiles">
         <div class="miniTile" id="0" onclick="check(this);"></div>
         <div class="miniTile" id="1" onclick="check(this);"></div>
@@ -122,6 +134,7 @@
       <button onclick="next();" id="nextNoun">Next</button>
       <br>
       <button class="setting-button" onclick="shuffle();">Restart</button>
+      <button class="setting-button" onclick="switchSide();">Swap languages</button>
     </div>
   </body>
 </html>
