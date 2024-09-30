@@ -10,17 +10,12 @@ function loadData(filePath) {
 
   result = result.split("\n");
 
-  let ret = [];
   for(let i = 0; i < result.length; i++){
-      if(result[i] != "" && result[i] != null){
-        //if(result[i].includes("UND")){
-          ret.push(result[i].split("UND"));
-        //}else{
-        //  ret.push(result[i]);
-        
+      if(result[i] != ""){
+        result[i] = result[i].split("UND");
       }
   }
-  window.alert(result);
+
   return result;
 }
 
@@ -46,7 +41,6 @@ function populateDataVariable(){ //data getCookie
       window.alert("No data sheet selected!");
       window.location.replace("https://goosejacket.github.io/GooseSite/DressRehearsal/chooseSet.html");
     }
-    else{
-      return loadData();
+    else
+      return loadData(d);
     }  
-}
