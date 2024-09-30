@@ -1,32 +1,35 @@
-<html lang="en">
+<! DOCTYPE html>
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Concept Learning Website</title>
+    <title>Rehearsal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="load.js"></script>
   </head>
   <body>
-    <h1>Concept Learning Website</h1>
-    <input type="text" id="input" placeholder="Enter a concept..." />
-    <button id="submitButton" onclick="search()">Learn</button>
-    <div id="result" style="display: none">
-      <h2>Explanation</h2>
-      <p id="explain"></p>
-      <h2>Example Problem</h2>
-      <p id="example"></p>
-      <h2>Practice Problem</h2>
-      <div id="practice">
-        <p id="question"></p> <br>
-        <input type="radio" id="A" name="ans" value="A" />
-        <label for="A" id="radioA"></label><br />
-        <input type="radio" id="B" name="ans" value="B" />
-        <label for="B" id="radioB"></label><br />
-        <input type="radio" id="C" name="ans" value="C" />
-        <label for="C" id="radioC"></label><br />
-        <input type="radio" id="D"  name="ans" value="D" />
-        <label for="D" id="radioD"></label><br />
-        <button id="practiceSubmit" onclick="checkAnswer()">Submit</button>
-        <button id="next" onclick="nextProblem()">Next Question</button>
-      </div>
+    <h1>
+    Rehearsal by Ang <3
+    </h1>
+    <div class="tiles">
+      <a href="chooseSet.html"><div class="tile" name="set">Choose Set Here<p id="currentSet"></p></div></a>
+      <a href="flash.html"><div class="tile" id="flashcards">Flashcards</div></a>
+      <a href="nouns.html"><div class="tile" id="nouns">Noun Genders</div></a>
+      <a href="mc.html"><div class="tile" id="mc">Multiple Choice Flashcards</div></a>
+      <a href="adjectives.html"><div class="tile" id="adj">Adjective Endings<br>-<br>not connected to any specific card set</div></a>
+      <a href="dress.html"><div class="tile" id="dress">Practice Quiz!</div></a>
     </div>
   </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let x;
+      if(getCookie("dataSheet")!==""){
+        x = '';
+        document.getElementById("currentSet").innerHTML = "Current set file: " + getCookie("dataSheet");
+      }
+      else{x='none';}
+      document.getElementById("flashcards").style.display = x;    
+      document.getElementById("nouns").style.display = x;
+      document.getElementById("mc").style.display = x;
+      document.getElementById("dress").style.display = x;
+    });  
+  </script>
 </html>
