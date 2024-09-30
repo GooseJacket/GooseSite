@@ -17,7 +17,7 @@ function loadData(filePath) {
           result[i] = result[i].split("UND");
         //}else{
         //  ret.push(result[i]);
-        }
+        
       }
   }
   window.alert(result);
