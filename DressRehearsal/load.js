@@ -12,9 +12,9 @@ function loadData(filePath) {
 
   let ret = [];
   for(let i = 0; i < result.length; i++){
-      if(result[i] != ""){
+      if(result[i] != "" && result[i] != null){
         //if(result[i].includes("UND")){
-          result[i] = result[i].split("UND");
+          ret.push(result[i].split("UND"));
         //}else{
         //  ret.push(result[i]);
         
