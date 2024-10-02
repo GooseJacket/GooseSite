@@ -30,13 +30,13 @@ die RollenverteilungUNDthe division of roles
 der UrsprungUNDthe origin
 das VertrauenUNDthe trust, confidence
 die VerwandtschaftUNDthe relatives
-die WohngemeinschaftUNDthe shared flat/apartment
+die WohngemeinschaftUNDthe shared apartment, the shared flat
 aufwachsenUNDto grow up
 beeinflussenUNDto influence
 sich beschäftigenUNDto keep oneself busy
-sich beteiligenUNDto take part/participate
+sich beteiligenUNDto take part, to participate
 sich engagierenUNDto get involved
-entstammenUNDto originate/derive from
+entstammenUNDto originate from, derive from
 gehörenUNDto belong to
 sich kümmern umUNDto take care of
 sich leistenUNDto afford
@@ -54,7 +54,7 @@ gemeinsamUNDtogether
 gesellschaftlichUNDsocial
 gemütlichUNDcomfortable, cozy
 gleichaltrigUNDof the same age
-gleichgeschlechtlichUNDof the same sex/gender
+gleichgeschlechtlichUNDof the same gender
 kinderlosUNDchildless
 nichtehelichUNDborn out of wedlock
 traditionellUNDtraditional
