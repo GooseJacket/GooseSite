@@ -51,7 +51,7 @@
                     let y = data[i][x].split("/")
                     for(let j = 0; j < y.length; j++){
                         if(compare(a.value, y[j])){
-                            a.style.color = "green";
+                            a.style.color = "green"; break;
                         }else{a.style.color = "red"; a.placeholder = "";}
                     }
                 }
