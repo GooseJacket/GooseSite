@@ -19,6 +19,22 @@ function loadData(filePath) {
   return result;
 }
 
+function compare(a, b){
+  let equiv = ["ae", "ä","Ae", "Ä",  
+               "oe", "ö", "Oe", "Ö",
+               "ue", "ü", "Ue", "Ü",
+               "ss", "ß", 
+               "-", " ",
+               "", "the "];
+  if(a === b){return true;}
+  for(let i = 0; i < equiv.length; i+=2){
+      a = a.replaceAll(equiv[i+1], equiv[i]);
+      b = b.replaceAll(equiv[i+1], equiv[i]);
+  }
+  if(a === b){return true;}
+  return false;
+}
+
 function getCookie(cname) { //general function that grabs cookie from server
     let name = cname + "=";
     let ca = document.cookie.split(';');
