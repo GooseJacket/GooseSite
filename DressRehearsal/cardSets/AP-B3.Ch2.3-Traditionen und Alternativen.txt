@@ -12,7 +12,7 @@ der FlohmarktbummelUNDa stroll through the flea market
 die GemeindeUNDcommunity (Gd)
 die GemeinschaftUNDcommunity
 das GemeinschaftsgefühlUNDsense of community, togetherness
-das GeschäftUNDshop; store
+das GeschäftUNDshop, store
 die HeimatUNDhomeland
 die IntimitätUNDintimacy
 das JugendamtUNDyouth welfare office
@@ -47,7 +47,7 @@ befähigenUNDto empower
 sich engagierenUNDto get involved
 entlastenUNDto relieve
 sich niederlassenUNDto settle down
-prägenUNDto shape, mould
+prägenUNDto shape, to mould
 verdienenUNDto earn
 vertretenUNDto represent
 zuziehenUNDto tighten
