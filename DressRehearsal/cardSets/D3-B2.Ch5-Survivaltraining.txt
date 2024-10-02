@@ -25,11 +25,11 @@ das SeilUNDthe rope
 das SignalUNDthe signal
 die StreckeUNDthe route
 das StreichholzUNDthe matchstick
-die StromungUNDthe flow, current
+die StromungUNDthe flowODER the current
 das SurvivaltrainingUNDthe survival training
 das TalentUNDthe talent
 die TeilnehmerinUNDthe participant (female)
-das TorUNDthe goal, gate
+das TorUNDthe goalODERgate
 der TrainerUNDthe coach
 das UferUNDthe shore
 der WettkampfUNDthe competition
@@ -39,8 +39,8 @@ auskommenUNDto get along
 benutzenUNDto use
 berührenUNDto touch
 durchfahrenUNDto travel straight through
-sich festmachenUNDto secure, fasten
-sich hangelnUNDto climb, move on a rope
+sich festmachenUNDto secureODERfasten
+sich hangelnUNDto climbODERto move on a rope
 kletternUNDto climb
 sich orientierenUNDto orient oneself
 paddelnUNDto paddle
