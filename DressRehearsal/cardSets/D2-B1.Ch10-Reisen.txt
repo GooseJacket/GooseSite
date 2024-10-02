@@ -1,0 +1,77 @@
+die TascheUNDthe bag
+das PaketUNDthe package
+die HandtascheUNDthe purse
+die AktentascheUNDthe briefcase
+die EinkaufstascheUNDthe shopping bag
+der RucksackUNDthe backpack
+der FlughafenUNDthe airport
+die S-BahnUNDthe city train
+das TaxiUNDthe taxi
+der WegUNDthe way, the path
+schwerUNDheavy
+rollenUNDto roll
+tragenUNDto carry
+übernachtenUNDto stay overnight
+die AbfahrtUNDthe departure
+die AnkunftUNDthe arrival
+die AuskunftUNDthe information
+der AutomatUNDthe vending machine
+der BesuchUNDthe visit
+das CaféUNDthe café
+die FahrkarteUNDthe ticket
+die GegendUNDarea
+das GepäckUNDluggage
+das GleisUNDtrack, platform
+vor drei JahrenUNDthree years ago
+der KofferUNDthe suitcase
+der KofferkuliUNDluggage cart
+das MuseumUNDthe museum
+die NäheUNDnearness, proximity
+in der NäheUNDnearby
+die PostUNDthe post office
+die PostkarteUNDthe postcard
+der SchalterUNDthe counter
+der SeeUNDthe lake
+die SeeUNDthe sea
+die SeiteUNDthe side
+die StadtmitteUNDthe center of the city
+das AutoUNDthe car
+das BootUNDthe boat
+das SchiffUNDthe ship
+das FahrradUNDthe bicycle
+das FlugzeugUNDthe airplane
+das MopedUNDthe moped
+das MotorradUNDthe motorcycle
+die StraßenbahnUNDthe streetcar
+die U-BahnUNDthe subway
+der ZugUNDthe train
+abbiegenUNDto turn
+abfahrenUNDto depart, leave
+ankommenUNDto arrive
+aussteigenUNDto get off
+einsteigenUNDto get in/on; to board
+umsteigenUNDto transfer
+entschuldigenUNDto excuse
+erzählenUNDto tell
+fliegenUNDto fly
+fragenUNDto ask
+zu Fuß gehenUNDto walk
+mitnehmenUNDto take along
+nachsehenUNDto check
+planenUNDto plan
+schaffenUNDto manage
+vorbeigehenUNDto go past
+fremdUNDforeign
+geradeausUNDstraight ahead
+kleinUNDsmall, little
+linksUNDleft
+nebenUNDnext to
+rechtsUNDright
+die KisteUNDbox, crate
+der KorbUNDthe basket
+der RollkofferUNDsuitcase on wheels
+drückenUNDto push
+schleppenUNDto drag, to lug (along), to haul
+ziehenUNDto pull
+der KofferraumUNDthe trunk (of a car)
+wiegenUNDto weigh
