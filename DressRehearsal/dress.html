@@ -42,30 +42,18 @@
             function black(a){
                 a.style.color = "black";
             }
-            
-            function compare(a, b){
-                let equiv = ["ae", "ä","Ae", "Ä",  
-                             "oe", "ö", "Oe", "Ö",
-                             "ue", "ü", "Ue", "Ü",
-                             "ss", "ß", 
-                             "-", " "];
-                if(a === b){return true;}
-                for(let i = 0; i < equiv.length; i+=2){
-                    a = a.replaceAll(equiv[i+1], equiv[i]);
-                    b = b.replaceAll(equiv[i+1], equiv[i]);
-                }
-                if(a === b){return true;}
-                return false;
-            }
                     
             function check(){
                 let a; let x = 1;
                 for(let i = 0; i < numRows; i++){
                     if(i == numRows/2){x = 0;}
                     a = document.getElementById(i);
-                    if(compare(a.value, data[i][x])){
-                        a.style.color = "green";
-                    }else{a.style.color = "red"; a.placeholder = "";}
+                    let y = data[i][x].split("/")
+                    for(let j = 0; j < y.length; j++){
+                        if(compare(a.value, y[j])){
+                            a.style.color = "green";
+                        }else{a.style.color = "red"; a.placeholder = "";}
+                    }
                 }
             }
 
