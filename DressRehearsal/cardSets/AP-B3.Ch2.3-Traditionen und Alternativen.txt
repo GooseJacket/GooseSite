@@ -1,8 +1,11 @@
-der Aussteiger / die AussteigerinUNDdropout
+der AussteigerUNDdropout (male)
+die AussteigerinUNDdropout (female)
 der BesitzstandUNDownership status
-der Bürger / die BürgerinUNDcitizen (male/female)
+der BürgerUNDcitizen (male)
+die BürgerinUNDcitizen (female)
 die EhrlichkeitUNDhonesty
-der Einwohner / die EinwohnerinUNDinhabitant (male/female)
+der EinwohnerUNDinhabitant (male)
+die EinwohnerinUNDinhabitant (female)
 die ErziehungUNDeducation level
 die FirmungUNDreligious confirmation
 der FlohmarktbummelUNDa stroll through the flea market
@@ -14,14 +17,16 @@ die HeimatUNDhomeland
 die IntimitätUNDintimacy
 das JugendamtUNDyouth welfare office
 die KirchensteuerUNDChurch tax
-der Kunstliebhaber, die KunstliebhaberinUNDart lover (male/female)
+der KunstliebhaberUNDart lover (male)
+die KunstliebhaberinUNDart lover (female)
 die KünstlerkolonieUNDartist colony
 der LandkreisUNDcounty
-der Mitbegründer / die MitbegründerinUNDco-founder (male/female)
-die NäheUNDnearness, proximity
+der MitbegründerUNDco-founder (male)
+die MitbegründerinUNDco-founder (female)
+die NäheUNDnearnessODERproximity
 in der NäheUNDnearby
 der PutzteufelUNDclean freak
-der SchrebergartenUNDa community garden
+der SchrebergartenUNDcommunity garden
 die SiedlungUNDsettlement
 der VereinUNDunion
 das ZugehörigkeitsgefühlUNDthe feeling of belonging
