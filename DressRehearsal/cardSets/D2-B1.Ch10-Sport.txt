@@ -44,5 +44,5 @@ Bist du erfolgreich?UNDAre you successful?
 Was ist das Ergebnis?UNDWhat is the result?
 Was macht Spaß?UNDWhat is fun?
 Das spielt steht 1:0!UNDThe game score is 1:0!
-Wir haben gewonnen!UNDWe won
-Wir haben verloren.UNDWe lost
+Wir haben gewonnen!UNDWe won!
+Wir haben verloren.UNDWe lost.
