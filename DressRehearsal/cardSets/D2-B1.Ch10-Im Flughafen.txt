@@ -1,0 +1,33 @@
+der AbflugUNDthe departure
+die AngestellteUNDthe employee
+die BäckereiUNDthe bakery
+die BordkarteUNDthe boarding pass
+der BrieffreundUNDthe pen pal
+das FensterUNDthe window
+der FlugUNDthe flight
+der FluggastUNDthe plane passenger
+der FlughafenUNDthe airport
+der ZeitungsstandUNDthe newspaper stand
+der FlugscheinUNDthe airplane ticket
+der FlugsteigUNDthe gate
+der GangUNDthe aisle
+das GlückUNDthe luck
+das GymnasiumUNDthe secondary school
+die HaltestelleUNDthe stop
+der PilotUNDthe pilot
+die PilotinUNDthe pilot (female)
+der ReisepassUNDthe passport
+abfliegenUNDto depart
+abholenUNDto pick up
+sich beeilenUNDto hurry
+kennen lernenUNDto get to know
+landenUNDto land
+bitte sehrUNDhere you are
+pünktlichUNDpunctually
+der AutomatUNDautomat, vending machine
+der Check-in AutomatUNDself-service check-in
+die ReiseUNDthe trip
+Gute Reise!UNDHave a good trip!
+die ReisetascheUNDthe traveling bag
+die SicherheitskontrolleUNDsecurity check
+die ZollkontrolleUNDcustoms check
