@@ -48,7 +48,7 @@
                 for(let i = 0; i < numRows; i++){
                     if(i == numRows/2){x = 0;}
                     a = document.getElementById(i);
-                    let y = data[i][x].split("/")
+                    let y = data[i][x].split("ODER")
                     for(let j = 0; j < y.length; j++){
                         if(compare(a.value, y[j])){
                             a.style.color = "green"; break;
