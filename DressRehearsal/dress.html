@@ -44,15 +44,16 @@
             }
                     
             function check(){
-                let a; let x = 1;
-                for(let i = 0; i < numRows; i++){
-                    if(i == numRows/2){x = 0;}
+                let a; let x = 1; //right column for top half
+                for(let i = 0; i < numRows; i++){ //for each row
+                    if(i == numRows/2){x = 0;} //when get to halfway, swap sides to left
                     a = document.getElementById(i);
-                    let y = data[i][x].split("ODER")
+                    let y = data[i][x].split(", ") //get data choices
                     for(let j = 0; j < y.length; j++){
-                        if(compare(a.value, y[j])){
-                            a.style.color = "green"; break;
-                        }else{a.style.color = "red"; a.placeholder = "";}
+                        if(compare(a.value, y[j])){ //compare data choice + user answer
+                            a.style.color = "green"; break; //if user answer = 1 choice, it's good!
+                        }
+                        else{a.style.color = "red"; a.placeholder = "";} //so sad :( user messed up.
                     }
                 }
             }
