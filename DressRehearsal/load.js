@@ -28,8 +28,10 @@ function compare(a, b){
                "oe", "ö", "Oe", "Ö",
                "ue", "ü", "Ue", "Ü",
                "ss", "ß", 
-               "-", " ",
-               "", "the "];
+               "_", "-",
+               "_", " ",
+               "", "the_"];
+  //window.alert(a + " " + b)
   if(a === b){return true;}
   for(let i = 0; i < equiv.length; i+=2){
       a = a.replaceAll(equiv[i+1], equiv[i]);
@@ -37,17 +39,19 @@ function compare(a, b){
   }
   if(a === b){return true;}
   while(a.includes("(") && a.includes(")") && a.indexOf("(") < a.indexOf(")")){
-    a.replaceAll(" (", "("); a.replaceAll(") ", ")");
+    a = a.replaceAll("_(", "(")
+    a.replaceAll(")_", ")");
     let temp = a.split("(");
     temp[1] = temp[1].split(")")[1];
-    a = "".join(temp);
+    a = temp.join("");
   }
   while(b.includes("(") && b.includes(")") && b.indexOf("(") < b.indexOf(")")){
-    b.replaceAll(" (", "("); b.replaceAll(") ", ")");
+    b = b.replaceAll("_(", "("); 
+    b.replaceAll(")_", ")");
     let temp = b.split("(");
     temp[1] = temp[1].split(")")[1];
-    b = "".join(temp);
-  }
+    b = temp.join("");
+  }//window.alert(a + ":" + b)
   if(a === b){return true;}
   return false;
 }
