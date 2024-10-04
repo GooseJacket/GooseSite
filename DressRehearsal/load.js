@@ -40,14 +40,14 @@ function compare(a, b){
   if(a === b){return true;}
   while(a.includes("(") && a.includes(")") && a.indexOf("(") < a.indexOf(")")){
     a = a.replaceAll("_(", "(")
-    a.replaceAll(")_", ")");
+    a = a.replaceAll(")_", ")");
     let temp = a.split("(");
     temp[1] = temp[1].split(")")[1];
     a = temp.join("");
   }
   while(b.includes("(") && b.includes(")") && b.indexOf("(") < b.indexOf(")")){
     b = b.replaceAll("_(", "("); 
-    b.replaceAll(")_", ")");
+    b = b.replaceAll(")_", ")");
     let temp = b.split("(");
     temp[1] = temp[1].split(")")[1];
     b = temp.join("");
