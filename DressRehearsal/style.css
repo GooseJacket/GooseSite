@@ -21,7 +21,7 @@ h1{
   color: var(--accent);
 }
 .tile, .bigTile{
-  border: 2px solid var(--mid);
+  border: 2px solid var(--darkest);
   color: var(--lightest);
   background: var(--mid);
   border-radius:20px;
