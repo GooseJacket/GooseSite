@@ -36,6 +36,17 @@ function compare(a, b){
       b = b.replaceAll(equiv[i+1], equiv[i]);
   }
   if(a === b){return true;}
+  while(a.includes("(") && a.includes(")") && a.indexOf("(") < a.indexOf(")")){
+    let temp = a.split("(");
+    temp[1] = temp[1].split(")")[1];
+    a = "".join(temp);
+  }
+  while(b.includes("(") && b.includes(")") && b.indexOf("(") < b.indexOf(")")){
+    let temp = b.split("(");
+    temp[1] = temp[1].split(")")[1];
+    b = "".join(temp);
+  }
+  if(a === b){return true;}
   return false;
 }
 
