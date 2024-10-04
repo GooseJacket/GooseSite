@@ -1,0 +1,27 @@
+<input id="username">
+<button onclick="logIn()">Log In</button>
+<script>
+  function setCookie(cname, cvalue, exdays) { //general function that pushes the cookie to the server
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  function getUserNameFromCookie(){ //data getCookie
+    let d = getCookie("username");
+    //window.alert(d);
+    if (d==""){
+    window.alert("Not logged in!");
+    }
+    else if(dataSheets.includes(d)){
+      window.alert("Hallo, " + d, "!");
+      history.back();
+    }
+    else window.alert("Uh. Something. Uh. Something went wrong. Yell at Ang at laladgdg@gmail.com to fix it, tell her 'something with the cookies pulling data on logIn.html'");
+  }  
+  function logIn(){
+    let x = document.getElementById("username").value;
+    setCookie("user", x, 365); 
+    getUserNameFromCookie();
+  }
+  </script>
