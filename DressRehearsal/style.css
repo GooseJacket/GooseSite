@@ -117,3 +117,7 @@ button{
   float:left;
 
 }
+table{
+  margin: 0 auto;
+  display:inline;
+}
