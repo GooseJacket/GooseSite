@@ -66,8 +66,11 @@
         currentCardID += 1
         if (currentCardID == data.length) {
           document.getElementById("results").style.display = "inline"
-          document.getElementById("resText").innerHTML =
-            "You finished the set! Your score is " + score + "/" + data.length
+          let congrats = "";
+          if(getCookie("username") != ""){congrats = "Great job, " + getCookie("username") + "!")}
+          congrats += "You finished the set! Your score is: " + score + "/" + data.length
+          document.getElementById("resText").innerHTML = congrats;
+            
           document.getElementById("play").style.display = "none"
         } else {
           set()
@@ -100,6 +103,7 @@
       }
 
       document.addEventListener("DOMContentLoaded", function () {
+        if(getCookie("username") != ""){hide();}
         set()
       })
     </script>
