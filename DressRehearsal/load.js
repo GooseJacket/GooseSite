@@ -78,7 +78,9 @@ function warn(){
   }
 }
 function hide(){
-  document.getElementById('log in babe').remove();
+  if(document.getElementById('log in babe'){
+    document.getElementById('log in babe').remove();
+  }
 }
 
 function populateDataVariable(){ //data getCookie
