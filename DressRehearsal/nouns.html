@@ -78,6 +78,7 @@
       }
 
       function set() {
+        if(getCookie("username") != ""){hide();}
         document.getElementById("nextNoun").style.display = "none"
         if (currentCardID == 0) {
           document.getElementById("results").style.display = "none"
@@ -103,7 +104,6 @@
       }
 
       document.addEventListener("DOMContentLoaded", function () {
-        if(getCookie("username") != ""){hide();}
         set()
       })
     </script>
