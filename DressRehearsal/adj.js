@@ -163,6 +163,7 @@ function runRound(){
 }
 window.onload = function() {
   generatePrompt();
+        if(getCookie("username") != ""){document.header.appendChild("<p>Hallo, " + getCookie("username")+"!</p>");}
 }
 
 $(document).ready(function(){
