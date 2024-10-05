@@ -73,6 +73,8 @@
             }
                 
             document.addEventListener('DOMContentLoaded', function () {populateTable();
+                                                                       
+        if(getCookie("username") != ""){document.header.appendChild("<p>Hallo, " + getCookie("username")+"!</p>");}
             });  
         </script>
         <h1>Practice Quiz</h1>
