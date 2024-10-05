@@ -38,6 +38,7 @@
         currentCardID += 1
         if (currentCardID == data.length) {
           document.getElementById("results").style.display="inline";
+          if(getCookie("username") != ""){document.getElementById("resText").innerHTML = "Great job, " + getCookie("username") + ", you finished going through Flashcards!"}
           document.getElementById("play").style.display="none";
           currentCardID = 0;
         }else{
@@ -47,6 +48,7 @@
       }
 
       function set() {
+        if(getCookie("username") != ""){hide();}
       	if(currentCardID == 0){
         document.getElementById("results").style.display="none";
           document.getElementById("play").style.display="";
@@ -76,7 +78,7 @@
     <h1>Flashcards</h1>
 
     <div class="results" id="results">
-      <div class="flashcard" id="etwas zu sagen">You finished the set!</div>
+      <div class="flashcard" id="resText">You finished going through Flashcards!</div>
     <button class="setting-button" onclick="shuffle();">Shuffle</button>
       <button class="setting-button" onclick="reset();">Reset Order</button>
     </div>
