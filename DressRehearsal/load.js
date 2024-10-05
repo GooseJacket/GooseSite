@@ -78,7 +78,7 @@ function warn(){
   }
 }
 function hide(){
-  if(document.getElementById('log in babe'){
+  if(document.getElementById('log in babe')){
     document.getElementById('log in babe').remove();
   }
 }
