@@ -1,5 +1,5 @@
 var writtenLetters = 	["a","d","e","f","h","i","k","l","m","n","o","r","s","v","t","u","x","z","’"];
-var phonemes = 				["æ","d","i","f","h","i","k","l","m","ɲ","ɑ","r","s","v","t","ɯ","x","z","ʔ"];
+var phonemes = 		["æ","d","ɛ","f","h","i","k","l","m","ɲ","ɑ","r","s","v","t","ɯ","x","z","ʔ"];
 //exceptions = ["e", "i", "a", "m", "n"];
 var exAtStart = ["e"]; var startRep = ["i"];
 var exAtEnd = ["m", "o"]; var endRep = ["ɱ", "ɔ"];
