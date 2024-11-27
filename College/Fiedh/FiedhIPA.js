@@ -1,12 +1,12 @@
 var writtenLetters = 	["a","d","e","f","h","i","k","l","m","n","o","r","s","v","t","u","x","z","’","\'"];
-var phonemes = 				["æ","d","ɛ","f","h","i","k","l","m","ɲ","ɑ","r","s","v","t","ɯ","x","z","ʔ", "ʔ"];
+var phonemes = 		["æ","d","ɛ","f","h","i","k","l","m","ɲ","ɑ","r","s","v","t","ɯ","x","z","ʔ", "ʔ"];
+//exceptions = ["e", "i", "a", "m", "n"];
+var exAtStart = ["e"]; var startRep = ["i"];
+var exAtEnd = ["m", "o"]; var endRep = ["ɱ", "ɔ"];
+var exBefore = ["n", "o"];	var before = ["k", "l"]; var beforeRep = ["n", "ɔ"];
+var exAfter = ["i"];	var after = ["r"]; var afterRep = ["ʏ"];
 
-//Exceptions / Allophones
-var exAtStart = ["e"]; 																var startRep = ["i"];
-var exAtEnd = ["m", "o"]; 														var endRep = ["ɱ", "ɔ"];
-var exBefore = ["n", "o"];	var before = ["k", "l"]; 	var beforeRep = ["n", "ɔ"];
-var exAfter = ["i"];				var after = ["r"]; 				var afterRep = ["ʏ"];
-
+var words = [];
 var word = "";
 var allos = "";
 
@@ -21,18 +21,27 @@ function getAlphabet(){
   window.alert(writtenLetters);
 }
 
-function getIPA(){
-	word = document.getElementById("word").value;
-	allos = "";
+function getIPA(word){
+  word = word.replaceAll("/", " ");
+  if(word.includes(" ")){
+  	words = word.split(" ");
+    window.alert(words);
+    for(var j = 0; j < words.length; j++){
+    	getIPA(words[j]);
+    }
+    return;
+  }
+  allos = "";
   word = word.replaceAll("sh", "ç");
   var currentIPA = "";
   var exc = "";
   for(var i = 0; i < word.length; i++){
-		var letter = word[i];
-		if(writtenLetters.includes(letter)){ //IF VALID CHAR
-			letter = allophone(letter, i);
-		}	
-	  currentIPA += letter;
+  	var letter = word[i];
+  	if(writtenLetters.includes(letter)){ //IF VALID CHAR
+    
+    	letter = allophone(letter, i);
+}	
+    currentIPA += letter;
   }
   document.getElementById("IPA").innerHTML += "<tr> <td>" + word + "</td><td>" + currentIPA + "</td><td>" + allos + "</td></tr>";
 }
@@ -65,4 +74,4 @@ function allophone(letter, i){
   return allo;
 }
 
-function getPhonRuleScript(a, b, c){allos += "/"+a+"/ --> ["+b+"] / "+c + "<br>";} //phoneme --> allophone / rule 
+function getPhonRuleScript(a, b, c){allos += "/"+a+"/ --> ["+b+"] / "+c + "<br>";}
