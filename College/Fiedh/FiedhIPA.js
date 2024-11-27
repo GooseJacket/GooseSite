@@ -21,7 +21,6 @@ function getAlphabet(){
 }
 
 function getIPA(){
-	document.getElementById("Exc").innerHTML = "";
 	word = document.getElementById("word").value;
   word = word.replaceAll("sh", "ç");
   var currentIPA = "";
