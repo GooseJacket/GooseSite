@@ -22,6 +22,7 @@ function getAlphabet(){
 
 function getIPA(word){
   word = word.replaceAll("/", " ");
+  if(word === ""){return;}
   if(word.includes(" ")){
   	words = word.split(" ");
     //window.alert(words);
