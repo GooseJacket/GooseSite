@@ -23,7 +23,7 @@
     <div class=GameUI  style="width: 90%;">
       <input id="word"/>
       <button id="test" onclick="getAlphabet();" style="display: none;">Testing - Get Alphabet</button>
-      <button id="go" onclick="getIPA();">Go!</button>
+      <button id="go" onclick="getIPA(document.getElementById('word').value);">Go!</button>
       <table id="IPA">
         <tr><th>Written Word</th><th>IPA</th><th>Allophonic Rules</th></tr>
       </table>
