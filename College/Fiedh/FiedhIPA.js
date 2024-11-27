@@ -7,7 +7,6 @@ var exBefore = ["n", "o"];	var before = ["k", "l"]; var beforeRep = ["n", "ɔ"];
 var exAfter = ["i"];	var after = ["r"]; var afterRep = ["ʏ"];
 
 var words = [];
-var word = "";
 var allos = "";
 
 function getAlphabet(){
@@ -25,7 +24,7 @@ function getIPA(word){
   word = word.replaceAll("/", " ");
   if(word.includes(" ")){
   	words = word.split(" ");
-    window.alert(words);
+    //window.alert(words);
     for(var j = 0; j < words.length; j++){
     	getIPA(words[j]);
     }
@@ -39,14 +38,14 @@ function getIPA(word){
   	var letter = word[i];
   	if(writtenLetters.includes(letter)){ //IF VALID CHAR
     
-    	letter = allophone(letter, i);
+    	letter = allophone(letter, word, i);
 }	
     currentIPA += letter;
   }
   document.getElementById("IPA").innerHTML += "<tr> <td>" + word + "</td><td>" + currentIPA + "</td><td>" + allos + "</td></tr>";
 }
 
-function allophone(letter, i){
+function allophone(letter, word, i){
 	var phon = phonemes[writtenLetters.indexOf(letter)]; 
 	var allo = letter; 
 	//AT START OF WORD
